@@ -12,13 +12,12 @@ import java.util.Objects;
  *
  * @author gradygb
  */
-public class ArmorShop implements Serializable{
-    
+public class Inventory implements Serializable {
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
 
-    public ArmorShop() {
+    public Inventory() {
     }
 
     public String getInventoryType() {
@@ -47,15 +46,15 @@ public class ArmorShop implements Serializable{
 
     @Override
     public String toString() {
-        return "ArmorShop{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.inventoryType);
-        hash = 97 * hash + this.quantityInStock;
-        hash = 97 * hash + this.requiredAmount;
+        int hash = 3;
+        hash = 79 * hash + Objects.hashCode(this.inventoryType);
+        hash = 79 * hash + this.quantityInStock;
+        hash = 79 * hash + this.requiredAmount;
         return hash;
     }
 
@@ -67,7 +66,7 @@ public class ArmorShop implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ArmorShop other = (ArmorShop) obj;
+        final Inventory other = (Inventory) obj;
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
@@ -76,7 +75,5 @@ public class ArmorShop implements Serializable{
         }
         return this.requiredAmount == other.requiredAmount;
     }
-    
-            
     
 }

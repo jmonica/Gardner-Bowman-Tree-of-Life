@@ -12,13 +12,12 @@ import java.util.Objects;
  *
  * @author gradygb
  */
-public class ArmorShop implements Serializable{
-    
+public class PersonalInventory implements Serializable{
     private String inventoryType;
     private int quantityInStock;
-    private int requiredAmount;
+    private int monyAmount;
 
-    public ArmorShop() {
+    public PersonalInventory() {
     }
 
     public String getInventoryType() {
@@ -37,25 +36,25 @@ public class ArmorShop implements Serializable{
         this.quantityInStock = quantityInStock;
     }
 
-    public int getRequiredAmount() {
-        return requiredAmount;
+    public int getMonyAmount() {
+        return monyAmount;
     }
 
-    public void setRequiredAmount(int requiredAmount) {
-        this.requiredAmount = requiredAmount;
+    public void setMonyAmount(int monyAmount) {
+        this.monyAmount = monyAmount;
     }
 
     @Override
     public String toString() {
-        return "ArmorShop{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "PersonalInventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", monyAmount=" + monyAmount + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.inventoryType);
-        hash = 97 * hash + this.quantityInStock;
-        hash = 97 * hash + this.requiredAmount;
+        hash = 79 * hash + Objects.hashCode(this.inventoryType);
+        hash = 79 * hash + this.quantityInStock;
+        hash = 79 * hash + this.monyAmount;
         return hash;
     }
 
@@ -67,16 +66,14 @@ public class ArmorShop implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ArmorShop other = (ArmorShop) obj;
+        final PersonalInventory other = (PersonalInventory) obj;
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
         if (this.quantityInStock != other.quantityInStock) {
             return false;
         }
-        return this.requiredAmount == other.requiredAmount;
+        return this.monyAmount == other.monyAmount;
     }
-    
-            
     
 }
