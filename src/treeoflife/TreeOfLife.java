@@ -9,6 +9,7 @@ import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Inventory;
 import byui.cit260.treeOfLife.model.PersonalInventory;
+import byui.cit260.treeOfLife.model.Player;
 import byui.cit260.treeOfLife.model.Scene;
 
 /**
@@ -64,5 +65,12 @@ public class TreeOfLife {
         
         String personalInfo = personalOne.toString();
         System.out.println(personalInfo);
-        }
+        
+        Player playerOne = new Player();
+        
+        playerOne.setName("Hisami");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+    }
 }
