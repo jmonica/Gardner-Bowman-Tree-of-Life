@@ -10,6 +10,7 @@ import byui.cit260.treeOfLife.model.Scene;
 import byui.cit260.treeOfLife.model.SceneTwo;
 import byui.cit260.treeOfLife.model.Character;
 import byui.cit260.treeOfLife.model.CharacterInventory;
+import byui.cit260.treeOfLife.model.Location;
 
 /**
  *
@@ -103,7 +104,14 @@ public class TreeOfLife {
         System.out.println(characterInventoryInfo);
         
         //Location
+        Location locationOne = new Location();
         
+        locationOne.setRow(30);
+        locationOne.setColumn(45);
+        locationOne.setVisited(3);
+        
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
         
         //Player
         Player playerOne = new Player();
