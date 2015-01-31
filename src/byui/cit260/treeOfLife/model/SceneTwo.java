@@ -12,12 +12,13 @@ import java.util.Objects;
  *
  * @author gradygb
  */
-public class Scene implements Serializable{
-   private char type;
+public class SceneTwo implements Serializable {
+    private char type;
     private String description;
     private char symbol;
+    private char blocked;
 
-    public Scene() {
+    public SceneTwo() {
     }
 
     public char getType() {
@@ -44,17 +45,26 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
+    public char getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(char blocked) {
+        this.blocked = blocked;
+    }
+
     @Override
     public String toString() {
-        return "Scene{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + '}';
+        return "SceneTwo{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + ", blocked=" + blocked + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + this.type;
-        hash = 53 * hash + Objects.hashCode(this.description);
-        hash = 53 * hash + this.symbol;
+        int hash = 5;
+        hash = 37 * hash + this.type;
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + this.symbol;
+        hash = 37 * hash + this.blocked;
         return hash;
     }
 
@@ -66,14 +76,16 @@ public class Scene implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Scene other = (Scene) obj;
+        final SceneTwo other = (SceneTwo) obj;
         if (this.type != other.type) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        return this.symbol == other.symbol;
-    }
-    
-} 
+        if (this.symbol != other.symbol) {
+            return false;
+        }
+        return this.blocked == other.blocked;
+    } 
+}

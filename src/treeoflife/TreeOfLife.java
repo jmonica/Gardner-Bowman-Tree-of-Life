@@ -5,7 +5,9 @@ import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Inventory;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.PersonalInventory;
+import byui.cit260.treeOfLife.model.Player;
 import byui.cit260.treeOfLife.model.Scene;
+import byui.cit260.treeOfLife.model.SceneTwo;
 
 /**
  *
@@ -30,10 +32,19 @@ public class TreeOfLife {
         sceneOne.setType('a');
         sceneOne.setDescription("This is a forest");
         sceneOne.setSymbol('b');
-        sceneOne.setBlocked('c');
         
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
+        
+        SceneTwo sceneTwo = new SceneTwo();
+        
+        sceneTwo.setType('e');
+        sceneTwo.setSymbol('f');
+        sceneTwo.setDescription("this is scene two");
+        sceneTwo.setBlocked('g');
+        
+        String sceneTwoInfo = sceneTwo.toString();
+        System.out.println(sceneTwoInfo);
         
         //Armor Shop
         ArmorShop armorShop = new ArmorShop();
@@ -83,4 +94,11 @@ public class TreeOfLife {
         
         //Location
         }
+        Player playerOne = new Player();
+        
+        playerOne.setName("Hisami");
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+    }
 }
