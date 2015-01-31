@@ -13,10 +13,9 @@ import java.util.Objects;
  * @author gradygb
  */
 public class Scene implements Serializable{
-    private char type;
+   private char type;
     private String description;
     private char symbol;
-    private char blocked;
 
     public Scene() {
     }
@@ -45,26 +44,17 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
-    public char getBlocked() {
-        return blocked;
-    }
-
-    public void setBlocked(char blocked) {
-        this.blocked = blocked;
-    }
-
     @Override
     public String toString() {
-        return "Scene{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + ", blocked=" + blocked + '}';
+        return "Scene{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 41 * hash + this.type;
-        hash = 41 * hash + Objects.hashCode(this.description);
-        hash = 41 * hash + this.symbol;
-        hash = 41 * hash + this.blocked;
+        int hash = 3;
+        hash = 53 * hash + this.type;
+        hash = 53 * hash + Objects.hashCode(this.description);
+        hash = 53 * hash + this.symbol;
         return hash;
     }
 
@@ -83,10 +73,7 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (this.symbol != other.symbol) {
-            return false;
-        }
-        return this.blocked == other.blocked;
+        return this.symbol == other.symbol;
     }
-
-}
+    
+} 
