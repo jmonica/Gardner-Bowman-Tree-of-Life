@@ -8,6 +8,8 @@ import byui.cit260.treeOfLife.model.PersonalInventory;
 import byui.cit260.treeOfLife.model.Player;
 import byui.cit260.treeOfLife.model.Scene;
 import byui.cit260.treeOfLife.model.SceneTwo;
+import byui.cit260.treeOfLife.model.Character;
+import byui.cit260.treeOfLife.model.CharacterInventory;
 
 /**
  *
@@ -87,18 +89,29 @@ public class TreeOfLife {
         System.out.println(mapInfo);
         
         //Character
+        Character characterOne = new Character();
         
+        characterOne.setName("Nephi");
+        String characterInfo= characterOne.toString();
+        System.out.println(characterInfo);
         
         //Character Info
+        CharacterInventory characterInventoryOne = new CharacterInventory();
         
+        characterInventoryOne.setInventoryType("This is your Personal Inventory");
+        String characterInventoryInfo = characterInventoryOne.toString();
+        System.out.println(characterInventoryInfo);
         
         //Location
-        }
+        
+        
+        //Player
         Player playerOne = new Player();
         
         playerOne.setName("Hisami");
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        }
+        
     }
-}
