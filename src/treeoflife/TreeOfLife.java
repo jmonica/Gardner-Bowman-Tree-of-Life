@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package treeoflife;
 
 import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Inventory;
+import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.PersonalInventory;
 import byui.cit260.treeOfLife.model.Scene;
 
@@ -21,13 +17,14 @@ public class TreeOfLife {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //Game
         Game gameOne = new Game();
         
         gameOne.setTotalTime(7.00);
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
-    
+        //Scene One
         Scene sceneOne = new Scene();
         
         sceneOne.setType('a');
@@ -38,6 +35,7 @@ public class TreeOfLife {
         String sceneInfo = sceneOne.toString();
         System.out.println(sceneInfo);
         
+        //Armor Shop
         ArmorShop armorShop = new ArmorShop();
         
         armorShop.setInventoryType("Inventory type is armor");
@@ -47,6 +45,7 @@ public class TreeOfLife {
         String armorInfo = armorShop.toString();
         System.out.println(armorInfo);
         
+        //Inventory
         Inventory inventoryOne = new Inventory();
         
         inventoryOne.setInventoryType("Inventory type is a sword");
@@ -56,6 +55,7 @@ public class TreeOfLife {
         String inventoryInfo = inventoryOne.toString();
         System.out.println(inventoryInfo);
         
+        //Personal Inventory
         PersonalInventory personalOne = new PersonalInventory();
         
         personalOne.setInventoryType("This is personal inventory");
@@ -64,5 +64,23 @@ public class TreeOfLife {
         
         String personalInfo = personalOne.toString();
         System.out.println(personalInfo);
+        
+        //Map
+        
+        Map mapOne = new Map();
+        
+        mapOne.setRowCount(20);
+        mapOne.setColumnCount(12);
+        
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
+        
+        //Character
+        
+        
+        //Character Info
+        
+        
+        //Location
         }
 }
