@@ -54,33 +54,17 @@ public class MainMenuView {
         getInput = getInput.trim();
         
         //if the selection is invaled 
-        if(getInput() != 'B'){
-          System.out.println("Invalid selection");
-          
-        }
-        else if(getInput () !='G'){
+        if (getInput.length() != 1){
             System.out.println("Invalid selection");
-           
+            continue;
         }
-        else if(getInput () !='H'){
-            System.out.println("Invalid selection");
-            
+        break;
         }
-        else if(getInput () !='S'){
-            System.out.println("Invalid selection");
-            
-        }
-        else if(getInput () !='E'){
-            System.out.println("Invalid selection");
-           
-        }
-        
-        }
-        return null;
+        return getInput;
     }
-
-        public void doAction(char choice) {
-        switch (choice) {
+        
+        public void doAction(char selection) {
+        switch (selection) {
             case 'B':
                 this.startNewGame();
                 break;
@@ -115,3 +99,4 @@ public class MainMenuView {
     private void saveGame() {
        System.out.println("*** saveGame function called");  
     }
+}
