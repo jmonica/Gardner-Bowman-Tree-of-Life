@@ -31,7 +31,7 @@ public class ForestControlTest {
         
         
         ForestControl instance = new ForestControl();
-        double expResult = 43.29139319262645;
+        double expResult = 43.0;
         double result = instance.calcHeightOfTree(distance, fists);
         assertEquals(expResult, result, 0.0001);
         
@@ -88,7 +88,7 @@ public class ForestControlTest {
         distance = 50.0;
         fists = 5.0;
         
-        expResult = 59.56776151469365;
+        expResult = 60.0;
         result = instance.calcHeightOfTree(distance, fists);
         assertEquals(expResult, result, 0.0001);
         
@@ -102,7 +102,7 @@ public class ForestControlTest {
         distance = 100.0;
         fists = 1.0;
         
-        expResult = 17.629303202201584;
+        expResult = 18.0;
         result = instance.calcHeightOfTree(distance, fists);
         assertEquals(expResult, result, 0.0001);
     }
