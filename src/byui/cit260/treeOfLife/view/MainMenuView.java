@@ -87,7 +87,11 @@ public class MainMenuView {
 
   
     private void startNewGame() {
-       System.out.println("*** startNewGame function called");  
+       GameControl.createNewGame(TreeOfLife.getPlayer());
+       
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayMenu();
+       
     }
     private void startExistingGame() {
        System.out.println("*** startExistingGame function called");
