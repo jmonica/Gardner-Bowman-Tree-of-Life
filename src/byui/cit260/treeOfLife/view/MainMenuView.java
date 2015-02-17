@@ -36,43 +36,9 @@ public class MainMenuView {
         }while (selection != 'E'); //an selction is not "Exit"
     }
 
-    public void doAction(char choice) {
-        switch (choice) {
-            case 'B':
-                this.startNewGame();
-                break;
-            case 'G':
-                this.startExistingGame();
-                break;
-            case 'H':
-                this.displayHelpMenu();
-                break;
-            case 'S':
-                this.saveGame();
-                break;
-            case 'E':
-                return;
-            default:
-                System.out.println("\n***Invalid selection *** Try again");
-                break;
-        }
-    }
-
-  
-    private void startNewGame() {
-       System.out.println("*** startNewGame function called");  
-    }
-    private void startExistingGame() {
-       System.out.println("*** startExistingGame function called");
-    }
-    private void displayHelpMenu() {
-       System.out.println("*** displayHelpMenu function called"); 
-    }
-
-    private void saveGame() {
-       System.out.println("*** saveGame function called");  
-    }
-
+    
+    
+    
     public String getInput() {
         boolean valid = false;
         String getInput = null;
@@ -109,5 +75,43 @@ public class MainMenuView {
            
         }
         
+        }
+        return null;
+    }
 
+        public void doAction(char choice) {
+        switch (choice) {
+            case 'B':
+                this.startNewGame();
+                break;
+            case 'G':
+                this.startExistingGame();
+                break;
+            case 'H':
+                this.displayHelpMenu();
+                break;
+            case 'S':
+                this.saveGame();
+                break;
+            case 'E':
+                return;
+            default:
+                System.out.println("\n***Invalid selection *** Try again");
+                break;
+        }
+    }
 
+  
+    private void startNewGame() {
+       System.out.println("*** startNewGame function called");  
+    }
+    private void startExistingGame() {
+       System.out.println("*** startExistingGame function called");
+    }
+    private void displayHelpMenu() {
+       System.out.println("*** displayHelpMenu function called"); 
+    }
+
+    private void saveGame() {
+       System.out.println("*** saveGame function called");  
+    }
