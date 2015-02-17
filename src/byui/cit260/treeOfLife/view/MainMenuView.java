@@ -5,7 +5,9 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.GameControl;
 import java.util.Scanner;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -87,7 +89,11 @@ public class MainMenuView {
 
   
     private void startNewGame() {
-       System.out.println("*** startNewGame function called");  
+       GameControl.createNewGame(TreeOfLife.getPlayer());  //create a new game
+       
+       //display the game menu
+       GameMenuView gameMenu = new GameMenuView();
+       gameMenu.displayMenu();
     }
     private void startExistingGame() {
        System.out.println("*** startExistingGame function called");
