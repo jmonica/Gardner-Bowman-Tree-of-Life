@@ -5,6 +5,8 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author gradygb
