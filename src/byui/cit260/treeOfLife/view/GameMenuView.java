@@ -32,7 +32,7 @@ public class GameMenuView {
             
             this.doAction(selection); // do action based on selection
             
-        } while (selection != 'E');
+        } while (selection != 'Q');
         
     }
 
