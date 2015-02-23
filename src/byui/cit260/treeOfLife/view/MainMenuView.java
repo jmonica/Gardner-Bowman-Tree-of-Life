@@ -96,7 +96,12 @@ public class MainMenuView {
         gameMenu.displayMenu();
     }
     private void startExistingGame() {
-       System.out.println("*** startExistingGame function called");
+       GameControl.startExistingGame(TreeOfLife.getPlayer()); //start an existing game
+
+        //display the option to choose from existing games
+        ExistingGameView existingGame = new ExistingGameView();
+        existingGame.displayMenu();
+        
     }
     private void displayHelpMenu() {
         //display the help menu
