@@ -118,12 +118,13 @@ public class HelpMenuView {
         System.out.println("\n\n**************************************************");
                           
         System.out.println("*                                                *"
-                       + "\n* Type in the Letters for the correspondings     *"
-                       + "\n* menus. This will help you to go from one place *"
-                       + "\n* to the next.                                   *"
+                       + "\n* Type in the letter for the corresponding       *"
+                       + "\n* selection. This will help you to move from one *"
+                       + "\n* menu to the next.                              *"
                        + "\n* Make sure to use capital letters throughout    *"
                        + "\n* the game. If you don't the move will not be    *"
-                       + "\n* recognized.                                    *");
+                       + "\n* recognized.                                    *"
+                       + "\n*                                                *");
         System.out.println("**************************************************");
     }
 }
