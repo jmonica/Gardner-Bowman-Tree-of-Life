@@ -111,6 +111,10 @@ public class MainMenuView {
     }
 
     private void saveGame() {
-       System.out.println("*** saveGame function called");  
+       GameControl .saveGame(TreeOfLife.getPlayer()); // save the game
+       
+       //display the saveGame menu
+       SaveMenuView saveMenu = new SaveMenuView();
+       saveMenu.displayMenu();
     }
 }

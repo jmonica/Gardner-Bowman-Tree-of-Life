@@ -13,15 +13,7 @@ import java.util.Scanner;
  */
 public class ExistingGameView {
 
-    private final String MENU = "\n"
-            +"\n----------------------------------------------------"
-            +"\n| Start Existing Game Menu                         |"
-            +"\n----------------------------------------------------"
-            +"\nA - Saved Game 1                                    "
-            +"\nB - Saved Game 2                                    "
-            +"\nC - Saved Game 3                                    "
-            +"\nE - Exit                                            "
-            +"\n----------------------------------------------------";
+    private final String MENU = "\n";
     
     public void displayMenu() {
         

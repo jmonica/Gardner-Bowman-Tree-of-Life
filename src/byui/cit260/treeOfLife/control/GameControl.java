@@ -13,4 +13,8 @@ public class GameControl {
     public static void startExistingGame (Player player) {
         System.out.println("\n*** startExistingGame stub function called");
     }
+
+    public static void saveGame(Player player) {
+        System.out.println("\n*** saveMenu stub function called");
+    }
 }
