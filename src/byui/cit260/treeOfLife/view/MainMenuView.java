@@ -14,7 +14,7 @@ import treeoflife.TreeOfLife;
  * @author MonicasApple
  */
 public class MainMenuView {
-
+  his
     private final String MENU = "\n"
             +"\n----------------------------------"
             +"\n| Main Menu                      |"
@@ -22,9 +22,11 @@ public class MainMenuView {
             +"\nB - Begin Game"
             +"\nG - Start existing game"
             +"\nH - To see help options on game play"
+            +"\nL - Location Menu"
             +"\nS - Save Game"
             +"\nE - Exit"
             +"\n----------------------------------";
+    
     public void displayMenu() {
         char selection = ' ';
         do{
@@ -79,6 +81,9 @@ public class MainMenuView {
             case 'S':
                 this.saveGame();
                 break;
+            case 'L':
+                this.location();
+                break;
             case 'E':
                 return;
             default:
@@ -116,5 +121,10 @@ public class MainMenuView {
        //display the saveGame menu
        SaveMenuView saveMenu = new SaveMenuView();
        saveMenu.displayMenu();
+    }
+
+    private void location() {
+        LocationView location = new LocationView();
+        location.displayMenu();
     }
 }
