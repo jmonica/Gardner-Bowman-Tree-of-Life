@@ -79,14 +79,14 @@ public class LocationView {
     }
 
     private void forestScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** forestScene function called");
     }
 
     private void riverScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** riverScene function called");
     }
 
     private void mountainScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        System.out.println("\n*** mountainScen function called");
+}
 }
