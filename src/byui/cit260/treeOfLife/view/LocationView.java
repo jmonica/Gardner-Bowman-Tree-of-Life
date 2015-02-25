@@ -83,7 +83,8 @@ public class LocationView {
     }
 
     private void riverScene() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        RiverSceneView riverScene = new RiverSceneView();
+        riverScene.display();
     }
 
     private void mountainScene() {
