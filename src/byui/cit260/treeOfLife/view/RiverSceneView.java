@@ -31,33 +31,33 @@ public class RiverSceneView {
         do {
             System.out.println(MENU);
             
-            String input = this.getInput();
+            double input = this.getInput();
             
         } while (radius != 'E');
         
     }
 
-    private String getInput() {
+    private double getInput() {
         
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
-        String radius = null;
+        double radius = 0;
         
         while (!valid) {
             System.out.println("Type the radius of the tree.");
             
             
-                double radius = Double.parseDouble(keyboard.nextLine().trim());
+            radius = Double.parseDouble(keyboard.nextLine().trim());
             
             
-            if (radius.length() != 1) {
-                System.out.println("Invalid selection");
-                continue;
-                
-            } else {
+            if (radius > 1) {
                 
                 RiverControl riverControl = new RiverControl();
                 riverControl.calcCircumference(radius);
+            } else {
+                System.out.println("Invalid selection");
+                continue;
+                
             } break;
         }
         return radius;
