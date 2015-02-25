@@ -14,7 +14,7 @@ import treeoflife.TreeOfLife;
  * @author MonicasApple
  */
 public class MainMenuView {
-    
+
     private final String MENU = "\n"
             +"\n----------------------------------"
             +"\n| Main Menu                      |"
