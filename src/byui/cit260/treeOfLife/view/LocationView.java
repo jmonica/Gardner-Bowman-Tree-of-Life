@@ -79,7 +79,8 @@ public class LocationView {
     }
 
     private void forestScene() {
-        System.out.println("\n*** forestScene function called");
+        ForestSceneView forestScene = new ForestSceneView();
+        forestScene.display();
     }
 
     private void riverScene() {
@@ -88,6 +89,7 @@ public class LocationView {
     }
 
     private void mountainScene() {
-        System.out.println("\n*** mountainScen function called");
+        MountainSceneView mountainScene = new MountainSceneView();
+        mountainScene.display();
 }
 }
