@@ -1,55 +1,19 @@
 
 package byui.cit260.treeOfLife.view;
 
-import java.util.Scanner;
-
 public class GameMenuView extends View{
-    private final String MENU = "\n"
+
+    public GameMenuView() {
+        super("\n"
             +"\n----------------------------------------------------"
             +"\n| Begin Game Menu                                  |"
             +"\n----------------------------------------------------"
             +"\nC - Choose Character                                "
             +"\nQ - Quit                                            "
-            +"\n----------------------------------------------------";
+            +"\n----------------------------------------------------");
+    }
     
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do {
-            
-            System.out.println(MENU);//display the existing game menu
-            
-            String input =this.getInput(); //get the user's selection
-            selection = input.charAt(0); //get first character of the string
-            
-            this.doAction(selection); // do action based on selection
-            
-        } while (selection != 'Q');
-        
-    }
-
-    private String getInput() {
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid) {
-            //prompt for the selection
-            System.out.println("Make your selection");
-            
-            //get the selection from the keyboard and trim off the blanks
-            getInput = keyboard.nextLine();
-            getInput = getInput.trim();
-            
-            //if the selection is invalid
-            if (getInput.length() != 1) {
-                System.out.println("Invalid selection");
-                continue;
-            }
-            break;
-        }
-          return getInput;
-    }
+    
 
     private void doAction(char selection) {
          switch (selection) {
@@ -66,6 +30,11 @@ public class GameMenuView extends View{
 
     private void characterSelection() {
         System.out.println("**** characterSelection function called");
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             
 }
