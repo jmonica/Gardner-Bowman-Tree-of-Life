@@ -3,7 +3,7 @@ package byui.cit260.treeOfLife.view;
 
 import java.util.Scanner;
 
-public class GameMenuView {
+public class GameMenuView extends View{
     private final String MENU = "\n"
             +"\n----------------------------------------------------"
             +"\n| Begin Game Menu                                  |"

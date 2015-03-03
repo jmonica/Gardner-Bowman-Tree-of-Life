@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author MonicasApple
  */
-public class ForestSceneView {
+public class ForestSceneView extends View{
        private final String MENU ="\n"
             +"\n--------------------------------------------------"
             +"\n| FOREST SCENE                                   |"
@@ -42,6 +42,7 @@ public class ForestSceneView {
         } while (distance != 'E');
     }
 
+    
     private double getInput() {
         
         Scanner keyboard = new Scanner(System.in);

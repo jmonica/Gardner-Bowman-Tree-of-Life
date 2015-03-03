@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author gradygb
  */
-class SaveMenuView {
+class SaveMenuView extends View{
     
     public final String MENU = "\n"
             +"\n----------------------------------------------------"

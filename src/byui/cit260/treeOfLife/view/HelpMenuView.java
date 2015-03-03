@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author gradygb
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     private final String MENU = "\n"
             +"\n----------------------------------------------------"

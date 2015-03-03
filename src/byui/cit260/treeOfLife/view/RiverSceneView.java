@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author gradygb
  */
-public class RiverSceneView {
+public class RiverSceneView extends View{
     
     private final String MENU ="\n"
             +"\n--------------------------------------------------"

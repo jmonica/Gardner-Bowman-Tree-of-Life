@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author gradygb
  */
-public class LocationView {
+public class LocationView extends View{
   
     private final String MENU = "\n"
                 + "\n*********************************************************"

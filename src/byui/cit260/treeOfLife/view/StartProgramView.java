@@ -6,7 +6,7 @@ import byui.cit260.treeOfLife.model.Player;
 import java.util.Scanner;
 
 
-public class StartProgramView {
+public class StartProgramView extends View{
     public void startProgram(){
     
     //display banner screen
@@ -23,7 +23,7 @@ public class StartProgramView {
     
     //Display the Main Menu
     MainMenuView mainMenu = new MainMenuView();
-    mainMenu.displayMenu();
+    mainMenu.display();
 
     
     }

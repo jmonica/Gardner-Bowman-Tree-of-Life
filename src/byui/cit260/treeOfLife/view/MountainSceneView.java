@@ -8,7 +8,7 @@ import java.util.Scanner;
  *
  * @author MonicasApple
  */
-public class MountainSceneView {
+public class MountainSceneView extends View{
     private final String MENU ="\n"
             +"\n--------------------------------------------------"
             +"\n| MOUNTAIN SCENE                                 |"

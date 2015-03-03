@@ -13,9 +13,10 @@ import treeoflife.TreeOfLife;
  *
  * @author MonicasApple
  */
-public class MainMenuView {
-
-    private final String MENU = "\n"
+public class MainMenuView extends View {
+   
+    public MainMenuView() {
+        super( "\n"
             +"\n----------------------------------"
             +"\n| Main Menu                      |"
             +"\n----------------------------------"
@@ -25,46 +26,7 @@ public class MainMenuView {
             +"\nL - Location Menu"
             +"\nS - Save Game"
             +"\nE - Exit"
-            +"\n----------------------------------";
-    
-    public void displayMenu() {
-        char selection = ' ';
-        do{
-        System.out.println(MENU); //display main menu
-        
-        String input = this.getInput(); //get the user's selection
-        selection = input.charAt(0); //get first character of string
-        
-        this.doAction(selection); //do action based on selection
-        
-        }while (selection != 'E'); //an selction is not "Exit"
-    }
-
-    
-    
-    
-    public String getInput() {
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-        
-        //prompt for the selection
-        System.out.println("Choose your selection");
-        
-        //get the selection from the keyboard and trim off the blanks
-        getInput = keyboard.nextLine();
-        getInput = getInput.trim();
-        
-        //if the selection is invaled 
-        if (getInput.length() != 1){
-            System.out.println("Invalid selection");
-            continue;
-        }
-        break;
-        }
-        return getInput;
+            +"\n----------------------------------");
     }
         
         public void doAction(char selection) {
@@ -126,5 +88,10 @@ public class MainMenuView {
     private void location() {
         LocationView location = new LocationView();
         location.displayMenu();
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
