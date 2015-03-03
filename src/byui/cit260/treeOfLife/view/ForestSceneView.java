@@ -5,15 +5,14 @@
  */
 package byui.cit260.treeOfLife.view;
 
-import byui.cit260.treeOfLife.control.ForestControl;
-import java.util.Scanner;
-
 /**
  *
  * @author MonicasApple
  */
-public class ForestSceneView extends View{
-       private final String MENU ="\n"
+public class ForestSceneView extends View{          
+
+    public ForestSceneView() {
+        super("\n"
             +"\n--------------------------------------------------"
             +"\n| FOREST SCENE                                   |"
             +"\n--------------------------------------------------"
@@ -22,66 +21,14 @@ public class ForestSceneView extends View{
             +"\nacross the river safely                           "
             +"\nMeasure the distance from the tree.               "
             +"\nCount how many fist high the tree is              "
-            +"\n--------------------------------------------------";           
+            +"\n--------------------------------------------------");
+    }
 
-    public void display() {
-        
-        char fists = ' ';
-        do {
-            System.out.println(MENU);
-            
-            double input = this.getInput();
-            
-        } while (fists != 'E');
-         char distance = ' ';
-        do {
-            System.out.println(MENU);
-            
-            double input = this.getInput();
-            
-        } while (distance != 'E');
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
-    private double getInput() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        double distance = 0;
-        double fists = 0;
-        
-        while (!valid) {
-            System.out.println("Type the distance from the tree.");
-            
-            
-            distance = Double.parseDouble(keyboard.nextLine().trim());
-            
-            
-            if (distance > 1) {
-                
-                ForestControl forestControl = new ForestControl();
-                forestControl.calcHeightOfTree(distance, fists);
-            }
-            else {
-                System.out.println("Invalid selection");
-                continue;
-            }
-                
-            System.out.println("Type the amount of fists high the tree is");
-            
-            if (fists > 1) {
-                
-                ForestControl forestControl = new ForestControl();
-                forestControl.calcHeightOfTree(distance, fists);
-            }
-            else {
-                System.out.println("Invalid selection");
-                continue;
-                
-            } break;
-        }
-        return fists;
-            
-    }
 }
 

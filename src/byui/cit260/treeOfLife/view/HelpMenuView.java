@@ -5,61 +5,24 @@
  */
 package byui.cit260.treeOfLife.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author gradygb
  */
 public class HelpMenuView extends View {
 
-    private final String MENU = "\n"
+
+    public HelpMenuView() {
+        super("\n"
             +"\n----------------------------------------------------"
             +"\n| Help Menu                                        |"
             +"\n----------------------------------------------------"
             +"\nG - What is the goal of the game?"
             +"\nM - How to move?"
             +"\nQ - Quit"
-            +"\n----------------------------------------------------";
+            +"\n----------------------------------------------------");
+    }
     
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do {
-        
-        System.out.println(MENU); //display the help menu
-        
-        String input = this.getInput(); //get the usesr's selection
-        selection = input.charAt(0); // get firt character of string
-        
-        this.doAction(selection); // do action based on selection
-        
-        } while (selection != 'Q'); // an selection is not "Quit"
-    }
-
-      public String getInput() {
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        while(!valid){
-        
-        //prompt for the selection
-        System.out.println("Choose your selection");
-        
-        //get the selection from the keyboard and trim off the blanks
-        getInput = keyboard.nextLine();
-        getInput = getInput.trim();
-        
-        //if the selection is invaled 
-        if (getInput.length() != 1){
-            System.out.println("Invalid selection");
-            continue;
-        }
-        break;
-        }
-        return getInput;
-    }
 
     private void doAction(char selection) {
         
@@ -126,5 +89,10 @@ public class HelpMenuView extends View {
                        + "\n* recognized.                                    *"
                        + "\n*                                                *");
         System.out.println("**************************************************");
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -5,15 +5,14 @@
  */
 package byui.cit260.treeOfLife.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author gradygb
  */
 public class LocationView extends View{
-  
-    private final String MENU = "\n"
+
+    public LocationView() {
+        super("\n"
                 + "\n*********************************************************"
                 + "\n* Location Menu                                         *"
                 + "\n*********************************************************"
@@ -21,42 +20,9 @@ public class LocationView extends View{
                 + "\nB - River                                                "
                 + "\nC - Mountain                                             "
                 + "\nE - Exit                                                 "
-                + "\n*********************************************************";
+                + "\n*********************************************************");
+    }   
     
-    public void displayMenu() {
-        
-        char selection = ' ';
-        do{
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        } while (selection != 'E');
-    }
-
-    private String getInput() {
-        boolean valid = false;
-        String getInput = null;
-        Scanner keyboard = new Scanner (System.in);
-        
-        while (!valid) {
-            System.out.println("Choose a scene to visit.");
-            
-            getInput = keyboard.nextLine();
-            getInput = getInput.trim();
-            
-            if (getInput.length() != 1) {
-                System.out.println("Invalid selection");
-                continue;
-            } 
-            break;
-        }
-        return getInput;
-    }
-
     public void doAction(char selection) {
         
         switch (selection){
@@ -92,4 +58,9 @@ public class LocationView extends View{
         MountainSceneView mountainScene = new MountainSceneView();
         mountainScene.display();
 }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
