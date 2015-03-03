@@ -7,7 +7,7 @@ package byui.cit260.treeOfLife.view;
  */
 public class MountainSceneView extends View{           
 
-    public MountainSceneView(String promptMessage) {
+    public MountainSceneView() {
         super("\n"
             +"\n--------------------------------------------------"
             +"\n| MOUNTAIN SCENE                                 |"

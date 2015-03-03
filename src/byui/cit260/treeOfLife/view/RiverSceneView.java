@@ -11,7 +11,7 @@ package byui.cit260.treeOfLife.view;
  */
 public class RiverSceneView extends View{
  
-    public RiverSceneView(String promptMessage) {
+    public RiverSceneView() {
         super("\n"
             +"\n--------------------------------------------------"
             +"\n| RIVER SCENE                                    |"

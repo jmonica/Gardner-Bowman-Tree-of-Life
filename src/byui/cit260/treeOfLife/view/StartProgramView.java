@@ -11,6 +11,7 @@ public class StartProgramView extends View{
     public StartProgramView(String promptMessage) {
         super(promptMessage);
     }
+
     public void startProgram(){
     
     //display banner screen
@@ -105,5 +106,5 @@ public class StartProgramView extends View{
     public void doAction(String value) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

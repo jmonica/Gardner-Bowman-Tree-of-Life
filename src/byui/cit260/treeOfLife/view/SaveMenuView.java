@@ -12,7 +12,7 @@ package byui.cit260.treeOfLife.view;
 class SaveMenuView extends View{
     
 
-    public SaveMenuView(String promptMessage) {
+    public SaveMenuView() {
         super("\n"
             +"\n----------------------------------------------------"
             +"\n| Save Game Menu                                   |"

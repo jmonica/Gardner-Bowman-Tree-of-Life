@@ -72,7 +72,7 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
         //display the help menu
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
         
     }
 
@@ -81,12 +81,12 @@ public class MainMenuView extends View {
        
        //display the saveGame menu
        SaveMenuView saveMenu = new SaveMenuView();
-       saveMenu.displayMenu();
+       saveMenu.display();
     }
 
     private void location() {
         LocationView location = new LocationView();
-        location.displayMenu();
+        location.display();
     }
 
     @Override
