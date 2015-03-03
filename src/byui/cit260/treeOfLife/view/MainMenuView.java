@@ -6,7 +6,6 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
-import java.util.Scanner;
 import treeoflife.TreeOfLife;
 
 /**

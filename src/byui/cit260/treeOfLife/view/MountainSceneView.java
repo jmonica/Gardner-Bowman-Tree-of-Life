@@ -1,15 +1,14 @@
 
 package byui.cit260.treeOfLife.view;
 
-import byui.cit260.treeOfLife.control.MountainControl;
-import java.util.Scanner;
-
 /**
  *
  * @author MonicasApple
  */
-public class MountainSceneView extends View{
-    private final String MENU ="\n"
+public class MountainSceneView extends View{           
+
+    public MountainSceneView(String promptMessage) {
+        super("\n"
             +"\n--------------------------------------------------"
             +"\n| MOUNTAIN SCENE                                 |"
             +"\n--------------------------------------------------"
@@ -18,46 +17,15 @@ public class MountainSceneView extends View{
             +"\nrope long enough to get down                      "
             +"\nPick up a rock and drop it down the cliff. Count  "
             +"\nthe seconds it takes to hit the bottom.           "
-            +"\n--------------------------------------------------";           
-
-    public void display() {
-        
-        char height = ' ';
-        do {
-            System.out.println(MENU);
-            
-            double input = this.getInput();
-            
-        } while (height != 'E');
-        
+            +"\n--------------------------------------------------");
     }
 
-    private double getInput() {
-        
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        double height = 0;
-        
-        while (!valid) {
-            System.out.println("How many second did the rock take to hit the ground?");
-            
-            
-            height = Double.parseDouble(keyboard.nextLine().trim());
-            
-            
-            if (height > 1) {
-                
-                MountainControl mountainControl = new MountainControl();
-                mountainControl.calcHeightOfMountain(height);
-            } else {
-                System.out.println("Invalid selection");
-                continue;
-                
-            } break;
-        }
-        return height;
-            
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
 
     
 }

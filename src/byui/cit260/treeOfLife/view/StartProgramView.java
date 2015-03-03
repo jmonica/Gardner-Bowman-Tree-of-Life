@@ -7,6 +7,10 @@ import java.util.Scanner;
 
 
 public class StartProgramView extends View{
+
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
+    }
     public void startProgram(){
     
     //display banner screen
@@ -95,6 +99,11 @@ public class StartProgramView extends View{
         System.out.println("\tWelcome to the game " + player.getName());
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("===================================");
+    }
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
