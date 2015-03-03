@@ -8,8 +8,33 @@ import java.util.Scanner;
 
 public class StartProgramView extends View{
 
-    public StartProgramView() {
-        super("\n\n**************************************************");
+    public StartProgramView(String promptMessage) {
+        super(promptMessage);
+    }
+
+    public void startProgram(){
+    
+    //display banner screen
+        this.displayBanner();
+    
+    //prompt the player to enter their name Retrieve the name of the player
+    String playersName = this.getPlayersName();    
+    
+    //Create and save the player object
+    Player player = ProgramControl.createPlayer(playersName);
+    
+    //Display a personalized welcome message
+    this.displayWelcomeMessage(player);
+    
+    //Display the Main Menu
+    MainMenuView mainMenu = new MainMenuView();
+    mainMenu.display();
+
+    
+    }
+    
+    public void displayBanner() {
+        System.out.println("\n\n**************************************************");
                           
         System.out.println("*                                                *"
                        + "\n* Embark on a journey to reach the Tree of Life. *"
@@ -41,30 +66,6 @@ public class StartProgramView extends View{
                         + "\n* lost in the spacious building.                 *"
                         + "\n*                                                *");
         System.out.println("**************************************************");
-    }
-    
-    public void startProgram(){
-    
-    //display banner screen
-        this.displayBanner();
-    
-    //prompt the player to enter their name Retrieve the name of the player
-    String playersName = this.getPlayersName();    
-    
-    //Create and save the player object
-    Player player = ProgramControl.createPlayer(playersName);
-    
-    //Display a personalized welcome message
-    this.displayWelcomeMessage(player);
-    
-    //Display the Main Menu
-    MainMenuView mainMenu = new MainMenuView();
-    mainMenu.display();
-
-    
-    }
-    
-    public void displayBanner() {
 
     }
 
