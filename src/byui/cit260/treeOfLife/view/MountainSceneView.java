@@ -24,7 +24,7 @@ public class MountainSceneView extends View{
     public void display(){
         String value;
         
-        do{
+           do{
             System.out.println("enter the width"); //display main menu
             String valueOne = this.getInput(); //get the user's selection
             System.out.println("enter the height"); //display main menu
@@ -46,6 +46,7 @@ public class MountainSceneView extends View{
         //call the control function to perform the task
         //display information to be viewed by the user
     }
+
 
     
 
