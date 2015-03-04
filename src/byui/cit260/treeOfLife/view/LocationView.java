@@ -47,16 +47,16 @@ public class LocationView extends View{
         char choice = value.charAt(0); //get the first character entered
 
         switch (value){
-            case 'A':
+            case "A":
                 this.forestScene();
                 break;
-            case 'B':
+            case "B":
                 this.riverScene();
                 break;
-            case 'C':
+            case "C":
                 this.mountainScene();
                 break;
-            case 'E':
+            case "E":
                 return;
             default:
                 System.out.println("\n*** Invalid selection***");

@@ -37,22 +37,22 @@ public class MainMenuView extends View {
         char choice = value.charAt(0); //get the first character entered
 
         switch (value) {
-            case 'B':
+            case "B":
                 this.startNewGame();
                 break;
-            case 'G':
+            case "G":
                 this.startExistingGame();
                 break;
-            case 'H':
+            case "H":
                 this.displayHelpMenu();
                 break;
-            case 'S':
+            case "S":
                 this.saveGame();
                 break;
-            case 'L':
+            case "L":
                 this.location();
                 break;
-            case 'E':
+            case "E":
                 return;
             default:
                 System.out.println("\n***Invalid selection *** Try again");

@@ -35,10 +35,10 @@ class SaveMenuView extends View{
         char choice = value.charAt(0); //get the first character entered
 
         switch (value){
-            case 'A':
+            case "A":
                 this.saveGame();
                 break;
-            case 'E':
+            case "E":
                 return;
             default:
                 System.out.println("\n*** Invalid selection ***");

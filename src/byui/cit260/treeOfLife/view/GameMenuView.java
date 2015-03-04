@@ -31,10 +31,10 @@ public class GameMenuView extends View{
         char choice = value.charAt(0); //get the first character entered
 
         switch (value) {
-             case 'C':
+             case "C":
                  this.characterSelection();
                  break;
-             case 'Q':
+             case "Q":
                  return;
              default:
                  System.out.println("\n*** Invalid selection ***");

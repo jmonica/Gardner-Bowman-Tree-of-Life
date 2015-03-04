@@ -82,13 +82,13 @@ public class HelpMenuView extends View {
         char choice = value.charAt(0); //get the first character entered
 
         switch (value) {
-            case 'G':
+            case "G":
                 this.gameInstruction();
                 break;
-            case 'M':
+            case "M":
                 this.howToMove();
                 break;
-            case 'Q':
+            case "Q":
                 return;
             default:
                 System.out.println("\n*** Invalid selection ***");
