@@ -53,11 +53,12 @@ public class MainMenuView extends View {
                 this.location();
                 break;
             case "E":
-                return;
+                return true;
             default:
                 System.out.println("\n***Invalid selection *** Try again");
                 break;
         }
+        return true;
     }
 
   

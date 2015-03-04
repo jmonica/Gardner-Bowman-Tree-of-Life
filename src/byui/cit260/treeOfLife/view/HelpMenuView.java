@@ -88,7 +88,7 @@ public class HelpMenuView extends View {
             case "M":
                 this.howToMove();
                 break;
-            case "Q":
+            case "E":
                 return;
             default:
                 System.out.println("\n*** Invalid selection ***");

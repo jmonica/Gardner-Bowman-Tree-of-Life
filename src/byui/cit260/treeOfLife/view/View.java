@@ -64,8 +64,4 @@ public abstract class View implements ViewInterface{
         this.promptMessage = promptMessage;
     }
 
-    private void doAction(String value) {
-        this.doAction(Object obj);
-    }
-
 }

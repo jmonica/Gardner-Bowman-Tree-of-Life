@@ -34,13 +34,13 @@ public class GameMenuView extends View{
              case "C":
                  this.characterSelection();
                  break;
-             case "Q":
-                 return;
+             case "E":
+                 return true;
              default:
                  System.out.println("\n*** Invalid selection ***");
                  break;
          } 
-        return false;
+        return true;
     }
             
 }
