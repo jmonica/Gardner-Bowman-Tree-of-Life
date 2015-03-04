@@ -27,9 +27,16 @@ public class MainMenuView extends View {
             +"\nE - Exit"
             +"\n----------------------------------");
     }
+    
+        @Override
+    public boolean doAction(Object obj) {
         
-        public void doAction(char selection) {
-        switch (selection) {
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value) {
             case 'B':
                 this.startNewGame();
                 break;
@@ -51,6 +58,7 @@ public class MainMenuView extends View {
                 System.out.println("\n***Invalid selection *** Try again");
                 break;
         }
+        return false;
     }
 
   
@@ -89,8 +97,4 @@ public class MainMenuView extends View {
         location.display();
     }
 
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

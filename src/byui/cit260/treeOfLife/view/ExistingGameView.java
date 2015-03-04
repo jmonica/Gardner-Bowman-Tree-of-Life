@@ -28,12 +28,13 @@ public class ExistingGameView extends View {
         System.out.println("**** startGameThree function called");
     }
 
-    @Override
-    public void doAction(String value) {
+
+    void displayMenu() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    void displayMenu() {
+    @Override
+    public boolean doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             

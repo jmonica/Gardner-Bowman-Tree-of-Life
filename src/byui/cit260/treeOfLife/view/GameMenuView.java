@@ -12,11 +12,25 @@ public class GameMenuView extends View{
             +"\nQ - Quit                                            "
             +"\n----------------------------------------------------");
     }
-    
-    
 
-    private void doAction(char selection) {
-         switch (selection) {
+
+    private void characterSelection() {
+        System.out.println("**** characterSelection function called");
+    }
+
+    void displayMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+                
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value) {
              case 'C':
                  this.characterSelection();
                  break;
@@ -25,20 +39,8 @@ public class GameMenuView extends View{
              default:
                  System.out.println("\n*** Invalid selection ***");
                  break;
-         }
-    }
-
-    private void characterSelection() {
-        System.out.println("**** characterSelection function called");
-    }
-
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         } 
+        return false;
     }
             
 }

@@ -22,27 +22,6 @@ public class LocationView extends View{
                 + "\nE - Exit                                                 "
                 + "\n*********************************************************");
     }   
-    
-    public void doAction(char selection) {
-        
-        switch (selection){
-            case 'A':
-                this.forestScene();
-                break;
-            case 'B':
-                this.riverScene();
-                break;
-            case 'C':
-                this.mountainScene();
-                break;
-            case 'E':
-                return;
-            default:
-                System.out.println("\n*** Invalid selection***");
-                break;
-        }
-
-    }
 
     private void forestScene() {
         ForestSceneView forestScene = new ForestSceneView();
@@ -60,7 +39,28 @@ public class LocationView extends View{
 }
 
     @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(Object obj) {
+                
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value){
+            case 'A':
+                this.forestScene();
+                break;
+            case 'B':
+                this.riverScene();
+                break;
+            case 'C':
+                this.mountainScene();
+                break;
+            case 'E':
+                return;
+            default:
+                System.out.println("\n*** Invalid selection***");
+                break;
+        }
     }
 }

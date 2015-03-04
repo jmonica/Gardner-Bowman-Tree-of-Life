@@ -22,9 +22,19 @@ class SaveMenuView extends View{
             +"\n----------------------------------------------------");
     }
 
+    private void saveGame() {
+                System.out.println("**** saveGame function called");
+    }
 
-    private void doAction(char selection) {
-        switch (selection){
+    @Override
+    public boolean doAction(Object obj) {
+                
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value){
             case 'A':
                 this.saveGame();
                 break;
@@ -34,15 +44,6 @@ class SaveMenuView extends View{
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
-    }
-
-    private void saveGame() {
-                System.out.println("**** saveGame function called");
-    }
-
-    @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     void displayMenu() {

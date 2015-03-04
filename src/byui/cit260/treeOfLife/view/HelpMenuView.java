@@ -22,24 +22,6 @@ public class HelpMenuView extends View {
             +"\nQ - Quit"
             +"\n----------------------------------------------------");
     }
-    
-
-    private void doAction(char selection) {
-        
-        switch (selection) {
-            case 'G':
-                this.gameInstruction();
-                break;
-            case 'M':
-                this.howToMove();
-                break;
-            case 'Q':
-                return;
-            default:
-                System.out.println("\n*** Invalid selection ***");
-                break;
-        }
-    }
 
     private void gameInstruction() {
         System.out.println("\n\n**************************************************");
@@ -92,7 +74,25 @@ public class HelpMenuView extends View {
     }
 
     @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(Object obj) {
+                
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value) {
+            case 'G':
+                this.gameInstruction();
+                break;
+            case 'M':
+                this.howToMove();
+                break;
+            case 'Q':
+                return;
+            default:
+                System.out.println("\n*** Invalid selection ***");
+                break;
+        }
     }
 }
