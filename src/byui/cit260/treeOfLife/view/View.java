@@ -65,7 +65,7 @@ public abstract class View implements ViewInterface{
     }
 
     private void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.doAction(Object obj);
     }
 
 }
