@@ -39,11 +39,12 @@ class SaveMenuView extends View{
                 this.saveGame();
                 break;
             case "E":
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
+        return true;
     }
 
     void displayMenu() {

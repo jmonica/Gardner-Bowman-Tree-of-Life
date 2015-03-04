@@ -57,10 +57,12 @@ public class LocationView extends View{
                 this.mountainScene();
                 break;
             case "E":
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection***");
                 break;
         }
+        return true;
     }
+    
 }

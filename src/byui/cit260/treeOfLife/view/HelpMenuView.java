@@ -89,10 +89,12 @@ public class HelpMenuView extends View {
                 this.howToMove();
                 break;
             case "E":
-                return;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
+    return true;
     }
+    
 }
