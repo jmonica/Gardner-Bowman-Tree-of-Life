@@ -13,7 +13,4 @@ public class RiverControl {
 	return circumference;
     }
 
-    public void display(double circumference) {
-        System.out.println("The circumference is" + circumference);
-    }
 }

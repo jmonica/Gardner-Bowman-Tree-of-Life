@@ -45,7 +45,8 @@ public class RiverSceneView extends View{
         //call the control function to perform the task
         RiverControl riverControl = new RiverControl();
         //display information to be viewed by the user
-        riverControl.display(double circumference);
+        double circumference = 0;
+        System.out.println("the circumference is" + circumference);
         return true;
     }
 }

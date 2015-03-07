@@ -44,7 +44,8 @@ public class MountainSceneView extends View{
         //call the control function to perform the task
         MountainControl mountainControl = new MountainControl();
         //display information to be viewed by the user
-        mountainControl.display(double height);
+        double height = 0;
+        System.out.println("the height is" + height);
         return true;
         
     }

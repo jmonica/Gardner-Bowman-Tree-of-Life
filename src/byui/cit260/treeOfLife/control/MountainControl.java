@@ -11,8 +11,4 @@ public class MountainControl {
 	
         return height;
     }
-
-    public void display(double height) {
-        System.out.println("the height of the mountain is" + height);
-    }
 }

@@ -26,7 +26,7 @@ public class ForestSceneView extends View{
 
     @Override
     public void display(){
-        String value;
+        String value = null;
         
            do{
             System.out.println("enter the width"); //display main menu
