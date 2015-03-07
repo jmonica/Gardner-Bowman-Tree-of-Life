@@ -5,6 +5,8 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.ForestControl;
+
 /**
  *
  * @author MonicasApple
@@ -29,27 +31,32 @@ public class ForestSceneView extends View{
         String value = null;
         
            do{
-            System.out.println("enter the width"); //display main menu
+            System.out.println("enter the amount of fists"); //display main menu
             String valueOne = this.getInput(); //get the user's selection
-            System.out.println("enter the height"); //display main menu
+            System.out.println("enter the distance from the tree"); //display main menu
             String valueTwo = this.getInput(); //get the user's selection 
-            double width = Double.parseDouble(valueOne);
-            double height = Double.parseDouble(valueTwo);
+            double fists = Double.parseDouble(valueOne);
+            double distance = Double.parseDouble(valueTwo);
             double[] inputs = new double[2];
-            inputs[0] = width;
-            inputs[1] = height;
+            inputs[0] = fists;
+            inputs[1] = distance;
             this.doAction(inputs); //do action based on selection
         
-        }while (!value.equals("E")); //an selction is not "Exit"
+        }while (!value.equals("E")); //and selction is not "Exit"
     }
     
     @Override
     public boolean doAction(Object obj) {
         double[] inputValues = (double[]) obj;
-        double width = inputValues[0];
-        double height = inputValues[1];
+        double fists = inputValues[0];
+        double distance = inputValues[1];
+        
         //call the control function to perform the task
+        ForestControl forestControl = new ForestControl();
         //display information to be viewed by the user
+        double theHeight = 0;
+        System.out.println("The height of the tree is" + theHeight);
+        return true;
     }
     
 }

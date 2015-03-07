@@ -13,8 +13,8 @@ public class ForestControl {
     
     double tall = (.1745* fists);
     double tan = Math.tan(tall);
-    double height = Math.round(distance * tan);
+    double theHeight = Math.round(distance * tan);
     
-    return height;
+    return theHeight;
     }
 }
