@@ -1,6 +1,8 @@
 
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.MountainControl;
+
 /**
  *
  * @author MonicasApple
@@ -22,29 +24,29 @@ public class MountainSceneView extends View{
     
     @Override
     public void display(){
-        String value;
+        String value = null;
         
            do{
-            System.out.println("enter the width"); //display main menu
+            System.out.println("enter the seconds"); //display main menu
             String valueOne = this.getInput(); //get the user's selection
-            System.out.println("enter the height"); //display main menu
-            String valueTwo = this.getInput(); //get the user's selection 
-            double width = Double.parseDouble(valueOne);
-            double height = Double.parseDouble(valueTwo);
-            double[] inputs = new double[2];
-            inputs[0] = width;
-            inputs[1] = height;
-            this.doAction(inputs); //do action based on selection
+
+            double time = Double.parseDouble(valueOne);
+
+            this.doAction(time); //do action based on selection
         
         }while (!value.equals("E")); //an selction is not "Exit"
     }
+    
     @Override
     public boolean doAction(Object obj) {
-        double[] inputValues = (double[]) obj;
-        double width = inputValues[0];
-        double height = inputValues[1];
+        double time;
+
         //call the control function to perform the task
+        MountainControl mountainControl = new MountainControl();
         //display information to be viewed by the user
+        mountainControl.display(double height);
+        return true;
+        
     }
 
 

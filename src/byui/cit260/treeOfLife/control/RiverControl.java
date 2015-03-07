@@ -12,4 +12,8 @@ public class RiverControl {
 	double circumference = (radius*2*3.14);
 	return circumference;
     }
+
+    public void display(double circumference) {
+        System.out.println("The circumference is" + circumference);
+    }
 }

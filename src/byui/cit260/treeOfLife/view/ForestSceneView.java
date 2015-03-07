@@ -25,10 +25,32 @@ public class ForestSceneView extends View{
     }
 
     @Override
-    public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void display(){
+        String value;
+        
+           do{
+            System.out.println("enter the width"); //display main menu
+            String valueOne = this.getInput(); //get the user's selection
+            System.out.println("enter the height"); //display main menu
+            String valueTwo = this.getInput(); //get the user's selection 
+            double width = Double.parseDouble(valueOne);
+            double height = Double.parseDouble(valueTwo);
+            double[] inputs = new double[2];
+            inputs[0] = width;
+            inputs[1] = height;
+            this.doAction(inputs); //do action based on selection
+        
+        }while (!value.equals("E")); //an selction is not "Exit"
     }
-
+    
+    @Override
+    public boolean doAction(Object obj) {
+        double[] inputValues = (double[]) obj;
+        double width = inputValues[0];
+        double height = inputValues[1];
+        //call the control function to perform the task
+        //display information to be viewed by the user
+    }
     
 }
 

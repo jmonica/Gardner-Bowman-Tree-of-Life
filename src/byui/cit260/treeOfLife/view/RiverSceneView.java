@@ -5,6 +5,8 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.RiverControl;
+
 /**
  *
  * @author gradygb
@@ -24,12 +26,26 @@ public class RiverSceneView extends View{
             +"\n--------------------------------------------------");
     }
 
+        @Override
+    public void display(){
+        String value = null;
+        
+           do{
+            System.out.println("enter the width"); //display main menu
+            String valueRadius = this.getInput(); //get the user's selection 
+            double radius = Double.parseDouble(valueRadius);
+            this.doAction(radius); //do action based on selection
+        
+        }while (!value.equals("E")); //an selction is not "Exit"
+    }
+    
     @Override
     public boolean doAction(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        double radius;
+        //call the control function to perform the task
+        RiverControl riverControl = new RiverControl();
+        //display information to be viewed by the user
+        riverControl.display(double circumference);
+        return true;
     }
-
-
-
-    
 }
