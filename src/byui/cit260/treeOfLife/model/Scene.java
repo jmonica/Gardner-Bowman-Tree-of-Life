@@ -16,6 +16,8 @@ public class Scene implements Serializable{
    private char type;
     private String description;
     private char symbol;
+    
+    private Location[] location;
 
     public Scene() {
     }
@@ -42,6 +44,14 @@ public class Scene implements Serializable{
 
     public void setSymbol(char symbol) {
         this.symbol = symbol;
+    }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
     }
 
     @Override

@@ -13,6 +13,8 @@ import java.util.Objects;
  */
 public class Player {
     private String name;
+    
+    private Game[] game;
 
     public Player() {
     }

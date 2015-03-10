@@ -12,7 +12,10 @@ package byui.cit260.treeOfLife.model;
 public class Location {
     private double row;
     private double column;
-    private double visited;
+    private double visited;   
+    private Scene scene;
+    private SceneTwo sceneTwo;
+    
 
     public Location() {
     }
@@ -41,6 +44,22 @@ public class Location {
 
     public void setVisited(double visited) {
         this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public SceneTwo getSceneTwo() {
+        return sceneTwo;
+    }
+
+    public void setSceneTwo(SceneTwo sceneTwo) {
+        this.sceneTwo = sceneTwo;
     }
 
     @Override

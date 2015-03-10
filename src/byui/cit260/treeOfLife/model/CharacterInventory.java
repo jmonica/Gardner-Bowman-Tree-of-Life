@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class CharacterInventory {
     private String inventoryType;
+     private Character character;
 
     public CharacterInventory() {
     }
@@ -25,6 +26,14 @@ public class CharacterInventory {
 
     public void setInventoryType(String inventoryType) {
         this.inventoryType = inventoryType;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 
     @Override

@@ -10,8 +10,13 @@ package byui.cit260.treeOfLife.model;
  * @author MonicasApple
  */
 public class Map {
+
+    public static void moveActorsToStartingLocation(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    private double rowCount;
    private double columnCount;
+   private Game[] game;
 
     public Map() {
     }
@@ -32,6 +37,14 @@ public class Map {
 
     public void setColumnCount(double columnCount) {
         this.columnCount = columnCount;
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
     }
 
     @Override

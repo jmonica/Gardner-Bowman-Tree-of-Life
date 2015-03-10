@@ -5,26 +5,52 @@
  */
 package byui.cit260.treeOfLife.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author MonicasApple
  */
-public class Character {
-    private String name;
+public enum Character implements Serializable{
+    
+    Nephi("Faithful son and later the prophet leader of the Nephites."),
+    Laman("The oldest rebellious brother of the Lamanites."),
+    Sam("The youngest boy and faithful brother of Nephi.");
+    
+    private final String description;
+    private final Point coordinates;
+ 
+    private Game game;
+    private CharacterInventory characterInventory;
 
-    public Character() {
+    Character (String description){
+        this.description = description;
+        coordinates = new Point(1,1);
     }
     
-    
-
-    public String getName() {
-        return name;
+    public String getDescription() {
+       return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public point getCoordinates(){
+        return coordinates;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public CharacterInventory getCharacterInventory() {
+        return characterInventory;
+    }
+
+    public void setCharacterInventory(CharacterInventory characterInventory) {
+        this.characterInventory = characterInventory;
     }
 
     @Override

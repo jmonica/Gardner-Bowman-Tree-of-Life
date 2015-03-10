@@ -12,12 +12,13 @@ import java.util.Objects;
  *
  * @author gradygb
  */
-public class Inventory implements Serializable {
+public class InventoryItem implements Serializable {
     private String inventoryType;
     private int quantityInStock;
-    private int requiredAmount;
+    private int requiredAmount;  
+    private Game game;
 
-    public Inventory() {
+    public InventoryItem() {
     }
 
     public String getInventoryType() {
@@ -44,6 +45,14 @@ public class Inventory implements Serializable {
         this.requiredAmount = requiredAmount;
     }
 
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
     @Override
     public String toString() {
         return "Inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
@@ -66,7 +75,7 @@ public class Inventory implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Inventory other = (Inventory) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (!Objects.equals(this.inventoryType, other.inventoryType)) {
             return false;
         }
@@ -74,6 +83,10 @@ public class Inventory implements Serializable {
             return false;
         }
         return this.requiredAmount == other.requiredAmount;
+    }
+
+    public void setDescription(String helmet_of_salvation) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

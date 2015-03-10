@@ -17,6 +17,7 @@ public class SceneTwo implements Serializable {
     private String description;
     private char symbol;
     private char blocked;
+    private Location[] location;
 
     public SceneTwo() {
     }
@@ -51,6 +52,14 @@ public class SceneTwo implements Serializable {
 
     public void setBlocked(char blocked) {
         this.blocked = blocked;
+    }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
     }
 
     @Override
