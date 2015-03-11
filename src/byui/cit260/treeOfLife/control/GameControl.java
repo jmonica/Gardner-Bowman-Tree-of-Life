@@ -33,6 +33,30 @@ public class GameControl {
         System.out.println("\n*** saveMenu stub function called");
     }
 
+    public static InventoryItem[] getSortedInventoryList() {
+        //get inventory list for the current game
+        InventoryItem[] originalInventoryList=
+                TreeOfLife.getCurrentGame().getInventory();
+        
+        //clone original list
+        InventoryItem[] inventoryList = originalInventoryList.clone();
+        
+        //using a BubbleSort to sort the list of inventoryList by name
+        InventoryItem tempInventoryItem;
+        for(int i = 0; i< inventoryList.length-1; i++){
+            for(int j = 0; j< inventoryList.length-1-i; j++){
+                if(inventoryList[j].getDescription().
+                        compareToIgnoreCase(inventoryList[j+1].getDescription())>0){
+                    tempInventoryItem = inventoryList[j];
+                    inventoryList[j] = inventoryList[j+1];
+                    inventoryList[j+1] = tempInventoryItem;
+                }
+            }
+        }
+        
+        return inventoryList;
+    }
+
     public enum Item {
 
         helmet,

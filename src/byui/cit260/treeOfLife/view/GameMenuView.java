@@ -1,6 +1,9 @@
 
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.GameControl;
+import byui.cit260.treeOfLife.model.InventoryItem;
+
 public class GameMenuView extends View{
 
     public GameMenuView() {
@@ -34,6 +37,29 @@ public class GameMenuView extends View{
              case "C":
                  this.characterSelection();
                  break;
+             case "V":
+                 this.displayMap();
+                 break;
+             case "I":
+                 this.viewPersonalInventory();
+                 break;
+             case "A":
+                 this.viewCharacters();
+                 break;
+             case "L":
+                 this.viewLocationsContet();
+                 break;
+             case "M":
+                 this.moveToLocation();
+             case "H":
+                 this.displayHelpMenu();
+                 break;
+             case "P":
+                 this.viewArmorShop();
+                 break;
+             case "T":
+                 this.goToTemple();
+                 break;
              case "E":
                  return true;
              default:
@@ -41,6 +67,59 @@ public class GameMenuView extends View{
                  break;
          } 
         return true;
+    }
+
+    private void displayMap() {
+        Location[][] location = MapControl.createMap();
+        
+        System.out.println("\nMap to the Tree of Life");
+        System.out.println("Row" + "\t" +
+                           "Column" + "\t");
+        
+        // for every column 
+        
+    }
+
+    private void viewPersonalInventory() {
+        // get the sorted list of inventory items for the current game
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" +
+                           "Required" + "\t"+
+                           "In Stock");
+        
+        // for each inventory item
+        for (InventoryItem inventoryItem : inventory){
+            //DISPLAY the description, the required amount and amont in stock
+            System.out.println(inventoryItem.getDescription() + "\t   " +
+                               inventoryItem.getRequiredAmount() + "\t   " +
+                               inventoryItem.getQuantitiyInStock());
+        }
+    }
+
+    private void viewCharacters() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewLocationsContet() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveToLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayHelpMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void viewArmorShop() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void goToTemple() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             
 }

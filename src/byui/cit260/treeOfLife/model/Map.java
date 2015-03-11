@@ -9,16 +9,42 @@ package byui.cit260.treeOfLife.model;
  *
  * @author MonicasApple
  */
-public class Map {
-
+public class Map  implements Serializable{
+    
     public static void moveActorsToStartingLocation(Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-   private double rowCount;
-   private double columnCount;
+   private int noOfRows;
+   private int noOfColumns;
    private Game[] game;
+   private Location[][] locations;
 
     public Map() {
+    }
+
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1){
+            System.out.println("The number of rows and columns must be greater than zero");
+            return;
+        }
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        //creat 2-D array for Location objects
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows;row++){
+            for(int column = 0; column < noOfColumns;column++){
+                //create and initialize new Location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                // assign the Location object to the current position in array
+                locations[row][column] = location;
+            }
+        }
     }
 
    
@@ -76,6 +102,10 @@ public class Map {
             return false;
         }
         return true;
+    }
+
+    Location[][] getLocations() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
    

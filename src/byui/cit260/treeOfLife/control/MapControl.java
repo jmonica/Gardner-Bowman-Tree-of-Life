@@ -13,11 +13,19 @@ import byui.cit260.treeOfLife.model.Map;
  */
 public class MapControl {
 
-    static Map createMap() {
-        System.out.println("*** called createMap() ****");
-        return null;
+    private static Map createMap() {
+       // create the map
+        Map map = new Map(20, 20);
+        
+        //creat the scenes for the game
+        Scene[] scenes = createScenes();
+        
+        //assign scenes to locations
+        GameControl.assignScenesToLocations(map, scenes);
+        
+        return map;
     }
-
+    
     static void moveActorsToStartingLocation(Map map) {
         System.out.println("*** called moveActorsToStartingLocation() ***");
     }

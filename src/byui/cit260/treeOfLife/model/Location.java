@@ -9,13 +9,13 @@ package byui.cit260.treeOfLife.model;
  *
  * @author MonicasApple
  */
-public class Location {
-    private double row;
-    private double column;
-    private double visited;   
+public class Location implements Serializable{
+    private int row;
+    private int column;
+    private boolean visited;   
     private Scene scene;
     private SceneTwo sceneTwo;
-    
+    private ArrayList<Character> characters;
 
     public Location() {
     }
