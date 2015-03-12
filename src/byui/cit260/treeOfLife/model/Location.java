@@ -5,6 +5,10 @@
  */
 package byui.cit260.treeOfLife.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
+
 /**
  *
  * @author MonicasApple
@@ -26,7 +30,7 @@ public class Location implements Serializable{
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
@@ -34,15 +38,15 @@ public class Location implements Serializable{
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
-    public double getVisited() {
+    public boolean getVisited() {
         return visited;
     }
 
-    public void setVisited(double visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
@@ -70,9 +74,12 @@ public class Location implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
-        hash = 47 * hash + (int) (Double.doubleToLongBits(this.visited) ^ (Double.doubleToLongBits(this.visited) >>> 32));
+        hash = 53 * hash + this.row;
+        hash = 53 * hash + this.column;
+        hash = 53 * hash + (this.visited ? 1 : 0);
+        hash = 53 * hash + Objects.hashCode(this.scene);
+        hash = 53 * hash + Objects.hashCode(this.sceneTwo);
+        hash = 53 * hash + Objects.hashCode(this.characters);
         return hash;
     }
 
@@ -85,17 +92,29 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (Double.doubleToLongBits(this.visited) != Double.doubleToLongBits(other.visited)) {
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Objects.equals(this.sceneTwo, other.sceneTwo)) {
+            return false;
+        }
+        if (!Objects.equals(this.characters, other.characters)) {
             return false;
         }
         return true;
     }
+
+    
+
     
     
     

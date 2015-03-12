@@ -5,6 +5,7 @@
  */
 package byui.cit260.treeOfLife.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -20,9 +21,6 @@ public enum Character implements Serializable{
     
     private final String description;
     private final Point coordinates;
- 
-    private Game game;
-    private CharacterInventory characterInventory;
 
     Character (String description){
         this.description = description;
@@ -33,52 +31,17 @@ public enum Character implements Serializable{
        return description;
     }
 
-    public point getCoordinates(){
+    public Point getCoordinates(){
         return coordinates;
-    }
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public CharacterInventory getCharacterInventory() {
-        return characterInventory;
-    }
-
-    public void setCharacterInventory(CharacterInventory characterInventory) {
-        this.characterInventory = characterInventory;
     }
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + '}';
+        return "Character{" + "description=" + description + ", coordinates=" + coordinates + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 47 * hash + Objects.hashCode(this.name);
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
+   
     
     
 }

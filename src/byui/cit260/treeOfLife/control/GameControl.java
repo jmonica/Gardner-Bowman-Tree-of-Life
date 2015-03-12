@@ -1,5 +1,6 @@
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.model.Constants;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Map;

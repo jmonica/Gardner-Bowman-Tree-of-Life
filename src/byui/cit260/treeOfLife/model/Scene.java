@@ -6,6 +6,7 @@
 package byui.cit260.treeOfLife.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 import treeoflife.TreeOfLife;
 
@@ -16,80 +17,29 @@ import treeoflife.TreeOfLife;
 public class Scene implements Serializable{
    private char type;
     private String description;
-    private char symbol;
-    
+    private String symbol;
+    private boolean blocked;
     private Location[] location;
 
-    private void setMapSymbol(String _st_) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean isBlocked() {
+        return blocked;
     }
 
-    private void setBlocked(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
     }
 
-    private void setTravelTime(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setTravelTime(double POSITIVE_INFINITY) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public enum SceneType {
-        start,
-        finish,
-        river,
-        forest,
-        mountain,
-        temple,
-        knowledge,
-        building;
-    }
-    private static Scene[] createScenes() throws MapControlException{
-        
-        Game game = TreeOfLife.getCurrentGame();
-        
-        Scene[] scenes = new Scene[SceneType.values().length];
-        
-        Scene startingScene = new Scene();
-        startingScene.setDescription(
-                    "\nYou begin in your small thatched roof cottage in the"
-                  + "woods. The Elder’s Scrolls are provided to you before you"
-                  + "begin the challenge from the village elders. Here you will"
-                  + "receive instruction and learn of the Tree of Life. The door"
-                  + "opens and you take your first steps outside and enter the "
-                  + "world of Ambrosia. \n" 
-                  + "Choose wisely, build your faith and endure to the end!");
-        startingScene.setMapSymbol(" ST ");
-        startingScene.setBlocked(false);
-        startingScene.setTravelTime(240);
-        scenes[SceneType.start.ordinal()] = startingScene;
-        
-        Scene finishScene = new Scene();
-        finishScene.setDescription(
-                    "\nCongratulations! Well done thou good and faithful servant."
-                  + "You have had great faith and have reached the Tree of Life.");
-        finishScene.setMapSymbol(" FN ");
-        finishScene.setBlocked(false);
-        finishScene.setTravelTime(Double.POSITIVE_INFINITY);
-        scenes[SceneType.finish.ordinal()] = finishScene;
-       return null;
-    }
+   
     
-    private static void assignScenesToLocations(Map map, Scene[] scenes){
-        Location[][] locations = map.getLocations();
-        
-        // start point
-        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.river.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.forest.ordinal()]);
-        locations[0][3].setScene(scenes[SceneType.mountain.ordinal()]);
-        locations[0][4].setScene(scenes[SceneType.temple.ordinal()]);
-        locations[0][5].setScene(scenes[SceneType.knowledge.ordinal()]);
-        locations[0][6].setScene(scenes[SceneType.building.ordinal()]);
-        locations[0][7].setScene(scenes[SceneType.finish.ordinal()]);
+    public String getSymbol() {
+        return symbol;
     }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    
     public char getType() {
         return type;
     }
@@ -106,13 +56,7 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public char getSymbol() {
-        return symbol;
-    }
-
-    public void setSymbol(char symbol) {
-        this.symbol = symbol;
-    }
+    
 
     public Location[] getLocation() {
         return location;
@@ -123,18 +67,22 @@ public class Scene implements Serializable{
     }
 
     @Override
-    public String toString() {
-        return "Scene{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + '}';
+    public int hashCode() {
+        int hash = 7;
+        hash = 11 * hash + this.type;
+        hash = 11 * hash + Objects.hashCode(this.description);
+        hash = 11 * hash + Objects.hashCode(this.symbol);
+        hash = 11 * hash + (this.blocked ? 1 : 0);
+        hash = 11 * hash + Arrays.deepHashCode(this.location);
+        return hash;
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + this.type;
-        hash = 53 * hash + Objects.hashCode(this.description);
-        hash = 53 * hash + this.symbol;
-        return hash;
+    public String toString() {
+        return "Scene{" + "type=" + type + ", description=" + description + ", symbol=" + symbol + ", blocked=" + blocked + ", location=" + location + '}';
     }
+
+    
 
     @Override
     public boolean equals(Object obj) {

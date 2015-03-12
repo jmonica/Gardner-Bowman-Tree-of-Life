@@ -5,6 +5,9 @@
  */
 package byui.cit260.treeOfLife.model;
 
+import java.io.Serializable;
+import java.util.Arrays;
+
 /**
  *
  * @author MonicasApple
@@ -47,23 +50,25 @@ public class Map  implements Serializable{
         }
     }
 
+    public int getNoOfRows() {
+        return noOfRows;
+    }
+
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
+    }
+
+    public int getNoOfColumns() {
+        return noOfColumns;
+    }
+
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
+    }
+
    
    
-    public double getRowCount() {
-        return rowCount;
-    }
-
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
-    }
-
-    public double getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
-    }
+    
 
     public Game[] getGame() {
         return game;
@@ -73,16 +78,22 @@ public class Map  implements Serializable{
         this.game = game;
     }
 
-    @Override
-    public String toString() {
-        return "Map{" + "rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+    public Location[][] getLocations() {
+        return locations;
     }
 
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        int hash = 7;
+        hash = 67 * hash + this.noOfRows;
+        hash = 67 * hash + this.noOfColumns;
+        hash = 67 * hash + Arrays.deepHashCode(this.game);
+        hash = 67 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -95,18 +106,27 @@ public class Map  implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
+        if (this.noOfColumns != other.noOfColumns) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.game, other.game)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
         return true;
     }
 
-    Location[][] getLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public String toString() {
+        return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", game=" + game + ", locations=" + locations + '}';
     }
+
+   
    
    
 }

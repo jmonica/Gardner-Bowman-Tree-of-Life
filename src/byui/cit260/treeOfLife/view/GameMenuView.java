@@ -3,6 +3,8 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
 import byui.cit260.treeOfLife.model.InventoryItem;
+import byui.cit260.treeOfLife.model.Location;
+import treeoflife.TreeOfLife;
 
 public class GameMenuView extends View{
 
@@ -69,16 +71,7 @@ public class GameMenuView extends View{
         return true;
     }
 
-    private void displayMap() {
-        Location[][] location = MapControl.createMap();
-        
-        System.out.println("\nMap to the Tree of Life");
-        System.out.println("Row" + "\t" +
-                           "Column" + "\t");
-        
-        // for every column 
-        
-    }
+
 
     private void viewPersonalInventory() {
         // get the sorted list of inventory items for the current game
@@ -119,6 +112,10 @@ public class GameMenuView extends View{
     }
 
     private void goToTemple() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void displayMap() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             
