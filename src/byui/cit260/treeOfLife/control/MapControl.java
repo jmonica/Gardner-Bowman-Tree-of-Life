@@ -92,14 +92,20 @@ public class MapControl {
                            "Column" + "\t");
         
         // for every column 
-       for(int i = 0; i< noOfRows.length-1; i++){
+       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
             System.out.println("\n***");
             System.out.println(i);
-                for(int j = 0; j< noOfColumns.length-1-i; j++){
+                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
                     System.out.print("\n\n|");
                     System.out.print(j);
-                    Location = location [i][j];
-                    if(noOfCoumns )
-                       else(System.out.println("\n\n??"))
+                    Location locations = location [i][j];
+                    if(locations.getVisited())
+                        System.out.print("~~~~");
+                    else 
+                        System.out.println("\n\n??");
+                               
     }
+       }
+       }
 }
+
