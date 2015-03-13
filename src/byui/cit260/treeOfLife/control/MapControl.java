@@ -63,6 +63,30 @@ public class MapControl {
         startingScene.setBlocked(false);
         scenes[SceneType.start.ordinal()] = startingScene;
         
+        Scene ForestScene = new Scene();
+        ForestScene.setDescription(
+                    "\nYou made it to the forest. Try to gain enough faith to"
+                  + "progress to the next scene by following instructions. \n");
+        ForestScene.setSymbol(" ^^^ ");
+        ForestScene.setBlocked(false);
+        scenes[SceneType.forest.ordinal()] = ForestScene;
+        
+        Scene RiverScene = new Scene();
+        RiverScene.setDescription(
+                    "\nYou made it to the river. Try to gain enough faith to"
+                  + "progress to the next scene by following instructions. \n");
+        RiverScene.setSymbol(" ~~~ ");
+        RiverScene.setBlocked(false);
+        scenes[SceneType.river.ordinal()] = RiverScene;
+        
+        Scene MountainScene = new Scene();
+        MountainScene.setDescription(
+                    "\nYou made it to the mountain. Try to gain enough faith to"
+                  + "progress to the next scene by following instructions. \n");
+        MountainScene.setSymbol(" MMM ");
+        MountainScene.setBlocked(false);
+        scenes[SceneType.mountain.ordinal()] = MountainScene;
+        
         Scene finishScene = new Scene();
         finishScene.setDescription(
                     "\nCongratulations! Well done thou good and faithful servant."

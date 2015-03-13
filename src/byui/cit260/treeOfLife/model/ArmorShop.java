@@ -47,7 +47,7 @@ public class ArmorShop implements Serializable{
 
     @Override
     public String toString() {
-        return "ArmorShop{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
+        return "ArmorShop" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
 
     @Override
