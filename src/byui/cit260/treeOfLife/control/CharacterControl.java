@@ -10,5 +10,5 @@ package byui.cit260.treeOfLife.control;
  * @author MonicasApple
  */
 public class CharacterControl {
-    
+   max(list) 
 }

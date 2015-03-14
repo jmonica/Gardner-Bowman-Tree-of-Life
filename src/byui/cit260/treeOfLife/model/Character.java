@@ -7,7 +7,6 @@ package byui.cit260.treeOfLife.model;
 
 import java.awt.Point;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
@@ -38,10 +37,6 @@ public enum Character implements Serializable{
     @Override
     public String toString() {
         return "Character{" + "description=" + description + ", coordinates=" + coordinates + '}';
-    }
-
-
-   
-    
+    }   
     
 }
