@@ -11,4 +11,11 @@ package byui.cit260.treeOfLife.control;
  */
 public class CharacterControl {
     
+    int[] characterBonus = new int [3];
+    
+    int Nephi = characterBonus[20];
+    int Sam = characterBonus[15];
+    int Laman = characterBonus[10];
+    
+    
 }

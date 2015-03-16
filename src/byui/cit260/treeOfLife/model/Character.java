@@ -37,6 +37,14 @@ public enum Character implements Serializable{
     @Override
     public String toString() {
         return "Character{" + "description=" + description + ", coordinates=" + coordinates + '}';
-    }   
+    } 
     
+    
+    public void displayBonus(){
+        int[] characterBonus = new int [3];
+        
+        for (int i=0; i<characterBonus.length; i++){
+            System.out.println("Your bonus faith is" + characterBonus);
+        }
+    }
 }
