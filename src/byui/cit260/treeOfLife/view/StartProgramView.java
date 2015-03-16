@@ -103,7 +103,8 @@ public class StartProgramView extends View{
         System.out.println("\tWe hope you have a lot of fun!");
         System.out.println("===================================");
     }
-
+    
+    
     @Override
     public boolean doAction(Object obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
