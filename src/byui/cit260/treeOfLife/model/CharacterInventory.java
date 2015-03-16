@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class CharacterInventory {
     private String inventoryType;
-     private Character character;
+    private Character character;
 
     public CharacterInventory() {
     }

@@ -69,7 +69,7 @@ public class GameControl {
         rope;
     }
 
-    private static InventoryItem[] createInventoryList() {
+    public static InventoryItem[] createInventoryList() {
         //createed array(list) of inventory item
         InventoryItem[] inventory =
                 new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
@@ -77,45 +77,66 @@ public class GameControl {
         InventoryItem helmet = new InventoryItem();
         helmet.setDescription("Helmet of salvation");
         helmet.setQuantityInStock(0);
-        helmet.setRequiredAmount(0);
+        helmet.setRequiredAmount(5);
         inventory[Item.helmet.ordinal()] = helmet;
 
         InventoryItem shield = new InventoryItem();
         shield.setDescription("Shield of faith");
         shield.setQuantityInStock(0);
-        shield.setRequiredAmount(0);
+        shield.setRequiredAmount(5);
         inventory[Item.shield.ordinal()] = shield;
 
         InventoryItem belt = new InventoryItem();
         belt.setDescription("Belt of truth");
         belt.setQuantityInStock(0);
-        belt.setRequiredAmount(0);
+        belt.setRequiredAmount(2);
         inventory[Item.belt.ordinal()] = belt;
 
         InventoryItem shod = new InventoryItem();
         shod.setDescription("Feet shod of peace");
         shod.setQuantityInStock(0);
-        shod.setRequiredAmount(0);
+        shod.setRequiredAmount(2);
         inventory[Item.shod.ordinal()] = shod;
 
         InventoryItem sword = new InventoryItem();
         sword.setDescription("Sword - word of God");
         sword.setQuantityInStock(0);
-        sword.setRequiredAmount(0);
+        sword.setRequiredAmount(5);
         inventory[Item.sword.ordinal()] = sword;
 
         InventoryItem breastplate = new InventoryItem();
         breastplate.setDescription("Breastplate of righteousness");
         breastplate.setQuantityInStock(0);
-        breastplate.setRequiredAmount(0);
+        breastplate.setRequiredAmount(3);
         inventory[Item.breastplate.ordinal()] = breastplate;
 
         InventoryItem rope = new InventoryItem();
         rope.setDescription("Rope");
         rope.setQuantityInStock(0);
-        rope.setRequiredAmount(0);
+        rope.setRequiredAmount(3);
         inventory[Item.rope.ordinal()] = rope;
 
         return inventory;
+    }
+    
+    public void displayRequiredAmount(){
+        int[] list = new int[7];
+        
+        //call function and pass arrays
+        getRequiredAmount(list);
+        String total = null;
+        
+        //display the total required faith to get all of the items
+        System.out.println("Total faith you will need to buy all the items is" + total);
+        
+    }
+    
+    public int getRequiredAmount(int[] list) {
+        int total = 0;
+        
+        for (int i=0; list.length-1; i++){
+            total = total + list[Item.belt.ordinal()];
+        }
+        return total;
     }
 }
