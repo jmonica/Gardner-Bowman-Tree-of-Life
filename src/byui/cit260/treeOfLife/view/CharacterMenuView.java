@@ -5,9 +5,6 @@
  */
 package byui.cit260.treeOfLife.view;
 
-import byui.cit260.treeOfLife.control.GameControl;
-import treeoflife.TreeOfLife;
-
 /**
  *
  * @author MonicasApple

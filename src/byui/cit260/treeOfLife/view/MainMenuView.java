@@ -49,9 +49,6 @@ public class MainMenuView extends View {
             case "S":
                 this.saveGame();
                 break;
-            case "L":
-                this.location();
-                break;
             case "E":
                 return true;
             default:
@@ -92,9 +89,5 @@ public class MainMenuView extends View {
        saveMenu.display();
     }
 
-    private void location() {
-        LocationView location = new LocationView();
-        location.display();
-    }
 
 }
