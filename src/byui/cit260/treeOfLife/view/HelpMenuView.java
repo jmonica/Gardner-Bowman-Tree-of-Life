@@ -19,7 +19,7 @@ public class HelpMenuView extends View {
             +"\n----------------------------------------------------"
             +"\nG - What is the goal of the game?"
             +"\nM - How to move?"
-            +"\nQ - Quit"
+            +"\nE - Exit"
             +"\n----------------------------------------------------");
     }
 
@@ -89,11 +89,12 @@ public class HelpMenuView extends View {
                 this.howToMove();
                 break;
             case "E":
-                return true;
+                return false;
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
+        
     return true;
     }
     

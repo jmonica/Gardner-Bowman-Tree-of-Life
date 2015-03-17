@@ -14,7 +14,8 @@ public class GameControl {
         TreeOfLife.setCurrentGame(game); // save in treeOfLife
 
         game.setPlayer(player); // save player in game
-
+        
+        
         //create the inventory list and save in the game
         InventoryItem[] inventoryList = GameControl.createInventoryList();
         game.setInventory(inventoryList);

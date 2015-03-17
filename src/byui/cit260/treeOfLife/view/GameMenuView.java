@@ -3,8 +3,6 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
 import byui.cit260.treeOfLife.model.InventoryItem;
-import byui.cit260.treeOfLife.model.Location;
-import treeoflife.TreeOfLife;
 
 public class GameMenuView extends View{
 
@@ -13,19 +11,16 @@ public class GameMenuView extends View{
             +"\n----------------------------------------------------"
             +"\n| Begin Game Menu                                  |"
             +"\n----------------------------------------------------"
-            +"\nC - Choose Character                                "
-            +"\nQ - Quit                                            "
+            +"\nV - Display Map                                     "
+            +"\nA - View Character                                  "
+            +"\nL - Location                                        " 
+            +"\nM - Move to Location                                "
+            +"\nH - Help                                            "
+            +"\nP - Armor Shop                                      "    
+            +"\nE - Exit                                            "
             +"\n----------------------------------------------------");
     }
 
-
-    private void characterSelection() {
-        System.out.println("**** characterSelection function called");
-    }
-
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public boolean doAction(Object obj) {
@@ -36,9 +31,7 @@ public class GameMenuView extends View{
         char choice = value.charAt(0); //get the first character entered
 
         switch (value) {
-             case "C":
-                 this.characterSelection();
-                 break;
+             
              case "V":
                  this.displayMap();
                  break;
@@ -91,32 +84,6 @@ public class GameMenuView extends View{
         }
     }
 
-    private void viewCharacters() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void viewLocationsContet() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void moveToLocation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayHelpMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void viewArmorShop() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void goToTemple() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayMap() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
             
 }
