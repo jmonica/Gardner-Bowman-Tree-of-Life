@@ -46,6 +46,7 @@ public class GameMenuView extends View{
                  break;
              case "M":
                  this.moveToLocation();
+                 break;
              case "H":
                  this.displayHelpMenu();
                  break;
