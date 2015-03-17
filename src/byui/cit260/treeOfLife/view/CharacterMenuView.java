@@ -5,6 +5,9 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.control.GameControl;
+import treeoflife.TreeOfLife;
+
 /**
  *
  * @author MonicasApple
@@ -37,7 +40,7 @@ public class GameMenuView extends View{
 
         switch (value) {
             case "C":
-                this.gameInstruction();
+                this.characterSelection();
                 break;
             case "E":
                 return false;
@@ -45,11 +48,18 @@ public class GameMenuView extends View{
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
-    private void characterSelection() {
-        System.out.println("**** characterSelection function called");
-    }
+        return true;
+   
 
-        private void gameInstruction() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+}
+
+        public void characterSelection() {
+            //display the game menu
+            CharacterMenuView characterMenu = new CharacterMenuView();
+            characterMenu.displayMenu();
         }
 }
+}
+
+        
+

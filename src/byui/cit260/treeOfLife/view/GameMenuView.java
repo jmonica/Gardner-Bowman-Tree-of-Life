@@ -42,7 +42,7 @@ public class GameMenuView extends View{
                  this.viewCharacters();
                  break;
              case "L":
-                 this.viewLocationsContet();
+                 this.viewLocations();
                  break;
              case "M":
                  this.moveToLocation();
@@ -82,6 +82,36 @@ public class GameMenuView extends View{
                                inventoryItem.getRequiredAmount() + "\t   " +
                                inventoryItem.getQuantitiyInStock());
         }
+    }
+
+    private void displayMap() {
+        System.out.println("displayMap Function called");
+    }
+
+    private void viewCharacters() {
+        System.out.println("viewCharacters called");
+    }
+
+    private void viewLocations() {
+        System.out.println("viewLocations Function called");
+    }
+
+    private void moveToLocation() {
+        System.out.println("moveToLocation Function called");
+    }
+
+    private void displayHelpMenu() {
+         //display the help menu
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
+    }
+
+    private void viewArmorShop() {
+        System.out.println("viewArmorShop Function Called");
+    }
+
+    private void goToTemple() {
+        System.out.println("goToTemple Function Called");
     }
 
    

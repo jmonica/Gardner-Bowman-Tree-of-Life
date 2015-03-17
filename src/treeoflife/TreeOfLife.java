@@ -46,5 +46,9 @@ public class TreeOfLife {
     public static void setPlayer(Player player) {
         TreeOfLife.player = player;
     }
+
+    public static void setCharacterSelection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
