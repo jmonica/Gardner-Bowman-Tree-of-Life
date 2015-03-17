@@ -26,12 +26,8 @@ public class GameControl {
         //move actors to starting position in the map
         MapControl.moveActorsToStartingLocation(map);
     }
-    public static void characterSelection(){
-        Character character = new Character;
-        TreeOfLife.setCharacterSelection();
-        
-        character.setCharacter(character);
-    }
+   
+    
     public static void startExistingGame(Player player) {
         System.out.println("\n*** startExistingGame stub function called");
     }
@@ -140,7 +136,7 @@ public class GameControl {
     public int getRequiredAmount(int[] list) {
         int total = 0;
         
-        for (int i=0; list.length-1; i++){
+        for (int i=0; 0<list.length-1; i++){
             total = total + list[Item.belt.ordinal()];
         }
         return total;

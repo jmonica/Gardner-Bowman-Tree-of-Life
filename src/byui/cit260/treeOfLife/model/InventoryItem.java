@@ -17,6 +17,7 @@ public class InventoryItem implements Serializable {
     private int quantityInStock;
     private int requiredAmount;  
     private Game game;
+    private String description;
 
     public InventoryItem(){
     }
@@ -86,11 +87,15 @@ public class InventoryItem implements Serializable {
     }
 
     public String getDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return description;
     }
 
     public String getQuantitiyInStock() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
  
