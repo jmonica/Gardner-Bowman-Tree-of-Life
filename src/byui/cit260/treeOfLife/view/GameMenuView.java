@@ -2,14 +2,19 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
+import byui.cit260.treeOfLife.control.MapControl;
+import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.InventoryItem;
+import byui.cit260.treeOfLife.model.Location;
+import java.awt.Point;
+import treeoflife.TreeOfLife;
 
 public class GameMenuView extends View{
 
     public GameMenuView() {
         super("\n"
             +"\n----------------------------------------------------"
-            +"\n| Begin Game Menu                                  |"
+            +"\n|   Game Menu                                      |"
             +"\n----------------------------------------------------"
             +"\nV - Display Map                                     "
             +"\nA - View Character                                  "
@@ -65,6 +70,29 @@ public class GameMenuView extends View{
         return true;
     }
 
+     private void displayMap() {
+        Location[][] location = TreeOfLife.getCurrentGame().getMap().getLocations();
+        
+        System.out.println("\nMap to the Tree of Life");
+        System.out.println("Row" + "\t 1  2  3  4  5  6  7  8" +
+                           "Column" + "\t");
+        
+        // for every column 
+       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
+            System.out.println("\n***");
+            System.out.println(i);
+                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
+                    System.out.print("\n\n|");
+                    System.out.print(j);
+                    Location locations = location [i][j];
+                    if(locations.getVisited())
+                        System.out.print("~~~~");
+                    else 
+                        System.out.println("\n\n??");
+                               
+                }
+        }
+        }
 
 
     private void viewPersonalInventory() {
@@ -85,8 +113,18 @@ public class GameMenuView extends View{
         }
     }
 
-    private void displayMap() {
-        System.out.println("displayMap Function called");
+
+      @Override
+    public boolean doAction(String choice){
+        Character character = null;
+        Point coordinates = character.getCoordinates();
+        //move character to specified location
+        try {
+            MapControl.moveCharacterToLocation(character, coordinates);          
+        } catch(MapControlException me){
+            System.out.println(me.getMessage());
+        }
+        return false;
     }
 
     private void viewCharacters() {

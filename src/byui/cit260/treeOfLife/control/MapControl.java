@@ -39,11 +39,12 @@ public class MapControl {
         
         for (Character character : characters){
             Point coordinates = character.getCoordinates();
-            MapControl.moveCharscterToLocation(character, coordinates);
+            MapControl.moveCharacterToLocation(character, coordinates);
         }
     }
     
-    public static void moveCharscterToLocation(Character chsrscter, Point coordinates)
+    
+    public static void moveCharacterToLocation(Character charscter, Point coordinates)
                             throws MapControlException{
         Map map = TreeOfLife.getCurrentGame().getMap();
         int newRow = coordinates.x-1;
@@ -59,17 +60,6 @@ public class MapControl {
         
     }
     
-    @Override
-    public boolean doAction(String choice){
-        Character character = null;
-        Point coordinates = character.getCoordinates();
-        //move character to specified location
-        try {
-            MapControl.moveCharscterToLocation(character, coordinates);          
-        } catch(MapControlException me){
-            System.out.println(me.getMessage());
-        }
-    }
   
     public enum SceneType {
         start,
@@ -145,28 +135,6 @@ public class MapControl {
         locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]);
         locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);
     }
-        private void displayMap() {
-        Location[][] location = TreeOfLife.getCurrentGame().getMap().getLocations();
         
-        System.out.println("\nMap to the Tree of Life");
-        System.out.println("Row" + "\t 1  2  3  4  5  6  7  8" +
-                           "Column" + "\t");
-        
-        // for every column 
-       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
-            System.out.println("\n***");
-            System.out.println(i);
-                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
-                    System.out.print("\n\n|");
-                    System.out.print(j);
-                    Location locations = location [i][j];
-                    if(locations.getVisited())
-                        System.out.print("~~~~");
-                    else 
-                        System.out.println("\n\n??");
-                               
-                }
-        }
-        }
 }
 

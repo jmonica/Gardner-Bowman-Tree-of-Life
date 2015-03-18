@@ -6,6 +6,9 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
+import byui.cit260.treeOfLife.exceptions.MapControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import treeoflife.TreeOfLife;
 
 /**
@@ -38,7 +41,13 @@ public class MainMenuView extends View {
 
         switch (value) {
             case "B":
+        {
+            try {
                 this.startNewGame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "G":
                 this.startExistingGame();
@@ -59,7 +68,7 @@ public class MainMenuView extends View {
     }
 
   
-    private void startNewGame() {
+    private void startNewGame() throws MapControlException {
         GameControl.createNewGame(TreeOfLife.getPlayer()); //create a new game
         
         //display the game menu
