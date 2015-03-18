@@ -1,5 +1,6 @@
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.Constants;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
@@ -9,7 +10,7 @@ import treeoflife.TreeOfLife;
 
 public class GameControl {
 
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player) throws MapControlException {
         Game game = new Game(); //create new game
         TreeOfLife.setCurrentGame(game); // save in treeOfLife
 

@@ -5,10 +5,12 @@
  */
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Scene;
+import java.awt.Point;
 import treeoflife.TreeOfLife;
 
 /**
@@ -30,8 +32,43 @@ public class MapControl {
         return map;
     }
     
-    static void moveActorsToStartingLocation(Map map) {
-        System.out.println("*** called moveActorsToStartingLocation() ***");
+    static void moveActorsToStartingLocation(Map map) 
+            throws MapControlException {
+        //for every character
+        Character[] characters = Character.values();
+        
+        for (Character character : characters){
+            Point coordinates = character.getCoordinates();
+            MapControl.moveCharscterToLocation(character, coordinates);
+        }
+    }
+    
+    public static void moveCharscterToLocation(Character chsrscter, Point coordinates)
+                            throws MapControlException{
+        Map map = TreeOfLife.getCurrentGame().getMap();
+        int newRow = coordinates.x-1;
+        int newColumn = coordinates.y-1;
+        
+        if (newRow<0 || newRow>=map.getNoOfRows()||
+                newColumn<0 || newColumn>=map.getNoOfColumns()){
+            throw new MapControlException("Cannot move actor to location"
+                                        + coordinates.x + "," + coordinates.y
+                                        + "because thst location is outside"
+                                        + "the bounds of the map.");  
+        }
+        
+    }
+    
+    @Override
+    public boolean doAction(String choice){
+        Character character = null;
+        Point coordinates = character.getCoordinates();
+        //move character to specified location
+        try {
+            MapControl.moveCharscterToLocation(character, coordinates);          
+        } catch(MapControlException me){
+            System.out.println(me.getMessage());
+        }
     }
   
     public enum SceneType {
@@ -128,8 +165,8 @@ public class MapControl {
                     else 
                         System.out.println("\n\n??");
                                
-    }
-       }
-       }
+                }
+        }
+        }
 }
 

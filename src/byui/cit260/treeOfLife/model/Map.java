@@ -13,10 +13,7 @@ import java.util.Arrays;
  * @author MonicasApple
  */
 public class Map implements Serializable{
-    
-    public static void moveActorsToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
    private int noOfRows;
    private int noOfColumns;
    private Game[] game;
@@ -126,9 +123,4 @@ public class Map implements Serializable{
         return "Map{" + "noOfRows=" + noOfRows + ", noOfColumns=" + noOfColumns + ", game=" + game + ", locations=" + locations + '}';
     }
 
-    
-    public static void calTotalPriceOfItems(){
-        
-        
-    }    
 }
