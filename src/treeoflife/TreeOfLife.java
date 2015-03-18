@@ -27,7 +27,13 @@ public class TreeOfLife {
     public static void main(String[] args) {
         // create StartProgramView and start the program
         StartProgramView startProgramView = new StartProgramView();
+        try{
         startProgramView.startProgram();
+        } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
        
     }
 
