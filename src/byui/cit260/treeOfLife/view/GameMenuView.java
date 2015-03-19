@@ -114,7 +114,7 @@ public class GameMenuView extends View{
     }
 
 
-      @Override
+      /*@Override
     public boolean doAction(String choice){
         Character character = null;
         Point coordinates = character.getCoordinates();
@@ -125,7 +125,7 @@ public class GameMenuView extends View{
             System.out.println(me.getMessage());
         }
         return false;
-    }
+    }*/
 
     private void viewCharacters() {
         System.out.println("viewCharacters called");

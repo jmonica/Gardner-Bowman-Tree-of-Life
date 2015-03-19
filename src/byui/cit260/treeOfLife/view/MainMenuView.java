@@ -73,7 +73,7 @@ public class MainMenuView extends View {
         
         //display the game menu
         CharacterMenuView characterMenu = new CharacterMenuView();
-        characterMenu.displayMenu();
+        characterMenu.display();
     }
     private void startExistingGame() {
        GameControl.startExistingGame(TreeOfLife.getPlayer()); //start an existing game

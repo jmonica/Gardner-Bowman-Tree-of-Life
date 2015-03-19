@@ -12,6 +12,7 @@ import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Scene;
 import java.awt.Point;
 import treeoflife.TreeOfLife;
+import byui.cit260.treeOfLife.model.Character;
 
 /**
  *
@@ -129,11 +130,11 @@ public class MapControl {
         
         // start point
         
-        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+        /*locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
         locations[0][2].setScene(scenes[SceneType.river.ordinal()]);
         locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);*/
     }
         
 }

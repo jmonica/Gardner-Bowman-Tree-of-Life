@@ -5,25 +5,24 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import byui.cit260.treeOfLife.model.Character;
+import byui.cit260.treeOfLife.model.CharacterInventory;
+import java.util.Scanner;
+
 /**
  *
  * @author MonicasApple
  */
-public class CharacterMenuView {
+public class CharacterMenuView extends View{
 
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-public class GameMenuView extends View{
 
-    public GameMenuView() {
+    public CharacterMenuView(){
         super("\n"
             +"\n----------------------------------------------------"
             +"\n| Begin Game Menu                                  |"
             +"\n----------------------------------------------------"
             +"\nC - Choose Character                                "
-            +"\nQ - Quit                                            "
+            +"\nE - Exit                                           "
             +"\n----------------------------------------------------");
     }
 
@@ -51,12 +50,34 @@ public class GameMenuView extends View{
 }
 
         public void characterSelection() {
-            //display the game menu
-            CharacterMenuView characterMenu = new CharacterMenuView();
-            characterMenu.displayMenu();
+            
+            System.out.println(Character.Nephi.name());
+            System.out.println("Choose Character");
+            
+            Scanner input = new Scanner(System.in);
+            String value = input.next();
+            
+             value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (value) {
+            case "N":
+                CharacterInventory.setCharacter(Character.valueOf("Nephi"));
+                break;
+            case "L":
+                CharacterInventory.setCharacter(Character.Laman);
+                break;
+            case "S":
+                CharacterInventory.setCharacter(Character.Sam);
+                break;
+            default:
+                System.out.println("\n*** Invalid selection ***");
+                break;
+        }
+        return true;
         }
 }
-}
+
 
         
 

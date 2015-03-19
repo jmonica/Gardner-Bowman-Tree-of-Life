@@ -29,6 +29,8 @@ public class ForestSceneView extends View{
     @Override
     public void display(){
         String value = null;
+        double fists = 0.0;
+        double distance = 0.0;
         
            do{
             System.out.println("enter the amount of fists"); //display main menu
@@ -37,8 +39,8 @@ public class ForestSceneView extends View{
             String valueTwo = this.getInput(); //get the user's selection
             
             try{
-            double fists = Double.parseDouble(valueOne);
-            double distance = Double.parseDouble(valueTwo);
+            fists = Double.parseDouble(valueOne);
+            distance = Double.parseDouble(valueTwo);
             } catch (NumberFormatException nf){
                 System.out.println("\nYou must enter a valid number."
                         + "Try again or enter E to exit.");
