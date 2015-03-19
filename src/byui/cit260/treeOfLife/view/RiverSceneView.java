@@ -6,6 +6,7 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.RiverControl;
+import byui.cit260.treeOfLife.exceptions.RiverControlException;
 
 /**
  *
@@ -29,11 +30,17 @@ public class RiverSceneView extends View{
         @Override
     public void display(){
         String value = null;
+        double radius = 0.0;
         
            do{
             System.out.println("enter the width"); //display main menu
             String valueRadius = this.getInput(); //get the user's selection 
-            double radius = Double.parseDouble(valueRadius);
+            try{
+            radius = Double.parseDouble(valueRadius);
+            } catch (NumberFormatException nf){
+                System.out.println("\nYou must enter a valid number."
+                        + "Try again or enter E to exit");
+            }
             this.doAction(radius); //do action based on selection
         
         }while (!value.equals("E")); //an selction is not "Exit"
@@ -41,12 +48,16 @@ public class RiverSceneView extends View{
     
     @Override
     public boolean doAction(Object obj) {
-        double radius;
+        double radius = 0;
         //call the control function to perform the task
-        RiverControl riverControl = new RiverControl();
-        //display information to be viewed by the user
+        try {
+            RiverControl.calcCircumference(double radius);
+        } catch (RiverControlException me){
+            System.out.println(me.getMessage());
+        }
+        /*display information to be viewed by the user
         double circumference = 0;
         System.out.println("the circumference is" + circumference);
-        return true;
+        return true;*/
     }
 }

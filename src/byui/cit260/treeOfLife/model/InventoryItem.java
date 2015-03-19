@@ -90,12 +90,12 @@ public class InventoryItem implements Serializable {
         return description;
     }
 
-    public String getQuantitiyInStock() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getQuantitiyInStock() {
+        return quantityInStock;
     }
 
  
