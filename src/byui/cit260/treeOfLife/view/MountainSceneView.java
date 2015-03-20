@@ -2,9 +2,8 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.MountainControl;
-import byui.cit260.treeOfLife.control.RiverControl;
 import byui.cit260.treeOfLife.exceptions.MountainControlException;
-import byui.cit260.treeOfLife.exceptions.RiverControlException;
+
 
 /**
  *
@@ -28,12 +27,18 @@ public class MountainSceneView extends View{
     @Override
     public void display(){
         String value = null;
-        
-           do{
+        double time = 0.0;
+           
+        do{
             System.out.println("enter the seconds"); //display main menu
-            String valueOne = this.getInput(); //get the user's selection
-
-            double time = Double.parseDouble(valueOne);
+            String valueTime = this.getInput(); //get the user's selection
+             try{
+                 time = Double.parseDouble(valueTime);
+             }catch (NumberFormatException nf){
+                 System.out.println("\n You must enter a valid number."
+                        + "Try again or enter E to exit");
+             }
+            
 
             this.doAction(time); //do action based on selection
         
@@ -46,9 +51,9 @@ public class MountainSceneView extends View{
 
         //call the control function to perform the task
         try {
-            MountainControl.HeightOfMountain(double time);
-        } catch (MountainControlException nf){
-            System.out.println(nf.getMessage());
+            MountainControl.calcHeightOfMountain(double time);
+        } catch (MountainControlException me){
+            System.out.println(me.getMessage());
         }
         MountainControl mountainControl = new MountainControl();
         //display information to be viewed by the user

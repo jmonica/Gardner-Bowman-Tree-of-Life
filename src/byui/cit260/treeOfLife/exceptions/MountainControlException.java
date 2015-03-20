@@ -9,12 +9,12 @@ package byui.cit260.treeOfLife.exceptions;
  *
  * @author MonicasApple
  */
-public class MountainControlException {
+public class MountainControlException extends Exception{
 
-   public MountainControlException() {
+    public MountainControlException() {
     }
 
-     public MountainControlException(String string) {
+    public MountainControlException(String string) {
         super(string);
     }
 
@@ -29,6 +29,5 @@ public class MountainControlException {
     public MountainControlException(String string, Throwable thrwbl, boolean bln, boolean bln1) {
         super(string, thrwbl, bln, bln1);
     }
-
-    
+   
 }
