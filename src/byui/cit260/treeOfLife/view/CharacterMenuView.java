@@ -81,7 +81,7 @@ public class CharacterMenuView extends View{
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
-        return true;
+        //return true;
         }
 }
 

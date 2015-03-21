@@ -59,6 +59,5 @@ public class RiverSceneView extends View{
         double circumference = 0;
         System.out.println("the circumference is" + circumference);
         return true;*/
-        return false;
     }
 }
