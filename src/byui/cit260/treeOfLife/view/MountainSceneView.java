@@ -52,7 +52,9 @@ public class MountainSceneView extends View{
         //call the control function to perform the task
         try {
             MountainControl.calcHeightOfMountain(double time);
-        } catch (MountainControlException me){
+            
+        } 
+        catch (MountainControlException me){
             System.out.println(me.getMessage());
         }
         MountainControl mountainControl = new MountainControl();

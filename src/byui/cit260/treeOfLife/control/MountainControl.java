@@ -15,4 +15,6 @@ public class MountainControl {
         }
 	double height = (16.1 * Math.pow(time, 2));
     }
+
+ 
 }
