@@ -51,7 +51,7 @@ public class RiverSceneView extends View{
         double radius = 0;
         //call the control function to perform the task
         try {
-            RiverControl.calcCircumference(double radius);
+            RiverControl.calcCircumference(radius);
         } catch (RiverControlException me){
             System.out.println(me.getMessage());
         }
@@ -59,5 +59,6 @@ public class RiverSceneView extends View{
         double circumference = 0;
         System.out.println("the circumference is" + circumference);
         return true;*/
+        return false;
     }
 }

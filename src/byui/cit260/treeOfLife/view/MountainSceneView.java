@@ -47,11 +47,11 @@ public class MountainSceneView extends View{
     
     @Override
     public boolean doAction(Object obj) {
-        double time;
+        double time = 0;
 
         //call the control function to perform the task
         try {
-            MountainControl.calcHeightOfMountain(double time);
+            MountainControl.calcHeightOfMountain(time);
             
         } 
         catch (MountainControlException me){
