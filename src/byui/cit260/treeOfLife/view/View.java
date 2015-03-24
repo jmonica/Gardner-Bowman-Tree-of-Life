@@ -5,7 +5,13 @@
  */
 package byui.cit260.treeOfLife.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -14,6 +20,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface{
     
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = TreeOfLife.getInFile();
+    protected final PrintWriter console = TreeOfLife.getOutFile();
     
     public View(String promptMessage){
         this.promptMessage = promptMessage;
@@ -24,7 +33,7 @@ public abstract class View implements ViewInterface{
         String value;
         
         do{
-        System.out.println(this.promptMessage); //display main menu
+        this.console.println(this.promptMessage); //display main menu
         value = this.getInput(); //get the user's selection        
         this.doAction(value); //do action based on selection
         
@@ -35,23 +44,30 @@ public abstract class View implements ViewInterface{
      public String getInput() {
         boolean valid = false;
         String selection = null;
-        Scanner keyboard = new Scanner(System.in);
+        //team assignment11 - p.14
+        while(!valid){ 
         
-        while(!valid){
-        
-        //prompt for the selection
-        System.out.println("Enter your selection");
-        
-        //get the selection from the keyboard and trim off the blanks
-        selection = keyboard.nextLine();
-        selection = selection.trim();
-        
-        //if the selection is invaled 
-        if (selection.length() < 1){
-            System.out.println("Invalid selection");
-            continue;
-        }
-        break;
+            try {
+                //prompt for the selection
+                System.out.println("Enter your selection");
+                
+                //get the selection from the keyboard and trim off the blanks
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+                
+                //if the selection is invaled
+                if (selection.length() < 1){
+                    ErrorView.display(this.getClass().getName(),
+                            "Invalid selection");
+                    continue;
+                }
+                break;
+            } catch (IOException e) {
+                //Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(),
+                        "Error reading input:" + e.getMessage());
+                return null;
+            }
         }
         return selection;
     }

@@ -6,6 +6,9 @@ import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Player;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import treeoflife.TreeOfLife;
 
 public class GameControl {
@@ -32,9 +35,16 @@ public class GameControl {
     public static void startExistingGame(Player player) {
         System.out.println("\n*** startExistingGame stub function called");
     }
-
-    public static void saveGame(Player player) {
-        System.out.println("\n*** saveMenu stub function called");
+    
+     public static void saveGame(Game game, String filePath) 
+        throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); //write the game object out to file
+        } catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
 
     public static InventoryItem[] getSortedInventoryList() {
@@ -142,4 +152,6 @@ public class GameControl {
         }
         return total;
     }
+       
 }
+
