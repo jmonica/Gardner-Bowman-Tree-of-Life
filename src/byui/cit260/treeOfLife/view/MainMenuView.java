@@ -76,7 +76,16 @@ public class MainMenuView extends View {
         characterMenu.display();
     }
     private void startExistingGame() {
-       GameControl.startExistingGame(TreeOfLife.getPlayer()); //start an existing game
+       //prompt for and get the name of the file to save the game in
+         System.out.println("\n\nEnter the file path for file where the game"
+                            + "is to be saved");
+        String filePath = this.getInput();
+        
+        try {
+        GameControl.getSavedGame(filePath); //start an existing game
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
 
         //display the option to choose from existing games
         ExistingGameView existingGame = new ExistingGameView();

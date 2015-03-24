@@ -6,8 +6,11 @@ import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Player;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import treeoflife.TreeOfLife;
 
@@ -32,9 +35,7 @@ public class GameControl {
     }
    
     
-    public static void startExistingGame(Player player) {
-        System.out.println("\n*** startExistingGame stub function called");
-    }
+
     
      public static void saveGame(Game game, String filePath) 
         throws GameControlException {
@@ -70,6 +71,26 @@ public class GameControl {
         
         return inventoryList;
     }
+
+    public static void getSavedGame(String filePath)
+        throws GameControlException{
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)){
+            ObjectInputStream output = new ObjectInputStream(fips);
+            
+            game = (Game) output.readObject();//read the game object from file
+        }
+        catch(FileNotFoundException fnfe){
+            throw new GameControlException(fnfe.getMessage());
+        }
+        catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+        //close the output file
+        TreeOfLife.setCurrentGame(game);//save in TreeOfLife
+    }
+    
 
     public enum Item {
 
@@ -154,4 +175,5 @@ public class GameControl {
     }
        
 }
+
 
