@@ -55,6 +55,7 @@ public class RiverSceneView extends View{
         } catch (RiverControlException me){
             System.out.println(me.getMessage());
         }
+        return true;
         /*display information to be viewed by the user
         double circumference = 0;
         System.out.println("the circumference is" + circumference);
