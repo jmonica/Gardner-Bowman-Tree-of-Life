@@ -49,7 +49,7 @@ public class CharacterMenuView extends View{
 
 }
 
-        public void characterSelection() {
+        public static void characterSelection() {
             
             System.out.println(Character.Nephi.name());
             System.out.println("Choose Character");
@@ -72,10 +72,10 @@ public class CharacterMenuView extends View{
                 CharacterInventory.setCharacter(Character.valueOf("Nephi"));
                 break;
             case "L":
-                CharacterInventory.setCharacter(Character.Laman);
+                CharacterInventory.setCharacter(Character.valueOf("Laman"));
                 break;
             case "S":
-                CharacterInventory.setCharacter(Character.Sam);
+                CharacterInventory.setCharacter(Character.valueOf("Sam"));
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***");
