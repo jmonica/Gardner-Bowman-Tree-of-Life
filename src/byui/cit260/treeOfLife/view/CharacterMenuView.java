@@ -49,7 +49,7 @@ public class CharacterMenuView extends View{
 
 }
 
-        public static void characterSelection() {
+        public void characterSelection() {
             
             System.out.println(Character.Nephi.name());
             System.out.println("Choose Character");
