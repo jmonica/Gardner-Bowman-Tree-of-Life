@@ -76,6 +76,10 @@ public class ArmorShop implements Serializable{
         }
         return this.requiredAmount == other.requiredAmount;
     }
+
+    public void display() {
+        
+    }
     
             
     
