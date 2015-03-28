@@ -128,7 +128,6 @@ public class GameMenuView extends View{
     }*/
 
     private void viewCharacters() {
-        System.out.println("viewCharacters called");
     }
 
     private void viewLocations() {
