@@ -129,7 +129,8 @@ public class GameMenuView extends View{
         return false;
     }*/
 
-    /*private void viewCharacters() {
+    /*prompt to do individual assignment for week11
+    private void viewCharacters() {
         String value;
     
         //prompt user to enter file path where they want to print the report
