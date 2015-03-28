@@ -4,6 +4,7 @@ package byui.cit260.treeOfLife.view;
 import byui.cit260.treeOfLife.control.GameControl;
 import byui.cit260.treeOfLife.control.MapControl;
 import byui.cit260.treeOfLife.exceptions.MapControlException;
+import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
 import java.awt.Point;
@@ -146,7 +147,9 @@ public class GameMenuView extends View{
     }
 
     private void viewArmorShop() {
-        System.out.println("viewArmorShop Function Called");
+        //display the armor shop menu
+        ArmorShop armorShop = new ArmorShopView();
+        armorShop.display();
     }
 
     private void goToTemple() {
