@@ -19,7 +19,7 @@ import treeoflife.TreeOfLife;
  */
 public abstract class View implements ViewInterface{
     
-    private String promptMessage;
+    String promptMessage;
     
     protected final BufferedReader keyboard = TreeOfLife.getInFile();
     protected final PrintWriter console = TreeOfLife.getOutFile();

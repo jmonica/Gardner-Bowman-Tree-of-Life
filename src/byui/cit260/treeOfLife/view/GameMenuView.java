@@ -7,6 +7,7 @@ import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.awt.Point;
 import treeoflife.TreeOfLife;
 
@@ -128,8 +129,54 @@ public class GameMenuView extends View{
         return false;
     }*/
 
-    private void viewCharacters() {
+    /*private void viewCharacters() {
+        String value;
+    
+        //prompt user to enter file path where they want to print the report
+        do{
+            this.console.println(this.promptMessage);
+            value=this.getInput();
+        }while (!value.equals("E"));
+        }
+        
+        //call the array to print out the description
+        String Character[] = new String[3];
+        
+        //call function to print out each item in the array
+        displayCharacters(String Character);
     }
+    
+    public void displayCharacter(Character){
+        Iterable<Character> desriptions;
+        
+        for (Character description : desriptions){
+             //display the description of each character in the list
+             System.out.println(Character.ordinal()+":"+description);             
+         }
+    }
+    
+    public String getInput(){
+        boolean valid = faulse;
+        String value = null;
+        
+        while (!valid){
+            try{
+                System.out.println("Where do you want to print the report?");
+                
+                value = this.keyboard.readln();
+
+                if (value.length()<1){
+                    ErrorView.display(this.getClass().getName(),
+                            "Invalid file path");
+                    continue;
+                }
+                break;
+            } catch(IOException e)
+                ErroeView.display(this.getClass().getName()
+                        "Error reading input:"+e.getMessage());
+                return null;
+        }
+    }*/
 
     private void viewLocations() {
         System.out.println("viewLocations Function called");
