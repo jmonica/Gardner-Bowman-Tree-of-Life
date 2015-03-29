@@ -57,9 +57,9 @@ public class CharacterMenuView extends View{
             +"\n----------------------------------------------------"
             +"\n| Character Choice                                 |"
             +"\n----------------------------------------------------"
-            +"\nN- Nephi                                   "
-            +"\nL - Laman                                          "
-            +"\nS - Sam                                          "         
+            +"\nN - Nephi"
+            +"\nL - Laman"
+            +"\nS - Sam"         
             +"\n----------------------------------------------------");
             Scanner input = new Scanner(System.in);
             String value = input.next();

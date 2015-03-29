@@ -6,13 +6,14 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.model.ArmorShop;
-import java.util.Scanner;
 
 /**
  *
  * @author MonicasApple
  */
 class ArmorShopView extends ArmorShop {
+    private Object keyboard;
+    private Object console;
 
     public ArmorShopView() {
         System.out.println( "\n\n"
@@ -30,11 +31,12 @@ class ArmorShopView extends ArmorShop {
                             +"\n--------------------------------------");
         }
     
-    public static void main(String[] args){
+    public void main(String[] args){
         double totalSale = 0;
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter your how many you want to buy");
-        totalSale = in.nextDouble();
+        
+        this.console.println("Enter your how many you want to buy");
+        totalSale = this.keyboard.readLine();
+        
         if(totalSale < 1){
             totalSale = totalSale + 0;
         }
@@ -56,6 +58,11 @@ class ArmorShopView extends ArmorShop {
         else if (totalSale < 7){
             totalSale = totalSale+60;
         }
+        else{
+            ErrorView.display(this.getClass().getName(), 
+                    "You must enter a value");
+        }
+       
         System.out.println("Total cost is: " +totalSale);
     }
     
