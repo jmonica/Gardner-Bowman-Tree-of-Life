@@ -61,6 +61,8 @@ public class CharacterMenuView extends View{
             +"\nL - Laman"
             +"\nS - Sam"         
             +"\n----------------------------------------------------");
+            
+            
             Scanner input = new Scanner(System.in);
             String value = input.next();
             
