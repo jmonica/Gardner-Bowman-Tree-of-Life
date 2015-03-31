@@ -30,13 +30,12 @@ public class MountainSceneView extends View{
         double time = 0.0;
            
         do{
-            System.out.println("enter the seconds"); //display main menu
+            this.console.println("enter the seconds"); //display main menu
             String valueTime = this.getInput(); //get the user's selection
              try{
                  time = Double.parseDouble(valueTime);
              }catch (NumberFormatException nf){
-                 System.out.println("\n You must enter a valid number."
-                        + "Try again or enter E to exit");
+                 ErrorView.display(this.getClass().getName(), "Error reading input: " + nf.getMessage());
              }
             
 

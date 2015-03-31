@@ -33,12 +33,12 @@ public class RiverSceneView extends View{
         double radius = 0.0;
         
            do{
-            System.out.println("enter the width"); //display main menu
+            this.console.println("enter the width"); //display main menu
             String valueRadius = this.getInput(); //get the user's selection 
             try{
             radius = Double.parseDouble(valueRadius);
             } catch (NumberFormatException nf){
-                System.out.println("\nYou must enter a valid number."
+                this.console.println("\nYou must enter a valid number."
                         + "Try again or enter E to exit");
             }
             this.doAction(radius); //do action based on selection
@@ -53,7 +53,7 @@ public class RiverSceneView extends View{
         try {
             RiverControl.calcCircumference(radius);
         } catch (RiverControlException me){
-            System.out.println(me.getMessage());
+            this.console.println(me.getMessage());
         }
         return true;
         /*display information to be viewed by the user

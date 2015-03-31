@@ -33,7 +33,7 @@ public class ForestSceneView extends View{
         double distance = 0.0;
         
            do{
-            System.out.println("enter the amount of fists"); //display main menu
+            this.console.println("enter the amount of fists"); //display main menu
             String valueOne = this.getInput(); //get the user's selection
             System.out.println("enter the distance from the tree"); //display main menu
             String valueTwo = this.getInput(); //get the user's selection
@@ -42,7 +42,7 @@ public class ForestSceneView extends View{
             fists = Double.parseDouble(valueOne);
             distance = Double.parseDouble(valueTwo);
             } catch (NumberFormatException nf){
-                System.out.println("\nYou must enter a valid number."
+                this.console.println("\nYou must enter a valid number."
                         + "Try again or enter E to exit.");
             }
             double[] inputs = new double[2];
@@ -63,7 +63,7 @@ public class ForestSceneView extends View{
         ForestControl forestControl = new ForestControl();
         //display information to be viewed by the user
         double theHeight = 0;
-        System.out.println("The height of the tree is" + theHeight);
+        this.console.println("The height of the tree is" + theHeight);
         return true;
     }
     

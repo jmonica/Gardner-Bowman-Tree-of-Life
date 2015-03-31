@@ -61,7 +61,7 @@ public class MainMenuView extends View {
             case "E":
                 return true;
             default:
-                System.out.println("\n***Invalid selection *** Try again");
+                this.console.println("\n***Invalid selection *** Try again");
                 break;
         }
         return true;
@@ -77,7 +77,7 @@ public class MainMenuView extends View {
     }
     private void startExistingGame() {
        //prompt for and get the name of the file to save the game in
-         System.out.println("\n\nEnter the file path for file where the game"
+         this.console.println("\n\nEnter the file path for file where the game"
                             + "is to be saved");
         String filePath = this.getInput();
         

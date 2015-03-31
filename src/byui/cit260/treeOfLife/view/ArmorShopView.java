@@ -69,7 +69,7 @@ class ArmorShopView extends ArmorShop {
                         "You must enter a value");
             }
             
-            System.out.println("Total cost is: " +totalSale);
+            this.console.println("Total cost is: " +totalSale);
         } catch (IOException ex) {
             ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
         }

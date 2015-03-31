@@ -24,9 +24,9 @@ public class HelpMenuView extends View {
     }
 
     private void gameInstruction() {
-        System.out.println("\n\n**************************************************");
+        this.console.println("\n\n**************************************************");
                           
-        System.out.println("*                                                *"
+        this.console.println("*                                                *"
                        + "\n* Embark on a journey to reach the Tree of Life. *"
                        + "\n* It will require faith and the ability to stay  *"
                        + "\n* the course despite the hardships you encounter.*"
@@ -34,7 +34,7 @@ public class HelpMenuView extends View {
                        + "\n* Shield of Faithe along the way to overcome the *"
                        + "\n* challenges ahead.                              *");
         
-        System.out.println("*                                                *"
+        this.console.println("*                                                *"
                        + "\n* Make sure you take the time to restore your    *"
                        + "\n* faith by visiting the temple often. Here you   *"
                        + "\n* will be strengthened in your faith. If you take*"
@@ -46,7 +46,7 @@ public class HelpMenuView extends View {
                        + "\n* future opportunities may not present themselves*"
                        + "\n* later in your journey.                         *");
         
-        System.out.println("*                                                *"
+        this.console.println("*                                                *"
                         + "\n* The goal is to reach the tree of life, but     *"
                         + "\n* depending on your faith, you may find yourself *"
                         + "\n* stuck in the large and spacious building or at *"
@@ -55,14 +55,14 @@ public class HelpMenuView extends View {
                         + "\n* reach either tree, you will surley have been   *"
                         + "\n* lost in the spacious building.                 *"
                         + "\n*                                                *");
-        System.out.println("**************************************************");
+       this.console.println("**************************************************");
 
     }
 
     private void howToMove() {
-        System.out.println("\n\n**************************************************");
+        this.console.println("\n\n**************************************************");
                           
-        System.out.println("*                                                *"
+        this.console.println("*                                                *"
                        + "\n* Type in the letter for the corresponding       *"
                        + "\n* selection. This will help you to move from one *"
                        + "\n* menu to the next.                              *"
@@ -70,7 +70,7 @@ public class HelpMenuView extends View {
                        + "\n* the game. If you don't the move will not be    *"
                        + "\n* recognized.                                    *"
                        + "\n*                                                *");
-        System.out.println("**************************************************");
+        this.console.println("**************************************************");
     }
 
     @Override

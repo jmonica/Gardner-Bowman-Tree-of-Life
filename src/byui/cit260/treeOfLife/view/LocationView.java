@@ -59,7 +59,7 @@ public class LocationView extends View{
             case "E":
                 return true;
             default:
-                System.out.println("\n*** Invalid selection***");
+                this.console.println("\n*** Invalid selection***");
                 break;
         }
         return true;

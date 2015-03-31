@@ -62,7 +62,7 @@ public class GameMenuView extends View{
              case "E":
                  return true;
              default:
-                 System.out.println("\n*** Invalid selection ***");
+                 this.console.println("\n*** Invalid selection ***");
                  break;
          } 
         return true;
@@ -71,8 +71,8 @@ public class GameMenuView extends View{
      public void displayMap() {
         Location[][] location = TreeOfLife.getCurrentGame().getMap().getLocations();
         
-        System.out.println("\nMap to the Tree of Life");
-        System.out.println("Row" + "\t 1  2  3  4  5  6  7  8" +
+        this.console.println("\nMap to the Tree of Life");
+        this.console.println("Row" + "\t 1  2  3  4  5  6  7  8" +
                            "Column" + "\t");
         
         // for every column 
@@ -99,15 +99,15 @@ public class GameMenuView extends View{
         // get the sorted list of inventory items for the current game
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        System.out.println("\nList of Inventory Items");
-        System.out.println("Description" + "\t" +
+        this.console.println("\nList of Inventory Items");
+        this.console.println("Description" + "\t" +
                            "Required" + "\t"+
                            "In Stock");
         
         // for each inventory item
         for (InventoryItem inventoryItem : inventory){
             //DISPLAY the description, the required amount and amont in stock
-            System.out.println(inventoryItem.getDescription() + "\t   " +
+            this.console.println(inventoryItem.getDescription() + "\t   " +
                                inventoryItem.getRequiredAmount() + "\t   " +
                                inventoryItem.getQuantitiyInStock());
         }
@@ -178,11 +178,11 @@ public class GameMenuView extends View{
     }*/
 
     private void viewLocations() {
-        System.out.println("viewLocations Function called");
+        this.console.println("viewLocations Function called");
     }
 
     private void moveToLocation() {
-        System.out.println("moveToLocation Function called");
+        this.console.println("moveToLocation Function called");
     }
 
     private void displayHelpMenu() {
@@ -198,7 +198,7 @@ public class GameMenuView extends View{
     }
 
     private void goToTemple() {
-        System.out.println("goToTemple Function Called");
+        this.console.println("goToTemple Function Called");
     }
 
    

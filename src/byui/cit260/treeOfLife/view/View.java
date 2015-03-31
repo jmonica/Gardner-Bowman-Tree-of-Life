@@ -47,7 +47,7 @@ public abstract class View implements ViewInterface{
         
             try {
                 //prompt for the selection
-                System.out.println("Enter your selection");
+                this.console.println("Enter your selection");
                 
                 //get the selection from the keyboard and trim off the blanks
                 selection = this.keyboard.readLine();

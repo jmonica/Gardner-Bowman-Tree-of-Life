@@ -23,7 +23,7 @@ class SaveMenuView extends View{
     }
 
     private void saveGame() {
-                System.out.println("**** saveGame function called");
+                this.console.println("**** saveGame function called");
     }
 
     @Override
@@ -41,7 +41,7 @@ class SaveMenuView extends View{
             case "E":
                 return true;
             default:
-                System.out.println("\n*** Invalid selection ***");
+                this.console.println("\n*** Invalid selection ***");
                 break;
         }
         return true;

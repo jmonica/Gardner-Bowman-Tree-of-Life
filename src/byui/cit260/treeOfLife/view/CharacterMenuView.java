@@ -63,9 +63,9 @@ public class CharacterMenuView extends View{
 
         public void characterSelection() throws IOException {
             
-            System.out.println(Character.Nephi.name());
-            System.out.println("Choose Character");
-            System.out.println("\n"
+            this.console.println(Character.Nephi.name());
+            this.console.println("Choose Character");
+            this.console.println("\n"
             +"\n----------------------------------------------------"
             +"\n| Character Choice                                 |"
             +"\n----------------------------------------------------"
@@ -103,7 +103,7 @@ public class CharacterMenuView extends View{
                 gameMenu.displayMap();
                 break;
             default:
-                System.out.println("\n*** Invalid selection ***");
+                this.console.println("\n*** Invalid selection ***");
                 break;
         }
         //return true;

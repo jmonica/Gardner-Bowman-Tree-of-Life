@@ -17,15 +17,15 @@ public class ExistingGameView extends View {
     
 
     private void startGameOne() {
-        System.out.println("**** startGameOne function called");
+        this.console.println("**** startGameOne function called");
     }
 
     private void startGameTwo() {
-        System.out.println("**** startGameTwo function called");
+        this.console.println("**** startGameTwo function called");
     }
 
     private void startGameThree() {
-        System.out.println("**** startGameThree function called");
+        this.console.println("**** startGameThree function called");
     }
 
 
