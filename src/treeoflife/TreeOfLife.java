@@ -18,8 +18,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -46,6 +44,15 @@ public class TreeOfLife {
             //open log file
             String filePath = "log.txt";
             TreeOfLife.logFile = new PrintWriter(filePath);
+            // create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
+            try{
+            startProgramView.startProgram();
+            } catch (Throwable te){
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
         } catch(Exception e){
             System.out.println("Exception:" + e.toString() +
                                 "\nCause:" + e.getCause() +
@@ -71,15 +78,7 @@ public class TreeOfLife {
             }
         }
         
-        // create StartProgramView and start the program
-        StartProgramView startProgramView = new StartProgramView();
-        try{
-        startProgramView.startProgram();
-        } catch (Throwable te){
-            System.out.println(te.getMessage());
-            te.printStackTrace();
-            startProgramView.display();
-        }
+        
        
     }
 
@@ -97,10 +96,6 @@ public class TreeOfLife {
 
     public static void setPlayer(Player player) {
         TreeOfLife.player = player;
-    }
-
-    public static void setCharacterSelection() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public static PrintWriter getOutFile() {

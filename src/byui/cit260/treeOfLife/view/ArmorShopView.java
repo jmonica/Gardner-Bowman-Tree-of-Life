@@ -6,15 +6,20 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.model.ArmorShop;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import treeoflife.TreeOfLife;
 
 /**
  *
  * @author MonicasApple
  */
 class ArmorShopView extends ArmorShop {
-    private Object keyboard;
-    private Object console;
-
+    
+    protected final BufferedReader keyboard = TreeOfLife.getInFile();
+    protected final PrintWriter console = TreeOfLife.getOutFile();
+    
     public ArmorShopView() {
         System.out.println( "\n\n"
                             +"\n---------Make your selection----------"
@@ -31,39 +36,43 @@ class ArmorShopView extends ArmorShop {
                             +"\n--------------------------------------");
         }
     
-    public void main(String[] args){
-        double totalSale = 0;
-        
-        this.console.println("Enter your how many you want to buy");
-        totalSale = this.keyboard.readLine();
-        
-        if(totalSale < 1){
-            totalSale = totalSale + 0;
+    public void main(){
+        try {
+            int totalSale = 0;
+            
+            this.console.println("Enter your how many you want to buy");
+            String userResponse = this.keyboard.readLine();
+            totalSale = Integer.parseInt(userResponse);
+            if(totalSale < 1){
+                totalSale = totalSale + 0;
+            }
+            else if (totalSale < 2){
+                totalSale = totalSale+10;
+            }
+            else if (totalSale < 3){
+                totalSale = totalSale+20;
+            }
+            else if (totalSale < 4){
+                totalSale = totalSale+30;
+            }
+            else if (totalSale < 5){
+                totalSale = totalSale+40;
+            }
+            else if (totalSale < 6){
+                totalSale = totalSale+50;
+            }
+            else if (totalSale < 7){
+                totalSale = totalSale+60;
+            }
+            else{
+                ErrorView.display(this.getClass().getName(),
+                        "You must enter a value");
+            }
+            
+            System.out.println("Total cost is: " +totalSale);
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
         }
-        else if (totalSale < 2){
-            totalSale = totalSale+10;
-        }
-        else if (totalSale < 3){
-            totalSale = totalSale+20;
-        }
-        else if (totalSale < 4){
-            totalSale = totalSale+30;
-        }
-        else if (totalSale < 5){
-            totalSale = totalSale+40;
-        }
-        else if (totalSale < 6){
-            totalSale = totalSale+50;
-        }
-        else if (totalSale < 7){
-            totalSale = totalSale+60;
-        }
-        else{
-            ErrorView.display(this.getClass().getName(), 
-                    "You must enter a value");
-        }
-       
-        System.out.println("Total cost is: " +totalSale);
     }
     
     /*public boolean doAction(Object obj) {

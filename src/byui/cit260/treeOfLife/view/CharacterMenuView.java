@@ -7,7 +7,13 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.model.Character;
 import byui.cit260.treeOfLife.model.CharacterInventory;
+import byui.cit260.treeOfLife.model.Game;
+import byui.cit260.treeOfLife.model.Map;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -34,11 +40,17 @@ public class CharacterMenuView extends View{
         value = value.toUpperCase();//convert to all upper case
         char choice = value.charAt(0); //get the first character entered
 
-        switch (value) {
-            case "C":
+        switch (choice) {
+            case 'C':
+        {
+            try {
                 this.characterSelection();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+            }
+        }
                 break;
-            case "E":
+            case 'E':
                 return false;
             default:
                 System.out.println("\n*** Invalid selection ***");
@@ -49,7 +61,7 @@ public class CharacterMenuView extends View{
 
 }
 
-        public void characterSelection() {
+        public void characterSelection() throws IOException {
             
             System.out.println(Character.Nephi.name());
             System.out.println("Choose Character");
@@ -63,21 +75,32 @@ public class CharacterMenuView extends View{
             +"\n----------------------------------------------------");
             
             
-            Scanner input = new Scanner(System.in);
-            String value = input.next();
+           
             
-             value = value.toUpperCase();//convert to all upper case
-        char choice = value.charAt(0); //get the first character entered
-
-        switch (value) {
-            case "N":
-                CharacterInventory.setCharacter(Character.valueOf("Nephi"));
+            String value = keyboard.readLine();
+            
+            value = value.toUpperCase();//convert to all upper case
+            char choice = value.charAt(0); //get the first character entered
+            GameMenuView gameMenu = new GameMenuView();
+        
+            switch (choice) {
+            case 'N':
+                TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
+                this.console.println("Welcome Nephi!");
+                
+                gameMenu.displayMap();
                 break;
-            case "L":
-                CharacterInventory.setCharacter(Character.valueOf("Laman"));
+            case 'L':
+                TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
+                this.console.println("Welcome Nephi!");
+                
+                gameMenu.displayMap();
                 break;
-            case "S":
-                CharacterInventory.setCharacter(Character.valueOf("Sam"));
+            case 'S':
+                TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
+                this.console.println("Welcome Nephi!");
+                
+                gameMenu.displayMap();
                 break;
             default:
                 System.out.println("\n*** Invalid selection ***");

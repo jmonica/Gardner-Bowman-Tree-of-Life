@@ -19,7 +19,6 @@ public class GameMenuView extends View{
             +"\n|   Game Menu                                      |"
             +"\n----------------------------------------------------"
             +"\nV - Display Map                                     "
-            +"\nA - View Character                                  "
             +"\nL - Location                                        " 
             +"\nM - Move to Location                                "
             +"\nH - Help                                            "
@@ -45,9 +44,6 @@ public class GameMenuView extends View{
              case "I":
                  this.viewPersonalInventory();
                  break;
-             case "A":
-                 this.viewCharacters();
-                 break;
              case "L":
                  this.viewLocations();
                  break;
@@ -72,7 +68,7 @@ public class GameMenuView extends View{
         return true;
     }
 
-     private void displayMap() {
+     public void displayMap() {
         Location[][] location = TreeOfLife.getCurrentGame().getMap().getLocations();
         
         System.out.println("\nMap to the Tree of Life");
@@ -80,20 +76,22 @@ public class GameMenuView extends View{
                            "Column" + "\t");
         
         // for every column 
-       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
-            System.out.println("\n***");
-            System.out.println(i);
-                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
-                    System.out.print("\n\n|");
-                    System.out.print(j);
-                    Location locations = location [i][j];
-                    if(locations.getVisited())
-                        System.out.print("~~~~");
-                    else 
-                        System.out.println("\n\n??");
-                               
-                }
-        }
+//       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
+//            System.out.println("\n***");
+//            System.out.println(i);
+//                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
+//                    System.out.print("\n\n|");
+//                    System.out.print(j);
+//                    Location locations = location [i][j];
+//                    if(locations.getVisited())
+//                        System.out.print("~~~~");
+//                    else 
+//                        System.out.println("\n\n??");
+//                               
+//                }
+//        }
+        
+        
         }
 
 

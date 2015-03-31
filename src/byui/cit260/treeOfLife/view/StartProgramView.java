@@ -3,7 +3,10 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.ProgramControl;
 import byui.cit260.treeOfLife.model.Player;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class StartProgramView extends View{
@@ -46,22 +49,26 @@ public class StartProgramView extends View{
     
 
     public void startProgram(){
-    
-    //display banner screen
-        this.displayBanner();
-    
-    //prompt the player to enter their name Retrieve the name of the player
-    String playersName = this.getPlayersName();    
-    
-    //Create and save the player object
-    Player player = ProgramControl.createPlayer(playersName);
-    
-    //Display a personalized welcome message
-    this.displayWelcomeMessage(player);
-    
-    //Display the Main Menu
-    MainMenuView mainMenu = new MainMenuView();
-    mainMenu.display();
+   
+        try {
+            //display banner screen
+            this.displayBanner();
+            
+            //prompt the player to enter their name Retrieve the name of the player
+            String playersName = this.getPlayersName();
+            
+            //Create and save the player object
+            Player player = ProgramControl.createPlayer(playersName);
+            
+            //Display a personalized welcome message
+            this.displayWelcomeMessage(player);
+            
+            //Display the Main Menu
+            MainMenuView mainMenu = new MainMenuView();
+            mainMenu.display();
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
 
     
     }
@@ -71,23 +78,23 @@ public class StartProgramView extends View{
 
     }
 
-    public String getPlayersName() {
+    public String getPlayersName() throws IOException {
         boolean valid = false;
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
+        
         
         while(!valid){
         
         //prompt for the players name
-        System.out.println("Enter the player's name below");
+        this.console.println("Enter the player's name below");
         
         //get the name from the keyboard and trim off the blanks
-        playersName = keyboard.nextLine();
+        playersName = keyboard.readLine();
         playersName = playersName.trim();
         
         //if the name is invalied (less than two character in length)
         if(playersName.length() < 2){
-          System.out.println("Invalid name - the name must not be blank");
+          ErrorView.display(this.getClass().getName(), "Invalid name - the name must not be blank");
           continue; //and repeat again
         }
         break; //out of the (exit) the repetition
@@ -98,10 +105,10 @@ public class StartProgramView extends View{
     }
 
     public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n===================================");
-        System.out.println("\tWelcome to the game " + player.getName());
-        System.out.println("\tWe hope you have a lot of fun!");
-        System.out.println("===================================");
+        this.console.println("\n\n===================================");
+        this.console.println("\tWelcome to the game " + player.getName());
+        this.console.println("\tWe hope you have a lot of fun!");
+        this.console.println("===================================");
     }
     
     
