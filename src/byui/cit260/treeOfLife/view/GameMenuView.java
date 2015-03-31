@@ -7,6 +7,7 @@ import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
+import byui.cit260.treeOfLife.model.Scene;
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.awt.Point;
 import treeoflife.TreeOfLife;
@@ -69,28 +70,40 @@ public class GameMenuView extends View{
     }
 
      public void displayMap() {
-        Location[][] location = TreeOfLife.getCurrentGame().getMap().getLocations();
+        Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
+        //Title display
+        System.out.println("\n|*********Map to the Tree of Life*********|");
         
-        this.console.println("\nMap to the Tree of Life");
-        this.console.println("Row" + "\t 1  2  3  4  5  6  7  8" +
-                           "Column" + "\t");
+        //Row and column display
+        System.out.println("\n|  0  |  1  |  2  |  3  |  4  |");
+        for(int i = 0; i < locations.length; i++){
+            
+            System.out.println("-----------------------------------------");
         
-        // for every column 
-//       for(int i = 0; i< TreeOfLife.getCurrentGame().getMap().getNoOfRows(); i++){
-//            System.out.println("\n***");
-//            System.out.println(i);
-//                for(int j = 0; j< TreeOfLife.getCurrentGame().getMap().getNoOfColumns(); j++){
-//                    System.out.print("\n\n|");
-//                    System.out.print(j);
-//                    Location locations = location [i][j];
-//                    if(locations.getVisited())
-//                        System.out.print("~~~~");
-//                    else 
-//                        System.out.println("\n\n??");
-//                               
-//                }
-//        }
-        
+        String grid = i + "|";
+        for(int j = 0; j<locations[i].length; j++){
+            Location location = locations[i][j];
+            
+            String symbol;
+            
+            Point currentCoordinates= TreeOfLife.getCurrentGame().getCharacter().getCoordinates();
+            Location characterLocation = locations[currentCoordinates.x][currentCoordinates.y];
+            
+            if(location == characterLocation){
+                symbol = "HERE";
+            }
+            else if (location.getVisited() ) {
+                
+                Scene scene = location.getScene();
+                symbol = MapControl.setSymbol();
+            }
+            else{
+                symbol = "????";
+            }
+            grid += (" "+symbol +" |");
+        }
+        System.out.println(grid);
+        }
         
         }
 

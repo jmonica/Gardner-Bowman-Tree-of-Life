@@ -22,7 +22,7 @@ public class MapControl {
 
     public static Map createMap() {
        // create the map
-        Map map = new Map(20, 20);
+        Map map = new Map(5, 5);
         
         //creat the scenes for the game
         Scene[] scenes = createScenes();

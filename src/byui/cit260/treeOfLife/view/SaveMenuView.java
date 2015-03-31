@@ -47,7 +47,5 @@ class SaveMenuView extends View{
         return true;
     }
 
-    void displayMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }
