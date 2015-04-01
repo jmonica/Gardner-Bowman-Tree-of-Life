@@ -81,14 +81,14 @@ public class HelpMenuView extends View {
         value = value.toUpperCase();//convert to all upper case
         char choice = value.charAt(0); //get the first character entered
 
-        switch (value) {
-            case "G":
+        switch (choice) {
+            case 'G':
                 this.gameInstruction();
                 break;
-            case "M":
+            case 'M':
                 this.howToMove();
                 break;
-            case "E":
+            case 'E':
                 return false;
             default:
                 System.out.println("\n*** Invalid selection ***");

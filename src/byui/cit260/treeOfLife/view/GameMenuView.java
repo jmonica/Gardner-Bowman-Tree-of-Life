@@ -219,7 +219,7 @@ public class GameMenuView extends View{
 
     private void viewArmorShop() {
         //display the armor shop menu
-        ArmorShop armorShop = new ArmorShopView();
+        ArmorShopView armorShop = new ArmorShopView();
         armorShop.display();
     }
 
