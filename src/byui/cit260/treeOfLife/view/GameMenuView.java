@@ -139,18 +139,18 @@ public class GameMenuView extends View{
     }
 
 
-      /*@Override
-    public boolean doAction(String choice){
-        Character character = null;
-        Point coordinates = character.getCoordinates();
-        //move character to specified location
-        try {
-            MapControl.moveCharacterToLocation(character, coordinates);          
-        } catch(MapControlException me){
-            System.out.println(me.getMessage());
-        }
-        return false;
-    }*/
+//      //@Override
+//    public boolean doAction(String choice){
+//        Character character = null;
+//        Point coordinates = character.getCoordinates();
+//        //move character to specified location
+//        try {
+//            MapControl.moveCharacterToLocation(character, coordinates);          
+//        } catch(MapControlException me){
+//            System.out.println(me.getMessage());
+//        }
+//        return false;
+//    }
 
     //prompt to do individual assignment for week11
     private void viewCharacters() {

@@ -87,19 +87,19 @@ public class CharacterMenuView extends View{
                 TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
                 this.console.println("Welcome Nephi!");
                 
-                gameMenu.displayMap();
+                //gameMenu.displayMap();
                 break;
             case 'L':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
                 this.console.println("Welcome Laman!");
                 
-                gameMenu.displayMap();
+                //gameMenu.displayMap();
                 break;
             case 'S':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
                 this.console.println("Welcome Sam!");
                 
-                gameMenu.displayMap();
+                //gameMenu.displayMap();
                 break;
             default:
                 this.console.println("\n*** Invalid selection ***");
