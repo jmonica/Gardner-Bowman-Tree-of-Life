@@ -123,16 +123,17 @@ public class GameMenuView extends View{
         // get the sorted list of inventory items for the current game
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        this.console.println("\nList of Inventory Items");
-        this.console.println("Description" + "\t" +
-                           "Required" + "\t"+
-                           "In Stock");
+        this.console.println("\n----------------------------------------------------");
+        this.console.println("|      List of Inventory Items                     |");
+        this.console.println("----------------------------------------------------");
+        this.console.println("Description" + "\t                    " +
+                           "How Many You Have");
+        this.console.println("     ");
         
         // for each inventory item
         for (InventoryItem inventoryItem : inventory){
             //DISPLAY the description, the required amount and amont in stock
-            this.console.println(inventoryItem.getDescription() + "\t   " +
-                               inventoryItem.getRequiredAmount() + "\t   " +
+            this.console.println(inventoryItem.getDescription() + "  --------------------------" +
                                inventoryItem.getQuantitiyInStock());
         }
     }

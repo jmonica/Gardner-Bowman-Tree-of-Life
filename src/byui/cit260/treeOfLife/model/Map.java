@@ -19,10 +19,8 @@ public class Map implements Serializable{
    private Game[] game;
    private Location[][] locations;
 
-    public Map() {
-    }
 
-    public Map(int noOfRows, int noOfColumns) {
+public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns < 1){
             System.out.println("The number of rows and columns must be greater than zero");
             return;

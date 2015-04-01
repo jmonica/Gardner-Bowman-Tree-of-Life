@@ -46,7 +46,8 @@ public class PersonalInventory implements Serializable{
 
     @Override
     public String toString() {
-        return "PersonalInventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", monyAmount=" + monyAmount + '}';
+        return "PersonalInventory{" + "inventoryType=" + inventoryType 
+                + ", quantityInStock=" + quantityInStock + ", monyAmount=" + monyAmount + '}';
     }
 
     @Override

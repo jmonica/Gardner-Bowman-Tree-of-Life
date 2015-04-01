@@ -125,16 +125,15 @@ public class MapControl {
        return null;
     }
     
-    private static void assignScenesToLocations(Map map, Scene[] scenes){
+    public static void assignScenesToLocations(Map map, Scene[] scenes){
         Location[][] locations = map.getLocations();
         
-        // start point
         
-        /*locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
-        locations[0][2].setScene(scenes[SceneType.river.ordinal()]);
-        locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]);
-        locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);*/
+//        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
+//        locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
+//        locations[0][2].setScene(scenes[SceneType.river.ordinal()]);
+//        locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]);
+//        locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);
     }
         
 }
