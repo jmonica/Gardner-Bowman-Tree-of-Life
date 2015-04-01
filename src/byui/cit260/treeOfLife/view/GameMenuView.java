@@ -208,7 +208,8 @@ public class GameMenuView extends View{
     }
 
     private void moveToLocation() {
-        this.console.println("moveToLocation Function called");
+        LocationView locationView = new LocationView();
+        locationView.display();
     }
 
     private void displayHelpMenu() {
@@ -220,7 +221,7 @@ public class GameMenuView extends View{
     private void viewArmorShop() {
         //display the armor shop menu
         ArmorShopView armorShop = new ArmorShopView();
-        armorShop.display();
+        armorShop.doAction(this);
     }
 
     private void goToTemple() {

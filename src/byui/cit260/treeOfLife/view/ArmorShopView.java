@@ -93,26 +93,26 @@ class ArmorShopView extends ArmorShop {
                 totalSale = totalSale + 0;
             }
             else if (totalSale < 2){
-                totalSale = totalSale+10;
+                totalSale = totalSale+9;
             }
             else if (totalSale < 3){
-                totalSale = totalSale+20;
+                totalSale = totalSale+18;
             }
             else if (totalSale < 4){
-                totalSale = totalSale+30;
+                totalSale = totalSale+27;
             }
             else if (totalSale < 5){
-                totalSale = totalSale+40;
+                totalSale = totalSale+36;
             }
             else if (totalSale < 6){
-                totalSale = totalSale+50;
+                totalSale = totalSale+45;
             }
             else if (totalSale < 7){
-                totalSale = totalSale+60;
+                totalSale = totalSale+54;
             }
             else{
                 ErrorView.display(this.getClass().getName(),
-                        "You must enter a value");
+                        "You must enter a value less than 7");
             }
             
             this.console.println("Total cost is: " +totalSale);
