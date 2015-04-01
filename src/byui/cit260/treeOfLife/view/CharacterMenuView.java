@@ -6,7 +6,6 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.model.Character;
-import byui.cit260.treeOfLife.model.CharacterInventory;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Map;
 import java.io.IOException;
@@ -92,13 +91,13 @@ public class CharacterMenuView extends View{
                 break;
             case 'L':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
-                this.console.println("Welcome Nephi!");
+                this.console.println("Welcome Laman!");
                 
                 gameMenu.displayMap();
                 break;
             case 'S':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
-                this.console.println("Welcome Nephi!");
+                this.console.println("Welcome Sam!");
                 
                 gameMenu.displayMap();
                 break;

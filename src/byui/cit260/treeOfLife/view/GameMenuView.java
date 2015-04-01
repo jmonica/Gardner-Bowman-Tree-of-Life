@@ -10,6 +10,7 @@ import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Scene;
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.awt.Point;
+import java.io.IOException;
 import treeoflife.TreeOfLife;
 
 public class GameMenuView extends View{
@@ -84,7 +85,7 @@ public class GameMenuView extends View{
         for(int j = 0; j<locations[i].length; j++){
             Location location = locations[i][j];
             
-            String symbol;
+            String symbol = null;
             
             Point currentCoordinates= TreeOfLife.getCurrentGame().getCharacter().getCoordinates();
             Location characterLocation = locations[currentCoordinates.x][currentCoordinates.y];
@@ -95,7 +96,7 @@ public class GameMenuView extends View{
             else if (location.getVisited() ) {
                 
                 Scene scene = location.getScene();
-                symbol = MapControl.setSymbol();
+                scene.setSymbol(symbol);
             }
             else{
                 symbol = "????";
@@ -140,7 +141,7 @@ public class GameMenuView extends View{
         return false;
     }*/
 
-    /*prompt to do individual assignment for week11
+    //prompt to do individual assignment for week11
     private void viewCharacters() {
         String value;
     
@@ -148,34 +149,33 @@ public class GameMenuView extends View{
         do{
             this.console.println(this.promptMessage);
             value=this.getInput();
-        }while (!value.equals("E"));
-        }
+        }while (!value.equals("E"));        
         
         //call the array to print out the description
-        String Character[] = new String[3];
+        String[] character = new String[3];
         
         //call function to print out each item in the array
-        displayCharacters(String Character);
+        displayCharacter();
     }
     
-    public void displayCharacter(Character){
-        Iterable<Character> desriptions;
+    public void displayCharacter(){
+        Iterable<Character> descriptions = null;
         
-        for (Character description : desriptions){
+        for (Character description : descriptions){
              //display the description of each character in the list
-             System.out.println(Character.ordinal()+":"+description);             
+             System.out.println(descriptions);             
          }
     }
     
     public String getInput(){
-        boolean valid = faulse;
+        boolean valid = false;
         String value = null;
         
         while (!valid){
             try{
                 System.out.println("Where do you want to print the report?");
                 
-                value = this.keyboard.readln();
+                value = this.keyboard.readLine();
 
                 if (value.length()<1){
                     ErrorView.display(this.getClass().getName(),
@@ -183,12 +183,14 @@ public class GameMenuView extends View{
                     continue;
                 }
                 break;
-            } catch(IOException e)
-                ErroeView.display(this.getClass().getName()
+            } catch(IOException e){
+                ErrorView.display(this.getClass().getName(),
                         "Error reading input:"+e.getMessage());
                 return null;
         }
-    }*/
+    }
+        return value;
+}        
 
     private void viewLocations() {
         this.console.println("viewLocations Function called");

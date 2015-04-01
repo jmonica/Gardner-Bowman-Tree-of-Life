@@ -6,7 +6,7 @@ import byui.cit260.treeOfLife.exceptions.RiverControlException;
 
 public class RiverControl {
     
-    public void calcCircumference (double radius) 
+    public static double calcCircumference (double radius) 
             throws RiverControlException{
         if (radius < 3 || 6 < radius){
             throw new RiverControlException("Cannot use that tree."
@@ -15,6 +15,7 @@ public class RiverControl {
         }
         
 	double circumference = (radius*2*3.14);
+        return circumference;
     }
 
 }

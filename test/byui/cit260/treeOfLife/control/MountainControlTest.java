@@ -5,6 +5,7 @@
  */
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.exceptions.MountainControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class MountainControlTest {
      * Test of calcHeightOfMountain method, of class MountainControl.
      */
     @Test
-    public void testCalcHeightOfMountain() {
+    public void testCalcHeightOfMountain() throws MountainControlException {
         System.out.println("calcHeightOfMountain");
         
         

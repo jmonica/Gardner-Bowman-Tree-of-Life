@@ -6,7 +6,7 @@ import byui.cit260.treeOfLife.exceptions.MountainControlException;
 
 public class MountainControl {
     
-    public static void calcHeightOfMountain(double time)
+    public static double calcHeightOfMountain(double time)
             throws MountainControlException{
         if  (time < 1 || time > 10){
             throw new MountainControlException(time + " seconds is too long."
@@ -14,6 +14,7 @@ public class MountainControl {
                                             + "find a different cliff.");
         }
 	double height = (16.1 * Math.pow(time, 2));
+        return height;
     }
 
  

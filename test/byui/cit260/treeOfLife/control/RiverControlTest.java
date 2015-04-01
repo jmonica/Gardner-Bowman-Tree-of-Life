@@ -5,6 +5,7 @@
  */
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.exceptions.RiverControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class RiverControlTest {
      * Test of calcCircumference method, of class RiverControl.
      */
     @Test
-    public void testCalcCircumference() {
+    public void testCalcCircumference() throws RiverControlException {
         System.out.println("calcCircumference");
         
         /***************
