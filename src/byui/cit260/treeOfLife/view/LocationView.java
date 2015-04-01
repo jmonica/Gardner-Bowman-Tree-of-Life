@@ -23,9 +23,37 @@ public class LocationView extends View{
                 + "\n*********************************************************");
     }   
 
-    private void forestScene() {
+   
+    @Override
+    public boolean doAction(Object obj) {
+                
+        String value = (String)obj;
+        
+        value = value.toUpperCase();//convert to all upper case
+        char choice = value.charAt(0); //get the first character entered
+
+        switch (choice){
+            case 'A':
+                this.forestScene();
+                break;
+            case 'B':
+                this.riverScene();
+                break;
+            case 'C':
+                this.mountainScene();
+                break;
+            case 'E':
+                return true;
+            default:
+                this.console.println("\n*** Invalid selection***");
+                break;
+        }
+        return true;
+    }
+     private void forestScene() {
         ForestSceneView forestScene = new ForestSceneView();
-        forestScene.display();
+        forestScene.display(); 
+        
     }
 
     private void riverScene() {
@@ -37,32 +65,5 @@ public class LocationView extends View{
         MountainSceneView mountainScene = new MountainSceneView();
         mountainScene.display();
 }
-
-    @Override
-    public boolean doAction(Object obj) {
-                
-        String value = (String)obj;
-        
-        value = value.toUpperCase();//convert to all upper case
-        char choice = value.charAt(0); //get the first character entered
-
-        switch (value){
-            case "A":
-                this.forestScene();
-                break;
-            case "B":
-                this.riverScene();
-                break;
-            case "C":
-                this.mountainScene();
-                break;
-            case "E":
-                return true;
-            default:
-                this.console.println("\n*** Invalid selection***");
-                break;
-        }
-        return true;
-    }
     
 }

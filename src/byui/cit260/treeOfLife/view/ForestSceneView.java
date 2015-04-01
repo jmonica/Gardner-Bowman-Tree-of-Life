@@ -26,16 +26,17 @@ public class ForestSceneView extends View{
             +"\n--------------------------------------------------");
     }
 
-    @Override
-    public void display(){
+//    @Override
+//    public void display(){
+    public void main(){
         String value = null;
         double fists = 0.0;
         double distance = 0.0;
         
            do{
-            this.console.println("enter the amount of fists"); //display main menu
+            this.console.println("Enter the amount of fists"); //display main menu
             String valueOne = this.getInput(); //get the user's selection
-            System.out.println("enter the distance from the tree"); //display main menu
+            System.out.println("Enter the distance from the tree"); //display main menu
             String valueTwo = this.getInput(); //get the user's selection
             
             try{
