@@ -2,15 +2,13 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
-import byui.cit260.treeOfLife.control.MapControl;
-import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Scene;
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.awt.Point;
 import java.io.IOException;
+
 import treeoflife.TreeOfLife;
 
 public class GameMenuView extends View{
@@ -32,42 +30,54 @@ public class GameMenuView extends View{
 
     @Override
     public boolean doAction(Object obj) {
-                
-        String value = (String)obj;
         
-        value = value.toUpperCase();//convert to all upper case
-        char choice = value.charAt(0); //get the first character entered
-
-        switch (value) {
-             
-             case "V":
-                 this.displayMap();
-                 break;
-             case "I":
-                 this.viewPersonalInventory();
-                 break;
-             case "L":
-                 this.viewLocations();
-                 break;
-             case "M":
-                 this.moveToLocation();
-                 break;
-             case "H":
-                 this.displayHelpMenu();
-                 break;
-             case "P":
-                 this.viewArmorShop();
-                 break;
-             case "T":
-                 this.goToTemple();
-                 break;
-             case "E":
-                 return true;
-             default:
-                 this.console.println("\n*** Invalid selection ***");
-                 break;
-         } 
-        return true;
+        try {
+            String value = keyboard.readLine();
+            
+            value = value.toUpperCase();//convert to all upper case
+            char choice = value.charAt(0); //get the first character entered
+            
+//        String value = (String)obj;
+//        
+//        value = value.toUpperCase();//convert to all upper case
+//        char choice = value.charAt(0); //get the first character entered
+            
+            switch (choice) {
+                
+                case 'V':
+                    this.displayMap();
+                    break;
+                case 'I':
+                    this.viewPersonalInventory();
+                    break;
+                case 'L':
+                    this.viewLocations();
+                    break;
+                case 'M':
+                    this.moveToLocation();
+                    break;
+                case 'H':
+                    this.displayHelpMenu();
+                    break;
+                case 'P':
+                    this.viewArmorShop();
+                    break;
+                case 'T':
+                    this.goToTemple();
+                    break;
+                case 'E':
+                    return true;
+                default:
+                    this.console.println("\n*** Invalid selection ***");
+                    break;
+            }
+            return true;
+        } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
+        return false;
+        
+        
     }
 
      public void displayMap() {
@@ -107,7 +117,7 @@ public class GameMenuView extends View{
         }
         
         }
-
+ 
 
     private void viewPersonalInventory() {
         // get the sorted list of inventory items for the current game

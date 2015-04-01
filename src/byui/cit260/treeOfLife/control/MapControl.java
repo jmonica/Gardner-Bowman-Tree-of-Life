@@ -72,7 +72,7 @@ public class MapControl {
         knowledge,
         building;
     }
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         
         Game game = TreeOfLife.getCurrentGame();
         

@@ -81,7 +81,7 @@ public class CharacterMenuView extends View{
             value = value.toUpperCase();//convert to all upper case
             char choice = value.charAt(0); //get the first character entered
             GameMenuView gameMenu = new GameMenuView();
-        
+            
             switch (choice) {
             case 'N':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
