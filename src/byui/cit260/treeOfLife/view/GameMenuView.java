@@ -22,6 +22,7 @@ public class GameMenuView extends View{
             +"\nL - Location" 
             +"\nM - Move to Location"
             +"\nH - Help"
+            +"\nT - Temple"    
             +"\nP - Armor Shop"    
             +"\nE - Exit"
             +"\n----------------------------------------------------");
@@ -71,12 +72,10 @@ public class GameMenuView extends View{
                     this.console.println("\n*** Invalid selection ***");
                     break;
             }
-            return true;
         } catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
         }
         return false;
-        
         
     }
 
@@ -133,7 +132,7 @@ public class GameMenuView extends View{
         // for each inventory item
         for (InventoryItem inventoryItem : inventory){
             //DISPLAY the description, the required amount and amont in stock
-            this.console.println(inventoryItem.getDescription() + "  --------------------------" +
+            this.console.println(inventoryItem.getDescription() + "--------------" +
                                inventoryItem.getQuantitiyInStock());
         }
     }

@@ -21,8 +21,8 @@ class ArmorShopView extends ArmorShop {
     protected final PrintWriter console = TreeOfLife.getOutFile();
     
     public ArmorShopView() {
-        System.out.println( "\n\n"
-                            +"\n---------Make your selection----------"
+        System.out.println( "\n\n------------------------------------"
+                            +"\n|        Make your selection         |"
                             +"\n--------------------------------------"
                             +"\n| ARMOR SHOP                         |"
                             +"\n--------------------------------------"
@@ -35,6 +35,52 @@ class ArmorShopView extends ArmorShop {
                             +"\nE - Exit"
                             +"\n--------------------------------------");
         }
+    public boolean doAction(Object obj){
+        
+        try {
+            String value = keyboard.readLine();
+            
+            value = value.toUpperCase();//convert to all upper case
+            char choice = value.charAt(0); //get the first character entered
+            
+            switch (choice){
+                case 'H':
+                    System.out.println("Helmet of Salvation is $10");
+                    this.main();
+                    break;
+                case 'F':
+                    System.out.println("Shield of Faith is $10");
+                    this.main();
+                    break;
+                case 'T':
+                    System.out.println("Belt of Truth is $10");
+                    this.main();
+                    break;
+                case 'P':
+                    System.out.println("Feet shod with Peace is $10");
+                    this.main();
+                    break;
+                case 'S':
+                    System.out.println("Sword 'Word of God'is $10");
+                    this.main();
+                    break;
+                case 'R':
+                    System.out.println("Breastplate of Righteousness is $10");
+                    this.main();
+                    break;
+                case 'E':
+                    return true;
+                default:
+                    this.console.println("\n***Invalid selection *** Try again");
+                    break;
+            }
+            
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+        }
+        return false;
+    }   
+    
     
     public void main(){
         try {
@@ -75,39 +121,6 @@ class ArmorShopView extends ArmorShop {
         }
     }
     
-    /*public boolean doAction(Object obj) {
-        
-        String value = (String)obj;
-        
-        value = value.toUpperCase();//convert to all upper case
-        char choice = value.charAt(0); //get the first character entered
-        
-        switch (value){    
-            case "H":
-                System.out.println("Helmet of Salvation is $10");
-                break;
-            case "F":
-                System.out.println("Shield of Faith is $10");
-                break;
-            case "T":
-               System.out.println("Belt of Truth is $10");
-                break;
-            case "P":
-                System.out.println("Feet shod with Peace is $10");
-                break;
-            case "S":
-                System.out.println("Sword 'Word of God'is $10");
-                break;
-            case "R":
-                System.out.println("Breastplate of Righteousness is $10");
-                break;
-            case "E":
-                return true;
-            default:
-                System.out.println("\n***Invalid selection *** Try again");
-                break;
-        }
-        return true;
-    }*/
+
 }
     

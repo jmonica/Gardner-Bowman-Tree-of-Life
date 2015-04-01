@@ -7,8 +7,6 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
 import byui.cit260.treeOfLife.exceptions.MapControlException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import treeoflife.TreeOfLife;
 
 /**

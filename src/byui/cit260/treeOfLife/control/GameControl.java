@@ -109,43 +109,43 @@ public class GameControl {
                 new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
 
         InventoryItem helmet = new InventoryItem();
-        helmet.setDescription("Helmet of salvation");
+        helmet.setDescription("-----Helmet of salvation------");
         helmet.setQuantityInStock(0);
         helmet.setRequiredAmount(5);
         inventory[Item.helmet.ordinal()] = helmet;
 
         InventoryItem shield = new InventoryItem();
-        shield.setDescription("Shield of faith");
+        shield.setDescription("--------Shield of faith-------");
         shield.setQuantityInStock(0);
         shield.setRequiredAmount(5);
         inventory[Item.shield.ordinal()] = shield;
 
         InventoryItem belt = new InventoryItem();
-        belt.setDescription("Belt of truth");
+        belt.setDescription("---------Belt of truth--------");
         belt.setQuantityInStock(0);
         belt.setRequiredAmount(2);
         inventory[Item.belt.ordinal()] = belt;
 
         InventoryItem shod = new InventoryItem();
-        shod.setDescription("Feet shod of peace");
+        shod.setDescription("------Feet shod of peace------");
         shod.setQuantityInStock(0);
         shod.setRequiredAmount(2);
         inventory[Item.shod.ordinal()] = shod;
 
         InventoryItem sword = new InventoryItem();
-        sword.setDescription("Sword - word of God");
+        sword.setDescription("------Sword - word of God-----");
         sword.setQuantityInStock(0);
         sword.setRequiredAmount(5);
         inventory[Item.sword.ordinal()] = sword;
 
         InventoryItem breastplate = new InventoryItem();
-        breastplate.setDescription("Breastplate of righteousness");
+        breastplate.setDescription("-Breastplate of righteousness-");
         breastplate.setQuantityInStock(0);
         breastplate.setRequiredAmount(3);
         inventory[Item.breastplate.ordinal()] = breastplate;
 
         InventoryItem rope = new InventoryItem();
-        rope.setDescription("Rope");
+        rope.setDescription("-------------Rope-------------");
         rope.setQuantityInStock(0);
         rope.setRequiredAmount(3);
         inventory[Item.rope.ordinal()] = rope;
