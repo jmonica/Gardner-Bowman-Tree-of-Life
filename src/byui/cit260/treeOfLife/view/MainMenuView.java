@@ -71,7 +71,7 @@ public class MainMenuView extends View {
     private void startNewGame() throws MapControlException {
         GameControl.createNewGame(TreeOfLife.getPlayer()); //create a new game
         
-        //display the game menu
+        //display the character menu
         CharacterMenuView characterMenu = new CharacterMenuView();
         characterMenu.display();
     }
@@ -101,9 +101,11 @@ public class MainMenuView extends View {
 
     private void saveGame() {
         //prompt for and get the name of the file to save the game in
+        ///Users/MonicasApple/NetBeansProjects/treeOfLife/ (filepath)
         System.out.println("\n\nEnter the file path for file where the game"
                             + "is to be saved");
         String filePath = this.getInput();
+        //String filePath = GameMenuView.getReportInput();
         
         try {
         GameControl .saveGame(TreeOfLife.getCurrentGame(), filePath); // save the game

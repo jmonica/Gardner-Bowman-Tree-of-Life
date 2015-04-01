@@ -14,17 +14,16 @@ import treeoflife.TreeOfLife;
 public class GameMenuView extends View{
 
     public GameMenuView() {
-        super("\n\n*************************************************");
-            
-        this.console.println("\n----------------------------------------------------"
+        super("\n----------------------------------------------------"
             +"\n|   Game Menu                                      |"
             +"\n----------------------------------------------------"
-            +"\nV - Display Map                                     "
-            +"\nL - Location                                        " 
-            +"\nM - Move to Location                                "
-            +"\nH - Help                                            "
-            +"\nP - Armor Shop                                      "    
-            +"\nE - Exit                                            "
+            +"\nV - Display Map"
+            +"\nI - Personal Inventory"    
+            +"\nL - Location" 
+            +"\nM - Move to Location"
+            +"\nH - Help"
+            +"\nP - Armor Shop"    
+            +"\nE - Exit"
             +"\n----------------------------------------------------");
     }
 
@@ -178,7 +177,8 @@ public class GameMenuView extends View{
          }
     }
     
-    public String getInput(){
+    //@Override
+    public String getReportInput(){
         boolean valid = false;
         String value = null;
         
@@ -204,7 +204,7 @@ public class GameMenuView extends View{
 }        
 
     private void viewLocations() {
-        this.console.println("viewLocations Function called");
+        this.displayMap();
     }
 
     private void moveToLocation() {

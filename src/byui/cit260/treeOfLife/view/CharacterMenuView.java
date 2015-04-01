@@ -6,12 +6,7 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.model.Character;
-import byui.cit260.treeOfLife.model.Game;
-import byui.cit260.treeOfLife.model.Map;
 import java.io.IOException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import treeoflife.TreeOfLife;
 
 /**
@@ -62,7 +57,7 @@ public class CharacterMenuView extends View{
 
         public void characterSelection() throws IOException {
             
-            this.console.println(Character.Nephi.name());
+            //this.console.println(Character.Nephi.name());
             this.console.println("Choose Character");
             this.console.println("\n"
             +"\n----------------------------------------------------"
@@ -87,19 +82,19 @@ public class CharacterMenuView extends View{
                 TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
                 this.console.println("Welcome Nephi!");
                 
-                //gameMenu.displayMap();
+                gameMenu.display();
                 break;
             case 'L':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
                 this.console.println("Welcome Laman!");
+                gameMenu.display();
                 
-                //gameMenu.displayMap();
                 break;
             case 'S':
                 TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
                 this.console.println("Welcome Sam!");
+                gameMenu.display();
                 
-                //gameMenu.displayMap();
                 break;
             default:
                 this.console.println("\n*** Invalid selection ***");
