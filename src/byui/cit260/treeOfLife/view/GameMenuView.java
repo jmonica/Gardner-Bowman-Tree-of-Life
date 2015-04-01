@@ -14,8 +14,9 @@ import treeoflife.TreeOfLife;
 public class GameMenuView extends View{
 
     public GameMenuView() {
-        super("\n"
-            +"\n----------------------------------------------------"
+        super("\n\n*************************************************");
+            
+        this.console.println("\n----------------------------------------------------"
             +"\n|   Game Menu                                      |"
             +"\n----------------------------------------------------"
             +"\nV - Display Map                                     "
@@ -83,10 +84,10 @@ public class GameMenuView extends View{
      public void displayMap() {
         Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
         //Title display
-        System.out.println("\n|*********Map to the Tree of Life*********|");
+        System.out.println("\n |******Map to the Tree of Life*****|");
         
         //Row and column display
-        System.out.println("\n|  0  |  1  |  2  |  3  |  4  |");
+        System.out.println("\n |   0  |   1  |   2  |   3  |   4  |");
         for(int i = 0; i < locations.length; i++){
             
             System.out.println("-----------------------------------------");

@@ -45,7 +45,7 @@ public class MainMenuView extends View {
             try {
                 this.startNewGame();
             } catch (MapControlException ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
             }
         }
                 break;
