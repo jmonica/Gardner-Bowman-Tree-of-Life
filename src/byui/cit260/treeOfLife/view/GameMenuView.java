@@ -2,7 +2,6 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
-import byui.cit260.treeOfLife.model.ArmorShop;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Scene;
@@ -32,48 +31,37 @@ public class GameMenuView extends View{
     @Override
     public boolean doAction(Object obj) {
         
-        try {
-            String value = keyboard.readLine();
+        String value = (String) obj;
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+        switch (choice) {
             
-            value = value.toUpperCase();//convert to all upper case
-            char choice = value.charAt(0); //get the first character entered
-            
-//        String value = (String)obj;
-//        
-//        value = value.toUpperCase();//convert to all upper case
-//        char choice = value.charAt(0); //get the first character entered
-            
-            switch (choice) {
-                
-                case 'V':
-                    this.displayMap();
-                    break;
-                case 'I':
-                    this.viewPersonalInventory();
-                    break;
-                case 'L':
-                    this.viewLocations();
-                    break;
-                case 'M':
-                    this.moveToLocation();
-                    break;
-                case 'H':
-                    this.displayHelpMenu();
-                    break;
-                case 'P':
-                    this.viewArmorShop();
-                    break;
-                case 'T':
-                    this.goToTemple();
-                    break;
-                case 'E':
-                    return true;
-                default:
-                    this.console.println("\n*** Invalid selection ***");
-                    break;
-            }
-        } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
+            case 'V':
+                this.displayMap();
+                break;
+            case 'I':
+                this.viewPersonalInventory();
+                break;
+            case 'L':
+                this.viewLocations();
+                break;
+            case 'M':
+                this.moveToLocation();
+                break;
+            case 'H':
+                this.displayHelpMenu();
+                break;
+            case 'P':
+                this.viewArmorShop();
+                break;
+            case 'T':
+                this.goToTemple();
+                break;
+            case 'E':
+                return true;
+            default:
+                this.console.println("\n*** Invalid selection ***");
+                break;
         }
         return false;
         

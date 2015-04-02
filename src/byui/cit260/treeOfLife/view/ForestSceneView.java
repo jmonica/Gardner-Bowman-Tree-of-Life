@@ -31,28 +31,20 @@ public class ForestSceneView extends View{
     }
     @Override
     public boolean doAction(Object obj){
-        try {
-            String value = keyboard.readLine();
-            
-            value = value.toUpperCase();
-            char choice = value.charAt(0);
-            
-            switch(choice){
-                case 'M':
-                    this.measurementGetter();
-                    break;
-                case 'E':
-                    return true;
-                default:
-                    this.console.println("\n*** Invalid selection ***");
-                    break;
-            }
-            return true;
-        } catch (IOException ex) {
-            ErrorView.display(this.getClass().getName(),
-                        "Error reading input:"+ex.getMessage());
+        String value = (String) obj;
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+        switch(choice){
+            case 'M':
+                this.measurementGetter();
+                break;
+            case 'E':
+                return true;
+            default:
+                this.console.println("\n*** Invalid selection ***");
+                break;
         }
-        return false;
+        return true;
     }
             
 
@@ -60,7 +52,7 @@ public class ForestSceneView extends View{
 //    @Override
 //    public void display(){
     public boolean measurementGetter(){
-        String value = null;
+        boolean done = false;
         double fists = 0.0;
         double distance = 0.0;
         
@@ -77,20 +69,32 @@ public class ForestSceneView extends View{
                 ErrorView.display(this.getClass().getName(),
                         "Error reading input:"+nf.getMessage());
             }
+            //check to see fists is invalid  less than 1 or greater than 5 = error
+                //error message 
+                    //continue to next iteration
+            //check to see distance is invalid  less than  50 or greater than 100
+                //error message
+                    //continue to next iteration
+            if (distance<50|| 100<distance){
+            System.out.println("Enter a value that is bigger than 50 and less than 100");
+                }
+            if (fists<1 || 5<fists){  
+            System.out.println("Enter a value that is bigger than 1 and less than 5");
+    }
             double[] inputs = new double[2];
             inputs[0] = fists;
             inputs[1] = distance;
-            this.calHeight(this); //do action based on selection
-        
-        }while (!value.equals("E")); //and selction is not "Exit"
+            this.calHeight(inputs); //do action based on selection
+            done = true;
+        }while (! done); //and selction is not "Exit"
         return false;
     
     }
      //@Override
-    private boolean calHeight(Object obj) {
-        double[] inputValues = (double[]) obj;
-        double fists = inputValues[0];
-        double distance = inputValues[1];
+    private boolean calHeight(double [] inputs) {
+       
+        double fists = inputs[0];
+        double distance = inputs[1];
         
         //call the control function to perform the task
         ForestControl forestControl = new ForestControl();
