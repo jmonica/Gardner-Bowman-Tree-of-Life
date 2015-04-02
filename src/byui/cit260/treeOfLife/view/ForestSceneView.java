@@ -44,7 +44,7 @@ public class ForestSceneView extends View{
                 this.console.println("\n*** Invalid selection ***");
                 break;
         }
-        return true;
+        return false;
     }
             
 
@@ -76,10 +76,10 @@ public class ForestSceneView extends View{
                 //error message
                     //continue to next iteration
             if (distance<50|| 100<distance){
-            System.out.println("Enter a value that is bigger than 50 and less than 100");
+            System.out.println("Enter a distance that is bigger than 50 and less than 100");
                 }
             if (fists<1 || 5<fists){  
-            System.out.println("Enter a value that is bigger than 1 and less than 5");
+            System.out.println("Enter amount of fists that is bigger than 1 and less than 5");
     }
             double[] inputs = new double[2];
             inputs[0] = fists;
@@ -103,7 +103,9 @@ public class ForestSceneView extends View{
         //display information to be viewed by the user
         double theHeight = 0;
         this.console.println("The height of the tree is" + theHeight);
-        return true;
+        
+        return false;
+        
     }
     
    
