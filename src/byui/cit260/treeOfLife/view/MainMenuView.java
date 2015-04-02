@@ -23,7 +23,6 @@ public class MainMenuView extends View {
             +"\nB - Begin Game"
             +"\nG - Start existing game"
             +"\nH - To see help options on game play"
-            +"\nL - Location Menu"
             +"\nS - Save Game"
             +"\nE - Exit"
             +"\n----------------------------------");
