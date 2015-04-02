@@ -52,7 +52,8 @@ public class LocationView extends View{
     }
      private void forestScene() {
         ForestSceneView forestScene = new ForestSceneView();
-        forestScene.display(); 
+        forestScene.display();
+        
         
     }
 
