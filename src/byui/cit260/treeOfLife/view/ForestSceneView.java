@@ -55,22 +55,7 @@ public class ForestSceneView extends View{
         return false;
     }
             
-     //@Override
-    private boolean calHeight(Object obj) {
-        double[] inputValues = (double[]) obj;
-        double fists = inputValues[0];
-        double distance = inputValues[1];
-        
-        //call the control function to perform the task
-        ForestControl forestControl = new ForestControl();
-        forestControl.calcHeightOfTree(distance, fists);
-        
-        //display information to be viewed by the user
-        double theHeight = 0;
-        this.console.println("The height of the tree is" + theHeight);
-        return true;
-    }
-    
+
 
 //    @Override
 //    public void display(){
@@ -101,7 +86,22 @@ public class ForestSceneView extends View{
         return false;
     
     }
-
+     //@Override
+    private boolean calHeight(Object obj) {
+        double[] inputValues = (double[]) obj;
+        double fists = inputValues[0];
+        double distance = inputValues[1];
+        
+        //call the control function to perform the task
+        ForestControl forestControl = new ForestControl();
+        forestControl.calcHeightOfTree(distance, fists);
+        
+        //display information to be viewed by the user
+        double theHeight = 0;
+        this.console.println("The height of the tree is" + theHeight);
+        return true;
+    }
+    
    
     
    
