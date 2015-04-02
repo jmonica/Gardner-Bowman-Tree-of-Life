@@ -7,8 +7,6 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.ForestControl;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -96,7 +94,7 @@ public class ForestSceneView extends View{
             }
             double[] inputs = new double[2];
             inputs[0] = fists;
-            inputs[0] = distance;
+            inputs[1] = distance;
             this.calHeight(this); //do action based on selection
         
         }while (!value.equals("E")); //and selction is not "Exit"
