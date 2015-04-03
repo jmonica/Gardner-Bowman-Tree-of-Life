@@ -33,12 +33,12 @@ public class TempleView extends View{
                 this.pray();
                 break;
             case 'E':
-                return false;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
         }
-        return true;
+        return false;
     }
 
     private void pray() {
