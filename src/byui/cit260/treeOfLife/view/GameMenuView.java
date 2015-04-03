@@ -213,7 +213,8 @@ public class GameMenuView extends View{
     }
 
     private void goToTemple() {
-        this.console.println("goToTemple Function Called");
+        TempleView templeView = new TempleView();
+        templeView.display();
     }
 
    
