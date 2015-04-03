@@ -33,7 +33,20 @@ public class RiverSceneView extends View{
         double radius = 0.0;
         
            do{
-            this.console.println("enter the width"); //display main menu
+            this.console.println("\n-----------------------------------------"
+                                + "\n*You are at the river which you need to  *"
+                                + "\n*go across to get to the mountain.       *"
+                                + "\n*Please enter the radius of a tree to    *"
+                                + "\n*calculate the circumference of the      *"
+                                + "\n*tree to see if the tree is wide enough  *"
+                                + "\n*to walk on.                             *"
+                                + "\n*The radius should be wider than 3 inches*"
+                                + "\n*and smaller than 6 inches               *"
+                                + "\n------------------------------------------"
+                                + "\n*Enter 'E' to exit the River scene.      *"
+                                + "\n------------------------------------------"); 
+            
+            //display main menu
             String valueRadius = this.getInput(); //get the user's selection 
             try{
             radius = Double.parseDouble(valueRadius);
