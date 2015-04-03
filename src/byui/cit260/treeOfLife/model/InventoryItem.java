@@ -18,7 +18,7 @@ public class InventoryItem implements Serializable {
     private int requiredAmount;  
     private Game game;
     private String description;
-
+    
     public InventoryItem(){
     }
 
@@ -98,7 +98,7 @@ public class InventoryItem implements Serializable {
     public int getQuantitiyInStock() {
         return quantityInStock;
     }
-
+    
  
     
 }

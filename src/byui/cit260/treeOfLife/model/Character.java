@@ -6,7 +6,9 @@
 package byui.cit260.treeOfLife.model;
 
 import java.awt.Point;
+import java.util.Objects;
 import java.io.Serializable;
+import treeoflife.TreeOfLife;
 
 /**
  *
@@ -14,16 +16,23 @@ import java.io.Serializable;
  */
 public enum Character implements Serializable{
     
-    Nephi("Faithful son and later the prophet leader of the Nephites."),
-    Laman("The oldest rebellious brother of the Lamanites."),
-    Sam("The youngest boy and faithful brother of Nephi.");
+    Nephi("Faithful son and later the prophet leader of the Nephites.", 15),
+    Laman("The oldest son of Lehi, rebellious brother of the Lamanites.", 5),
+    Sam("The youngest boy of Lehi, faithful brother of Nephi.", 10);
     
     private final String description;
     private final Point coordinates;
+    
+    private final int faithPoints;
 
-    Character (String description){
+    Character (String description, int faithPoints){
         this.description = description;
+        this.faithPoints = faithPoints;
+        
         coordinates = new Point(1,1);
+    }
+    public int getFaithPoints(){
+        return faithPoints;
     }
     
     public String getDescription() {
@@ -36,7 +45,7 @@ public enum Character implements Serializable{
 
     @Override
     public String toString() {
-        return "Character{" + "description=" + description + ", coordinates=" + coordinates + '}';
+        return "Character{" + "description=" + description + ", coordinates=" + coordinates + ", faithPoints=" + faithPoints + '}';
     } 
     
     

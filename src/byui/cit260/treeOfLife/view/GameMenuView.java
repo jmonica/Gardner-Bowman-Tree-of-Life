@@ -2,6 +2,7 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
+import byui.cit260.treeOfLife.model.FaithMeter;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Scene;
@@ -17,7 +18,8 @@ public class GameMenuView extends View{
             +"\n|   Game Menu                                      |"
             +"\n----------------------------------------------------"
             +"\nV - Display Map"
-            +"\nI - Personal Inventory"    
+            +"\nI - Personal Inventory"
+            +"\nF - Display Faith Points"    
             +"\nL - Location" 
             +"\nM - Move to Location"
             +"\nH - Help"
@@ -57,6 +59,8 @@ public class GameMenuView extends View{
             case 'T':
                 this.goToTemple();
                 break;
+            case 'F':
+                this.getFaith();
             case 'E':
                 return true;
             default:
@@ -117,12 +121,12 @@ public class GameMenuView extends View{
                            "How Many You Have");
         this.console.println("     ");
         
-        // for each inventory item
         for (InventoryItem inventoryItem : inventory){
             //DISPLAY the description, the required amount and amont in stock
             this.console.println(inventoryItem.getDescription() + "--------------" +
                                inventoryItem.getQuantitiyInStock());
         }
+        
     }
 
 
@@ -215,6 +219,18 @@ public class GameMenuView extends View{
     private void goToTemple() {
         TempleView templeView = new TempleView();
         templeView.display();
+    }
+
+//    private String displayFaithPoints() {
+//        CharacterMenuView characterFaith = new CharacterMenuView();
+//        characterFaith.display();
+//        return null;
+//        
+//    }
+
+    private void getFaith() {
+        FaithMeterView faithMeter = new FaithMeterView();
+        faithMeter.getFaithCurrent();
     }
 
    

@@ -75,25 +75,43 @@ public class CharacterMenuView extends View{
             
             value = value.toUpperCase();//convert to all upper case
             char choice = value.charAt(0); //get the first character entered
-            GameMenuView gameMenu = new GameMenuView();
+            
             
             switch (choice) {
             case 'N':
-                TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
-                this.console.println("Welcome Nephi!");
-                
-                gameMenu.display();
+                this.getNephi();
+//                TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
+//                this.console.println("Welcome Nephi! " + Character.Nephi.getDescription());
+//                this.console.println("Your Faith total are " + Character.Nephi.getFaithPoints());
+//                //Faith
+//                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+//                TreeOfLife.getCurrentGame().setFaith(faith);
+//                
+//                gameMenu.display();
                 break;
             case 'L':
-                TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
-                this.console.println("Welcome Laman!");
-                gameMenu.display();
+                this.getLaman();
+//                TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
+//                this.console.println("Welcome Laman! " + Character.Laman.getDescription());
+//                this.console.println("Your Faith total are " + Character.Laman.getFaithPoints());
+//                //Faith
+//                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+//                TreeOfLife.getCurrentGame().setFaith(faith);
+//                
+//                gameMenu.display();
+                
                 
                 break;
             case 'S':
-                TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
-                this.console.println("Welcome Sam!");
-                gameMenu.display();
+                this.getSam();
+//                TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
+//                this.console.println("Welcome Sam! " + Character.Sam.getDescription());
+//                this.console.println("Your Faith total are " + Character.Sam.getFaithPoints());
+//                //Faith
+//                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+//                TreeOfLife.getCurrentGame().setFaith(faith);
+//                
+//                gameMenu.display();
                 
                 break;
             default:
@@ -101,7 +119,47 @@ public class CharacterMenuView extends View{
                 break;
         }
         //return true;
+            
         }
+
+    private void getNephi() {
+                TreeOfLife.getCurrentGame().setCharacter(Character.Nephi);
+                this.console.println("Welcome Nephi! " + Character.Nephi.getDescription());
+                this.console.println("Your Faith total is " + Character.Nephi.getFaithPoints());
+                
+                //Faith
+                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+                TreeOfLife.getCurrentGame().setFaith(faith);
+                
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();
+    }
+
+    private void getLaman() {
+         TreeOfLife.getCurrentGame().setCharacter(Character.Laman);
+                this.console.println("Welcome Laman! " + Character.Laman.getDescription());
+                this.console.println("Your Faith total is " + Character.Laman.getFaithPoints());
+                //Faith
+                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+                TreeOfLife.getCurrentGame().setFaith(faith);
+                
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();
+    }
+
+    private void getSam() {
+        TreeOfLife.getCurrentGame().setCharacter(Character.Sam);
+                this.console.println("Welcome Sam! " + Character.Sam.getDescription());
+                this.console.println("Your Faith total is " + Character.Sam.getFaithPoints());
+                //Faith
+                int faith = TreeOfLife.getCurrentGame().getCharacter().getFaithPoints();
+                TreeOfLife.getCurrentGame().setFaith(faith);
+                
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.display();
+    }
+        
+        
 }
 
 

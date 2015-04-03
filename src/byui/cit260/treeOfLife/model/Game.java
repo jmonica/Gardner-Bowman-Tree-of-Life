@@ -19,9 +19,7 @@ public class Game implements Serializable{
     private Player player;
     private InventoryItem[] inventory;
     private Character character;
-
-    public Game() {
-    }    
+   
 
     public Character getCharacter() {
         return character;
@@ -30,7 +28,9 @@ public class Game implements Serializable{
     public void setCharacter(Character character) {
         this.character = character;
     }
-
+    public int setFaith(int faith) {
+        return faith;
+    }
     public double getTotalTime() {
         return totalTime;
     }
@@ -96,9 +96,11 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }  
+
+    public FaithMeter getFaithMeter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
-    
+
     
 }
