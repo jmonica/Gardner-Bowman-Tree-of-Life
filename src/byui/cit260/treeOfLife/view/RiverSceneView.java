@@ -38,7 +38,7 @@ public class RiverSceneView extends View{
                                 + "\n*go across to get to the mountain.       *"
                                 + "\n*Please enter the radius of a tree to    *"
                                 + "\n*calculate the circumference of the      *"
-                                + "\n*tree to see if the tree is wide enough  *"
+                                + "\n*tree to see if it is wide enough        *"
                                 + "\n*to walk on.                             *"
                                 + "\n*The radius should be wider than 3 inches*"
                                 + "\n*and smaller than 6 inches               *"
