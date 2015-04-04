@@ -68,13 +68,24 @@ public class Scene implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 11 * hash + this.type;
-        hash = 11 * hash + Objects.hashCode(this.description);
-        hash = 11 * hash + Objects.hashCode(this.symbol);
-        hash = 11 * hash + (this.blocked ? 1 : 0);
-        hash = 11 * hash + Arrays.deepHashCode(this.location);
+        hash = 43 * hash + this.type;
+        hash = 43 * hash + Objects.hashCode(this.description);
+        hash = 43 * hash + Objects.hashCode(this.symbol);
+        hash = 43 * hash + (this.blocked ? 1 : 0);
+        hash = 43 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
+
+//    @Override
+//    public int hashCode() {
+//        int hash = 7;
+//        hash = 11 * hash + this.type;
+//        hash = 11 * hash + Objects.hashCode(this.description);
+//        hash = 11 * hash + Objects.hashCode(this.symbol);
+//        hash = 11 * hash + (this.blocked ? 1 : 0);
+//        hash = 11 * hash + Arrays.deepHashCode(this.location);
+//        return hash;
+//    }
 
     @Override
     public String toString() {

@@ -106,18 +106,20 @@ public class Location implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 89 * hash + this.row;
-        hash = 89 * hash + this.column;
-        hash = 89 * hash + (this.visited ? 1 : 0);
-        hash = 89 * hash + Objects.hashCode(this.scene);
-        hash = 89 * hash + Objects.hashCode(this.sceneTwo);
-        hash = 89 * hash + Arrays.deepHashCode(this.characters);
-        hash = 89 * hash + (this.blocked ? 1 : 0);
-        hash = 89 * hash + this.xCoordinate;
-        hash = 89 * hash + this.yCoordinate;
+        int hash = 7;
+        hash = 97 * hash + this.row;
+        hash = 97 * hash + this.column;
+        hash = 97 * hash + (this.visited ? 1 : 0);
+        hash = 97 * hash + Objects.hashCode(this.scene);
+        hash = 97 * hash + Objects.hashCode(this.sceneTwo);
+        hash = 97 * hash + Arrays.deepHashCode(this.characters);
+        hash = 97 * hash + (this.blocked ? 1 : 0);
+        hash = 97 * hash + this.xCoordinate;
+        hash = 97 * hash + this.yCoordinate;
         return hash;
     }
+
+
     
 
 //    @Override

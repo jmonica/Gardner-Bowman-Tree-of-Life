@@ -121,6 +121,7 @@ public class MapControl {
         RiverScene.setDescription(
                     "\nYou made it to the river. Try to gain enough faith to"
                   + "progress to the next scene by following instructions. \n");
+        
         RiverScene.setSymbol(" ~~~ ");
         RiverScene.setBlocked(true);
         scenes[SceneType.river.ordinal()] = RiverScene;
@@ -207,8 +208,8 @@ public class MapControl {
 //       throw new MapControlException("starting location is: "+location); //this is to test location 
         location.setVisited(true);
          //if moves to new level then setCurrentLevel
-        MapControl setLevel = new MapControl();
-        setLevel.setCurrentLevel(location);
+        MapControl setSpot= new MapControl();
+        setSpot.setCurrentSpot(location);
      
     
     
@@ -216,7 +217,7 @@ public class MapControl {
        }
     
     
-    public void setCurrentLevel (Location location){
+    public void setCurrentSpot(Location location){
         Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
         if (location == locations[0][1]){
             TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.start);

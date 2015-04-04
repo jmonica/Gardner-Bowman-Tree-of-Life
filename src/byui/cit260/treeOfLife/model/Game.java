@@ -20,6 +20,7 @@ public class Game implements Serializable{
     private Player player;
     private InventoryItem[] inventory;
     private Character character;
+    private MapControl.SceneType currentPlace; 
    
 
     public Character getCharacter() {
@@ -103,9 +104,15 @@ public class Game implements Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setCurrentPlace(MapControl.SceneType sceneType) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    public void setCurrentPlace(MapControl.SceneType sceneType) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+ public MapControl.SceneType getCurrentPlace() {
+        return currentPlace;
     }
 
+    public void  setCurrentPlace(MapControl.SceneType currentLevel) {
+        this.currentPlace = currentPlace;
+    }
     
 }

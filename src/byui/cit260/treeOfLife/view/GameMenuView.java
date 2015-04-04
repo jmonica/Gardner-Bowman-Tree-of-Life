@@ -196,12 +196,13 @@ public class GameMenuView extends View{
 }        
 
     private void viewLocations() {
-        this.displayMap();
+        LocationView locationView = new LocationView();
+        locationView.display();
     }
 
     private void moveToLocation() {
-        LocationView locationView = new LocationView();
-        locationView.display();
+        MapView mapMenu = new MapView();
+        mapMenu.display();
     }
 
     private void displayHelpMenu() {
@@ -237,6 +238,11 @@ public class GameMenuView extends View{
         CharacterMenuView choose = new CharacterMenuView();
         choose.display();
     }
+
+//    private void mapMenu() {
+//        MapView mapMenu = new MapView();
+//        mapMenu.display();
+//    }
 
    
             
