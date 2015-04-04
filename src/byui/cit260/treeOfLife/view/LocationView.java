@@ -43,7 +43,7 @@ public class LocationView extends View{
                 this.mountainScene();
                 break;
             case 'E':
-                return false;
+                this.goBack();
             default:
                 this.console.println("\n*** Invalid selection***");
                 break;
@@ -66,5 +66,10 @@ public class LocationView extends View{
         MountainSceneView mountainScene = new MountainSceneView();
         mountainScene.display();
 }
+
+    private void goBack() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+    }
     
 }

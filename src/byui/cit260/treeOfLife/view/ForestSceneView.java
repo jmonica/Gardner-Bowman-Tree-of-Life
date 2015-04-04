@@ -109,8 +109,8 @@ public class ForestSceneView extends View{
     }
 
     private void location() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        LocationView locationView = new LocationView();
+        locationView.display();
     }
     
    

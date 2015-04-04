@@ -91,12 +91,10 @@ public class MountainSceneView extends View{
         
     }
 
-    private void location() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+ private void location() {
+        LocationView locationView = new LocationView();
+        locationView.display();
     }
-
-
     
 
     

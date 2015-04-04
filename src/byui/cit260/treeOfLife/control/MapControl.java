@@ -6,7 +6,6 @@
 package byui.cit260.treeOfLife.control;
 
 import byui.cit260.treeOfLife.exceptions.MapControlException;
-import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Scene;
@@ -87,7 +86,7 @@ public class MapControl {
     
     private static Scene[] createScenes() {
         
-        Game game = TreeOfLife.getCurrentGame();
+        //Game game = TreeOfLife.getCurrentGame();
         
         Scene[] scenes = new Scene[SceneType.values().length];
         
@@ -101,7 +100,7 @@ public class MapControl {
                   + "opens and you take your first steps outside and enter the "
                   + "world of Ambrosia. \n" 
                   + "Choose wisely, build your faith and endure to the end!");
-        startingScene.setSymbol(" ST ");
+        startingScene.setSymbol(" STA ");
         startingScene.setBlocked(false);
         
         scenes[SceneType.start.ordinal()] = startingScene;
@@ -141,7 +140,7 @@ public class MapControl {
         finishScene.setDescription(
                     "\nCongratulations! Well done thou good and faithful servant."
                   + "You have had great faith and have reached the Tree of Life.");
-        finishScene.setSymbol(" FN ");
+        finishScene.setSymbol(" !*! ");
         finishScene.setBlocked(false);
         scenes[SceneType.finish.ordinal()] = finishScene;
        
