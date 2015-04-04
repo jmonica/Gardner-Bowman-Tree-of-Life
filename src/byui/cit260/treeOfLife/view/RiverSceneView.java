@@ -7,6 +7,8 @@ package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.RiverControl;
 import byui.cit260.treeOfLife.exceptions.RiverControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -73,19 +75,29 @@ private boolean measurementGetter() {
          return false;   
     }
 
- private void calRadius(double[] input) {
-     double radius = input[0];
-     
-     RiverControl riverControl = new RiverControl();
-     riverControl.calcCircumference(radius);
+    private boolean calRadius(double[] input) {
+        try {
+            double radius = input[0];
+            
+            RiverControl riverControl = new RiverControl();
+            riverControl.calcCircumference(radius);
+            
+            double theRadius = 0;
+            this.console.println("That circimference of the tree is "+ theRadius);
+            
+            return false;
+        } catch (RiverControlException ex) {
+            Logger.getLogger(RiverSceneView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
 
         
     }
-private void location() {
+    private void location() {
         LocationView locationView = new LocationView();
-       locationView.display();     
+        locationView.display();     
     }
-    }
+}
 
 
 //        @Override
@@ -134,9 +146,4 @@ private void location() {
         double circumference = 0;
         System.out.println("the circumference is" + circumference);
         return true;*/
-    }
 
-   
-    
-    
-}
