@@ -33,7 +33,7 @@ public class TempleView extends View{
                 this.pray();
                 break;
             case 'E':
-                return true;
+                this.goBack();
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
@@ -53,6 +53,11 @@ public class TempleView extends View{
                         + "\n*                                  *"
                         + "\n* Press 'E' to exit the temple     *");
         this.console.println("*************************************");
+    }
+
+    private void goBack() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
 }

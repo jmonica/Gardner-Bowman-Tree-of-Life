@@ -83,10 +83,10 @@ public class GameMenuView extends View{
             System.out.println("-----------------------------------------");
         
         String grid = i + "|";
-        for(int j = 0; j<locations[i].length; j++){
+        for(int j = 0; j <locations[i].length; j++){
             Location location = locations[i][j];
             
-            String symbol = null;
+            String symbol;
             
             Point currentCoordinates= TreeOfLife.getCurrentGame().getCharacter().getCoordinates();
             Location characterLocation = locations[currentCoordinates.x][currentCoordinates.y];
@@ -94,10 +94,10 @@ public class GameMenuView extends View{
             if(location == characterLocation){
                 symbol = "HERE";
             }
-            else if (location.getVisited() ) {
+            else if (location.getVisited()) {
                 
                 Scene scene = location.getScene();
-                scene.setSymbol(symbol);
+                symbol = scene.getSymbol();
             }
             else{
                 symbol = "????";
