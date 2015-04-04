@@ -13,6 +13,7 @@ import byui.cit260.treeOfLife.model.Scene;
 import java.awt.Point;
 import treeoflife.TreeOfLife;
 import byui.cit260.treeOfLife.model.Character;
+import java.io.Serializable;
 
 /**
  *
@@ -24,11 +25,11 @@ public class MapControl {
        // create the map
         Map map = new Map(5, 5);
         
-        //creat the scenes for the game
+        //create the scenes for the game
         Scene[] scenes = createScenes();
         
-        //assign scenes to locations
-        MapControl.assignScenesToLocations(map, scenes);
+        //assign scenes to locations on map
+        GameControl.assignScenesToLocations(map, scenes);
         
         return map;
     }
@@ -62,22 +63,35 @@ public class MapControl {
     }
     
   
-    public enum SceneType {
-        start,
-        finish,
-        river,
-        forest,
-        mountain,
-        temple,
-        knowledge,
-        building;
-    }
-    public static Scene[] createScenes() {
+    public enum SceneType implements Serializable{
+        start("Starting Point in the Game"),
+        finish("Tree of life!"),
+        river("River Scene"),
+        forest("Forest Scene"),
+        mountain("Mountain Scene"),
+        temple("Go to the temple to regain faith"),
+        knowledge("The tree of Knowlege!"),
+        building("The Great and Spacious Building");
         
-        Game game = TreeOfLife.getCurrentGame();
+        private String locationDescription;
+        
+        SceneType(String locationDescription){
+        this.locationDescription = locationDescription;  
+        
+        }
+        public String getLocationDescription(){
+        return locationDescription;
+        }
+        
+    }
+    
+    private static Scene[] createScenes() {
+        
+        //Game game = TreeOfLife.getCurrentGame();
         
         Scene[] scenes = new Scene[SceneType.values().length];
         
+        //Start Scene
         Scene startingScene = new Scene();
         startingScene.setDescription(
                     "\nYou begin in your small thatched roof cottage in the"
@@ -89,8 +103,10 @@ public class MapControl {
                   + "Choose wisely, build your faith and endure to the end!");
         startingScene.setSymbol(" ST ");
         startingScene.setBlocked(false);
+        
         scenes[SceneType.start.ordinal()] = startingScene;
         
+        //Forest Scene
         Scene ForestScene = new Scene();
         ForestScene.setDescription(
                     "\nYou made it to the forest. Try to gain enough faith to"
@@ -99,22 +115,27 @@ public class MapControl {
         ForestScene.setBlocked(false);
         scenes[SceneType.forest.ordinal()] = ForestScene;
         
+        
+        //River Scene
         Scene RiverScene = new Scene();
         RiverScene.setDescription(
                     "\nYou made it to the river. Try to gain enough faith to"
                   + "progress to the next scene by following instructions. \n");
         RiverScene.setSymbol(" ~~~ ");
-        RiverScene.setBlocked(false);
+        RiverScene.setBlocked(true);
         scenes[SceneType.river.ordinal()] = RiverScene;
         
+        
+        //Mountain Scene
         Scene MountainScene = new Scene();
         MountainScene.setDescription(
                     "\nYou made it to the mountain. Try to gain enough faith to"
                   + "progress to the next scene by following instructions. \n");
         MountainScene.setSymbol(" MMM ");
-        MountainScene.setBlocked(false);
+        MountainScene.setBlocked(true);
         scenes[SceneType.mountain.ordinal()] = MountainScene;
         
+        //Tree of Life
         Scene finishScene = new Scene();
         finishScene.setDescription(
                     "\nCongratulations! Well done thou good and faithful servant."
@@ -122,18 +143,107 @@ public class MapControl {
         finishScene.setSymbol(" FN ");
         finishScene.setBlocked(false);
         scenes[SceneType.finish.ordinal()] = finishScene;
-       return null;
+       
+       //Temple
+        Scene templeScene = new Scene();
+        templeScene.setDescription(
+                    "\n Pray at the alter to gain faith for you long journey!");
+        templeScene.setSymbol(" T^T ");
+        templeScene.setBlocked(false);
+        scenes[SceneType.temple.ordinal()] = templeScene;
+        
+        
+        //Tree of Knowledge
+        Scene knowledgeScene = new Scene();
+        knowledgeScene.setDescription(
+                    "\n Tree of Knowledge you made it far but not quite far enough.");
+        knowledgeScene.setSymbol(" !K! ");
+        knowledgeScene.setBlocked(true);
+        scenes[SceneType.knowledge.ordinal()] = knowledgeScene;
+        
+        
+        //Spacious Building
+        Scene buildingScene = new Scene();
+        buildingScene.setDescription(
+                    "\n Didn't quite make it this time.");
+        buildingScene.setSymbol(" *-* ");
+        buildingScene.setBlocked(true);
+        scenes[SceneType.building.ordinal()] = buildingScene;
+        
+        return scenes;
+       
+    }
+    public static void moveCharactersToStartingLocation(Map map) throws MapControlException {
+
+       // System.out.println("*** called moveCharactersToStartingLocation() ****");
+
+        Character character = TreeOfLife.getCurrentGame().getCharacter();
+     
+
+        Point coordinates = character.getCoordinates();
+        MapControl.moveCharactersToLocation(character, coordinates);
     }
     
-    public static void assignScenesToLocations(Map map, Scene[] scenes){
-        Location[][] locations = map.getLocations();
+       public static void moveCharactersToLocation(Character character, Point coordinates) throws MapControlException {
+
+        Map map = TreeOfLife.getCurrentGame().getMap();
+
+        int newRow = coordinates.x ;
+        int newColumn = coordinates.y ;
+
+        if (newRow < 0 || newRow >= map.getNoOfRows()
+                || newColumn < 0 || newColumn >= map.getNoOfColumns()) {
+            throw new MapControlException("Can not move to this location "
+                    + coordinates.x + ", " + coordinates.y
+                    + " it is outside the bounds of the map.");
+        }
         
+
         
-//        locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
-//        locations[0][1].setScene(scenes[SceneType.forest.ordinal()]);
-//        locations[0][2].setScene(scenes[SceneType.river.ordinal()]);
-//        locations[1][0].setScene(scenes[SceneType.mountain.ordinal()]);
-//        locations[1][2].setScene(scenes[SceneType.finish.ordinal()]);
+        character.getCoordinates().x = coordinates.x;
+        character.getCoordinates().y = coordinates.y;
+        //set location as visited
+        Location location = map.getLocations()[coordinates.x][coordinates.y];
+//       throw new MapControlException("starting location is: "+location); //this is to test location 
+        location.setVisited(true);
+         //if moves to new level then setCurrentLevel
+        MapControl setLevel = new MapControl();
+        setLevel.setCurrentLevel(location);
+     
+    
+    
+    
+       }
+    
+    
+    public void setCurrentLevel (Location location){
+        Location[][] locations = TreeOfLife.getCurrentGame().getMap().getLocations();
+        if (location == locations[0][1]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.start);
+        }
+        else if (location == locations[0][0]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.temple);
+        }
+        else if (location == locations[1][0]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.forest);
+        }
+        else if (location == locations[1][2]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.river);
+        }
+        else if (location == locations[1][4]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.mountain);
+        }
+        else if (location == locations[2][2]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.finish);
+        }
+        else if (location == locations[4][1]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.knowledge);
+        }
+        else if (location == locations[4][4]){
+            TreeOfLife.getCurrentGame().setCurrentPlace(SceneType.building);
+        }
+        
+     
     }
         
 }

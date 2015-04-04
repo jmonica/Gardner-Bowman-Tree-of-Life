@@ -24,7 +24,7 @@ public class MainMenuView extends View {
             +"\nG - Start existing game"
             +"\nH - To see help options on game play"
             +"\nS - Save Game"
-            +"\nE - Exit"
+//            +"\nE - Exit"
             +"\n----------------------------------");
     }
     
@@ -55,8 +55,8 @@ public class MainMenuView extends View {
             case "S":
                 this.saveGame();
                 break;
-            case "E":
-                return true;
+//            case "E":
+//                return false;
             default:
                 this.console.println("\n***Invalid selection *** Try again");
                 break;

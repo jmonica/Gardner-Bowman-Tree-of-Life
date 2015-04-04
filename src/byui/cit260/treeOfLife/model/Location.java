@@ -6,7 +6,7 @@
 package byui.cit260.treeOfLife.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -19,12 +19,21 @@ public class Location implements Serializable{
     private boolean visited;   
     private Scene scene;
     private SceneTwo sceneTwo;
-    private ArrayList<Character> characters;
+    private Character[] characters;
+    private boolean blocked;
+    private int xCoordinate;
+    private int yCoordinate;
+    
 
     public Location() {
     }
     
-    
+    public boolean isBlocked() {
+        return blocked;
+    }
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }    
 
     public double getRow() {
         return row;
@@ -66,25 +75,66 @@ public class Location implements Serializable{
         this.sceneTwo = sceneTwo;
     }
 
+    public Character[] getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Character[] characters) {
+        this.characters = characters;
+    }
+
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    public void setxCoordinate(int xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public int getyCoordinate() {
+        return yCoordinate;
+    }
+
+    public void setyCoordinate(int yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", sceneTwo=" + sceneTwo + ", characters=" + characters + ", blocked=" + blocked + ", xCoordinate=" + xCoordinate + ", yCoordinate=" + yCoordinate + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + this.row;
-        hash = 53 * hash + this.column;
-        hash = 53 * hash + (this.visited ? 1 : 0);
-        hash = 53 * hash + Objects.hashCode(this.scene);
-        hash = 53 * hash + Objects.hashCode(this.sceneTwo);
-        hash = 53 * hash + Objects.hashCode(this.characters);
+        hash = 89 * hash + this.row;
+        hash = 89 * hash + this.column;
+        hash = 89 * hash + (this.visited ? 1 : 0);
+        hash = 89 * hash + Objects.hashCode(this.scene);
+        hash = 89 * hash + Objects.hashCode(this.sceneTwo);
+        hash = 89 * hash + Arrays.deepHashCode(this.characters);
+        hash = 89 * hash + (this.blocked ? 1 : 0);
+        hash = 89 * hash + this.xCoordinate;
+        hash = 89 * hash + this.yCoordinate;
         return hash;
     }
+    
 
+//    @Override
+//    public int hashCode() {
+//        int hash = 3;
+//        hash = 53 * hash + this.row;
+//        hash = 53 * hash + this.column;
+//        hash = 53 * hash + (this.visited ? 1 : 0);
+//        hash = 53 * hash + Objects.hashCode(this.scene);
+//        hash = 53 * hash + Objects.hashCode(this.sceneTwo);
+//        hash = 53 * hash + Objects.hashCode(this.characters);
+//        return hash;
+//    }
+//
+    
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(Object obj){
         if (obj == null) {
             return false;
         }
@@ -107,11 +157,51 @@ public class Location implements Serializable{
         if (!Objects.equals(this.sceneTwo, other.sceneTwo)) {
             return false;
         }
-        if (!Objects.equals(this.characters, other.characters)) {
+        if (!Arrays.deepEquals(this.characters, other.characters)) {
+            return false;
+        }
+        if (this.blocked != other.blocked) {
+            return false;
+        }
+        if (this.xCoordinate != other.xCoordinate) {
+            return false;
+        }
+        if (this.yCoordinate != other.yCoordinate) {
             return false;
         }
         return true;
     }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Location other = (Location) obj;
+//        if (this.row != other.row) {
+//            return false;
+//        }
+//        if (this.column != other.column) {
+//            return false;
+//        }
+//        if (this.visited != other.visited) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.scene, other.scene)) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.sceneTwo, other.sceneTwo)) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.characters, other.characters)) {
+//            return false;
+//        }
+//        return true;
+//    }
+
 
     
 

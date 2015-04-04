@@ -1,11 +1,14 @@
 package byui.cit260.treeOfLife.control;
 
+import byui.cit260.treeOfLife.control.MapControl.SceneType;
 import byui.cit260.treeOfLife.exceptions.MapControlException;
 import byui.cit260.treeOfLife.model.Constants;
 import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
+import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Map;
 import byui.cit260.treeOfLife.model.Player;
+import byui.cit260.treeOfLife.model.Scene;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -90,7 +93,49 @@ public class GameControl {
         //close the output file
         TreeOfLife.setCurrentGame(game);//save in TreeOfLife
     }
-    
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        
+        Location[][] locations = map.getLocations();
+        //temple
+        locations[0][0].setScene(scenes[SceneType.temple.ordinal()]);
+        locations[0][0].setVisited(true);
+       
+        //start
+        locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
+        locations[0][1].setVisited(true);
+        
+        //not blocked scenes
+        
+        //forest
+        locations[1][0].setScene(scenes[SceneType.forest.ordinal()]);
+        locations[1][0].setVisited(true);
+        //river
+        locations[1][2].setScene(scenes[SceneType.river.ordinal()]);
+        locations[1][2].setVisited(true);
+        //mountain
+        locations[1][4].setScene(scenes[SceneType.mountain.ordinal()]);
+        locations[1][4].setVisited(true);
+        
+        
+        //blocked scenes
+        //building
+        locations[1][0].setScene(scenes[SceneType.building.ordinal()]);
+        locations[1][0].setVisited(true);
+        locations[1][0].setBlocked(false);
+        
+        //knowledge
+        locations[4][1].setScene(scenes[SceneType.knowledge.ordinal()]);
+        locations[4][1].setVisited(true);
+        locations[4][1].setBlocked(false);
+        
+        //Tree of Live
+        locations[2][2].setScene(scenes[SceneType.finish.ordinal()]);
+        locations[2][2].setVisited(true);
+        locations[2][2].setBlocked(false);
+    }
+
+
 
     public enum Item {
 

@@ -62,7 +62,7 @@ public class GameMenuView extends View{
             case 'F':
                 this.getFaith();
             case 'E':
-                return true;
+                this.goBack();
             default:
                 this.console.println("\n*** Invalid selection ***");
                 break;
@@ -231,6 +231,11 @@ public class GameMenuView extends View{
     private void getFaith() {
         FaithMeterView faithMeter = new FaithMeterView();
         faithMeter.getFaithCurrent();
+    }
+
+    private void goBack() {
+        CharacterMenuView choose = new CharacterMenuView();
+        choose.display();
     }
 
    

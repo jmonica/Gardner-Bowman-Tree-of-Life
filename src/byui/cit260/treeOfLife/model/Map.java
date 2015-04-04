@@ -7,6 +7,8 @@ package byui.cit260.treeOfLife.model;
 
 import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Objects;
+
 
 /**
  *
@@ -85,8 +87,8 @@ public Map(int noOfRows, int noOfColumns) {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + this.noOfRows;
-        hash = 67 * hash + this.noOfColumns;
+        hash = 67 * hash + Objects.hashCode(this.noOfRows);
+        hash = 67 * hash + Objects.hashCode(this.noOfColumns);
         hash = 67 * hash + Arrays.deepHashCode(this.game);
         hash = 67 * hash + Arrays.deepHashCode(this.locations);
         return hash;
@@ -101,10 +103,10 @@ public Map(int noOfRows, int noOfColumns) {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.noOfRows != other.noOfRows) {
+        if (!Objects.equals(this.noOfRows, other.noOfRows)) {
             return false;
         }
-        if (this.noOfColumns != other.noOfColumns) {
+        if (!Objects.equals(this.noOfColumns, other.noOfColumns)) {
             return false;
         }
         if (!Arrays.deepEquals(this.game, other.game)) {

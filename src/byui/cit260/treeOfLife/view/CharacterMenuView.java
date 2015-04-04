@@ -45,7 +45,7 @@ public class CharacterMenuView extends View{
         }
                 break;
             case 'E':
-                return false;
+                this.startOver();
             default:
                 System.out.println("\n*** Invalid selection ***");
                 break;
@@ -157,6 +157,11 @@ public class CharacterMenuView extends View{
                 
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.display();
+    }
+
+    private void startOver() {
+        MainMenuView main = new MainMenuView();
+        main.display();
     }
         
         

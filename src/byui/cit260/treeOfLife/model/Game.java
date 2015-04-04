@@ -5,6 +5,7 @@
  */
 package byui.cit260.treeOfLife.model;
 
+import byui.cit260.treeOfLife.control.MapControl;
 import java.io.Serializable;
 
 /**
@@ -99,6 +100,10 @@ public class Game implements Serializable{
     }  
 
     public FaithMeter getFaithMeter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setCurrentPlace(MapControl.SceneType sceneType) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
