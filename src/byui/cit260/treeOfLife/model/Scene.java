@@ -24,7 +24,11 @@ public class Scene implements Serializable{
         return blocked;
     }
 
-    public void setBlocked(boolean blocked) {
+    public Boolean getBlocked(){
+        return blocked;
+    }
+    
+    public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
     }
 
@@ -68,24 +72,15 @@ public class Scene implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + this.type;
-        hash = 43 * hash + Objects.hashCode(this.description);
-        hash = 43 * hash + Objects.hashCode(this.symbol);
-        hash = 43 * hash + (this.blocked ? 1 : 0);
-        hash = 43 * hash + Arrays.deepHashCode(this.location);
+        hash = 97 * hash + this.type;
+        hash = 97 * hash + Objects.hashCode(this.description);
+        hash = 97 * hash + Objects.hashCode(this.symbol);
+        hash = 97 * hash + (this.blocked ? 1 : 0);
+        hash = 97 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
 
-//    @Override
-//    public int hashCode() {
-//        int hash = 7;
-//        hash = 11 * hash + this.type;
-//        hash = 11 * hash + Objects.hashCode(this.description);
-//        hash = 11 * hash + Objects.hashCode(this.symbol);
-//        hash = 11 * hash + (this.blocked ? 1 : 0);
-//        hash = 11 * hash + Arrays.deepHashCode(this.location);
-//        return hash;
-//    }
+
 
     @Override
     public String toString() {
