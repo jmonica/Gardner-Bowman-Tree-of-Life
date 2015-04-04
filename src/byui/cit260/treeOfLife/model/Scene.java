@@ -8,7 +8,6 @@ package byui.cit260.treeOfLife.model;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
-import treeoflife.TreeOfLife;
 
 /**
  *
@@ -84,6 +83,24 @@ public class Scene implements Serializable{
 
     
 
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Scene other = (Scene) obj;
+//        if (this.type != other.type) {
+//            return false;
+//        }
+//        if (!Objects.equals(this.description, other.description)) {
+//            return false;
+//        }
+//        return this.symbol == other.symbol;
+//    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -99,7 +116,16 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        return this.symbol == other.symbol;
+        if (!Objects.equals(this.symbol, other.symbol)) {
+            return false;
+        }
+        if (this.blocked != other.blocked) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.location, other.location)) {
+            return false;
+        }
+        return true;
     }
     
 } 
