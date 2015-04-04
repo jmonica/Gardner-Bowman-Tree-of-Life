@@ -43,7 +43,7 @@ public class MountainSceneView extends View{
         }
                 break;
             case 'E':
-                return true;
+                this.location();
             default:
                 this.console.println("\n*** Invalid selection ***");
                 break;
@@ -89,6 +89,11 @@ public class MountainSceneView extends View{
         this.console.println("the height is" + height);
         return true;
         
+    }
+
+    private void location() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
 

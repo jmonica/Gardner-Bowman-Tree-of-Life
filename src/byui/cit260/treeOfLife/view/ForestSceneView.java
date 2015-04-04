@@ -39,12 +39,12 @@ public class ForestSceneView extends View{
                 this.measurementGetter();
                 break;
             case 'E':
-                return true;
+                this.location();
             default:
                 this.console.println("\n*** Invalid selection ***");
                 break;
         }
-        return false;
+        return true;
     }
             
 
@@ -106,6 +106,11 @@ public class ForestSceneView extends View{
         
         return false;
         
+    }
+
+    private void location() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
     
    
