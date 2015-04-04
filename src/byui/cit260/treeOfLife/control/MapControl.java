@@ -33,37 +33,7 @@ public class MapControl {
         
         return map;
     }
-    
-    static void moveActorsToStartingLocation(Map map) 
-            throws MapControlException {
-        //for every character
-        Character[] characters = Character.values();
-        
-        for (Character character : characters){
-            Point coordinates = character.getCoordinates();
-            MapControl.moveCharacterToLocation(character, coordinates);
-        }
-    }
-    
-    
-    public static void moveCharacterToLocation(Character charscter, Point coordinates)
-                            throws MapControlException{
-        Map map = TreeOfLife.getCurrentGame().getMap();
-        int newRow = coordinates.x-1;
-        int newColumn = coordinates.y-1;
-        
-        if (newRow<0 || newRow>=map.getNoOfRows()||
-                newColumn<0 || newColumn>=map.getNoOfColumns()){
-            throw new MapControlException("Cannot move actor to location"
-                                        + coordinates.x + "," + coordinates.y
-                                        + "because thst location is outside"
-                                        + "the bounds of the map.");  
-        }
-        
-    }
-    
-  
-    public enum SceneType implements Serializable{
+        public enum SceneType implements Serializable{
         start("Starting Point in the Game"),
         finish("Tree of life!"),
         river("River Scene"),
@@ -85,9 +55,39 @@ public class MapControl {
         
     }
     
+    static void moveActorsToStartingLocation(Map map) 
+            throws MapControlException {
+        //for every character
+        Character[] characters = Character.values();
+        
+        for (Character character : characters){
+            Point coordinates = character.getCoordinates();
+            MapControl.moveCharacterToLocation(character, coordinates);
+        }
+    }
+    
+    
+    public static void moveCharacterToLocation(Character charscter, Point coordinates)
+                            throws MapControlException{
+        Map map = TreeOfLife.getCurrentGame().getMap();
+        int newRow = coordinates.x;
+        int newColumn = coordinates.y;
+        
+        if (newRow<0 || newRow >= map.getNoOfRows()||
+                newColumn<0 || newColumn >= map.getNoOfColumns()){
+            throw new MapControlException("Cannot move character to this location"
+                                        + coordinates.x + "," + coordinates.y
+                                        + "because that location is out of bounds.");  
+        }
+        
+    }
+    
+  
+
+    
     private static Scene[] createScenes() {
         
-        //Game game = TreeOfLife.getCurrentGame();
+        Game game = TreeOfLife.getCurrentGame();
         
         Scene[] scenes = new Scene[SceneType.values().length];
         

@@ -100,39 +100,44 @@ public class GameControl {
         //temple
         locations[0][0].setScene(scenes[SceneType.temple.ordinal()]);
         locations[0][0].setVisited(true);
+        locations[0][0].setBlocked(false);
        
         //start
         locations[0][1].setScene(scenes[SceneType.start.ordinal()]);
         locations[0][1].setVisited(true);
+        locations[0][1].setBlocked(false);
         
         //not blocked scenes
         
         //forest
         locations[1][0].setScene(scenes[SceneType.forest.ordinal()]);
         locations[1][0].setVisited(true);
+        locations[0][1].setBlocked(false);
         //river
         locations[1][2].setScene(scenes[SceneType.river.ordinal()]);
         locations[1][2].setVisited(true);
+        locations[0][1].setBlocked(false);
         //mountain
         locations[1][4].setScene(scenes[SceneType.mountain.ordinal()]);
         locations[1][4].setVisited(true);
+        locations[0][1].setBlocked(false);
         
         
         //blocked scenes
         //building
         locations[1][0].setScene(scenes[SceneType.building.ordinal()]);
-        locations[1][0].setVisited(true);
-        locations[1][0].setBlocked(false);
+        locations[1][0].setVisited(false);
+        locations[1][0].setBlocked(true);
         
         //knowledge
         locations[4][1].setScene(scenes[SceneType.knowledge.ordinal()]);
-        locations[4][1].setVisited(true);
-        locations[4][1].setBlocked(false);
+        locations[4][1].setVisited(false);
+        locations[4][1].setBlocked(true);
         
         //Tree of Live
         locations[2][2].setScene(scenes[SceneType.finish.ordinal()]);
-        locations[2][2].setVisited(true);
-        locations[2][2].setBlocked(false);
+        locations[2][2].setVisited(false);
+        locations[2][2].setBlocked(true);
     }
 
 
