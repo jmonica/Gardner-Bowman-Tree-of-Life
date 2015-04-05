@@ -80,9 +80,8 @@ private boolean measurementGetter() {
             double radius = input[0];
             
             RiverControl riverControl = new RiverControl();
-            riverControl.calcCircumference(radius);
             
-            double theRadius = 0;
+            double theRadius = riverControl.calcCircumference(radius);;
             this.console.println("That circimference of the tree is "+ theRadius);
             
             return false;

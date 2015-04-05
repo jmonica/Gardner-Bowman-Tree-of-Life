@@ -98,10 +98,9 @@ public class ForestSceneView extends View{
         
         //call the control function to perform the task
         ForestControl forestControl = new ForestControl();
-        forestControl.calcHeightOfTree(distance, fists);
         
         //display information to be viewed by the user
-        double theHeight = 0;
+        double theHeight = forestControl.calcHeightOfTree(distance, fists);;
         this.console.println("The height of the tree is" + theHeight);
         
         return false;

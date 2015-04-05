@@ -82,10 +82,9 @@ public class MountainSceneView extends View{
 
         //call the control function to perform the task
         MountainControl mountainControl = new MountainControl();
-        mountainControl.calcHeightOfMountain(time);
         
         //display information to be viewed by the user
-        double height = 0;
+        double height = mountainControl.calcHeightOfMountain(time);;
         this.console.println("the height is" + height);
         return true;
         
