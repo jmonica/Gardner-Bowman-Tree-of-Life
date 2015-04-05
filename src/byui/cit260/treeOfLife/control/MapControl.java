@@ -54,7 +54,7 @@ public class MapControl {
         
     }
     
-    static void moveActorsToStartingLocation(Map map) 
+    public static void moveActorsToStartingLocation(Map map) 
             throws MapControlException {
         //for every character
         Character[] characters = Character.values();
@@ -66,7 +66,7 @@ public class MapControl {
     }
     
     
-    public static void moveCharacterToLocation(Character charscter, Point coordinates)
+    public static void moveCharacterToLocation(Character character, Point coordinates)
                             throws MapControlException{
         Map map = TreeOfLife.getCurrentGame().getMap();
         int newRow = coordinates.x;
@@ -94,12 +94,12 @@ public class MapControl {
         Scene startingScene = new Scene();
         startingScene.setDescription(
                     "\nYou begin in your small thatched roof cottage in the"
-                  + "woods. The Elder’s Scrolls are provided to you before you"
-                  + "begin the challenge from the village elders. Here you will"
-                  + "receive instruction and learn of the Tree of Life. The door"
-                  + "opens and you take your first steps outside and enter the "
-                  + "world of Ambrosia. \n" 
-                  + "Choose wisely, build your faith and endure to the end!");
+                  + "\nwoods. The Elder’s Scrolls are provided to you before you"
+                  + "\nbegin the challenge from the village elders. Here you will"
+                  + "\nreceive instruction and learn of the Tree of Life. The door"
+                  + "\nopens and you take your first steps outside and enter the "
+                  + "\nworld of Ambrosia. \n" 
+                  + "\nChoose wisely, build your faith and endure to the end!");
         startingScene.setSymbol(" STA ");
         startingScene.setBlocked(false);
         
@@ -109,7 +109,7 @@ public class MapControl {
         Scene ForestScene = new Scene();
         ForestScene.setDescription(
                     "\nYou made it to the forest. Try to gain enough faith to"
-                  + "progress to the next scene by following instructions. \n");
+                  + "\nprogress to the next scene by following instructions. \n");
         ForestScene.setSymbol(" ^^^ ");
         ForestScene.setBlocked(false);
         scenes[SceneType.forest.ordinal()] = ForestScene;
@@ -119,7 +119,7 @@ public class MapControl {
         Scene RiverScene = new Scene();
         RiverScene.setDescription(
                     "\nYou made it to the river. Try to gain enough faith to"
-                  + "progress to the next scene by following instructions. \n");
+                  + "nprogress to the next scene by following instructions. \n");
         
         RiverScene.setSymbol(" ~~~ ");
         RiverScene.setBlocked(true);
@@ -130,7 +130,7 @@ public class MapControl {
         Scene MountainScene = new Scene();
         MountainScene.setDescription(
                     "\nYou made it to the mountain. Try to gain enough faith to"
-                  + "progress to the next scene by following instructions. \n");
+                  + "\nprogress to the next scene by following instructions. \n");
         MountainScene.setSymbol(" MMM ");
         MountainScene.setBlocked(true);
         scenes[SceneType.mountain.ordinal()] = MountainScene;
@@ -139,7 +139,7 @@ public class MapControl {
         Scene finishScene = new Scene();
         finishScene.setDescription(
                     "\nCongratulations! Well done thou good and faithful servant."
-                  + "You have had great faith and have reached the Tree of Life.");
+                  + "\nYou have had great faith and have reached the Tree of Life.");
         finishScene.setSymbol(" !*! ");
         finishScene.setBlocked(false);
         scenes[SceneType.finish.ordinal()] = finishScene;

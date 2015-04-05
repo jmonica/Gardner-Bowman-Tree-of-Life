@@ -100,7 +100,7 @@ public class GameMenuView extends View{
                 symbol = scene.getSymbol();
             }
             else{
-                symbol = "????";
+                symbol = " ??? ";
             }
             grid += (" "+symbol +" |");
         }
