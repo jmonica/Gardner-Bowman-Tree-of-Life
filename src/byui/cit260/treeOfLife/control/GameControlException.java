@@ -9,7 +9,7 @@ package byui.cit260.treeOfLife.control;
  *
  * @author gradygb
  */
-class GameControlException extends Exception {
+public class GameControlException extends Exception {
 
     public GameControlException() {
     }

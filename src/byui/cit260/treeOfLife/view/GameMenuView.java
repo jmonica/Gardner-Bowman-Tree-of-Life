@@ -2,12 +2,19 @@
 package byui.cit260.treeOfLife.view;
 
 import byui.cit260.treeOfLife.control.GameControl;
+import byui.cit260.treeOfLife.control.GameControlException;
+import byui.cit260.treeOfLife.model.Character;
 import byui.cit260.treeOfLife.model.FaithMeter;
+import byui.cit260.treeOfLife.model.Game;
 import byui.cit260.treeOfLife.model.InventoryItem;
 import byui.cit260.treeOfLife.model.Location;
 import byui.cit260.treeOfLife.model.Scene;
 import java.awt.Point;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import treeoflife.TreeOfLife;
 
@@ -58,6 +65,15 @@ public class GameMenuView extends View{
                 break;
             case 'T':
                 this.goToTemple();
+                break;
+            case 'C':
+        {
+            try {
+                this.viewCharacters();
+            } catch (GameControlException ex) {
+                Logger.getLogger(GameMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'F':
                 this.getFaith();
@@ -144,29 +160,19 @@ public class GameMenuView extends View{
 //    }
 
     //prompt to do individual assignment for week11
-    private void viewCharacters() {
-        String value;
+
+    public static void viewCharacters() 
+        throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream("C:\\Users\\gradygb\\Desktop\\TreeOfLife\\treeOfLife.txt")) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(Character.Nephi.getDescription());
+            output.writeObject(Character.Laman.getDescription());
+            output.writeObject(Character.Sam.getDescription());//write the game object out to file
+        } catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
     
-        //prompt user to enter file path where they want to print the report
-        do{
-            this.console.println(this.promptMessage);
-            value=this.getInput();
-        }while (!value.equals("E"));        
-        
-        //call the array to print out the description
-        String[] character = new String[3];
-        
-        //call function to print out each item in the array
-        displayCharacter();
-    }
-    
-    public void displayCharacter(){
-        Iterable<Character> descriptions = null;
-        
-        for (Character description : descriptions){
-             //display the description of each character in the list
-             System.out.println(descriptions);             
-         }
     }
     
     //@Override
